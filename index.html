@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Arshia Learning</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Tahoma, Arial, sans-serif;
+    }
+
+    body {
+      background: #f4f7fb;
+      color: #222;
+    }
+
+    header {
+      background: #4f46e5;
+      color: white;
+      padding: 28px 20px;
+      text-align: center;
+      border-radius: 0 0 25px 25px;
+    }
+
+    header h1 {
+      font-size: 29px;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 15px;
+      opacity: 0.9;
+    }
+
+    .container {
+      padding: 25px 18px;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .welcome {
+      background: white;
+      padding: 22px;
+      border-radius: 18px;
+      margin-bottom: 22px;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+    }
+
+    .welcome h2 {
+      margin-bottom: 10px;
+    }
+
+    .welcome p {
+      color: #666;
+      line-height: 1.9;
+    }
+
+    .courses {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    .course {
+      background: white;
+      padding: 25px 15px;
+      border-radius: 18px;
+      text-align: center;
+      cursor: pointer;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.07);
+      transition: 0.2s;
+    }
+
+    .course:active {
+      transform: scale(0.96);
+    }
+
+    .icon {
+      font-size: 40px;
+      margin-bottom: 12px;
+    }
+
+    .course h3 {
+      margin-bottom: 8px;
+    }
+
+    .course p {
+      font-size: 13px;
+      color: #777;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 10px;
+      color: #888;
+      font-size: 13px;
+    }
+
+    @media (max-width: 400px) {
+      .courses {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Arshia Learning 📚</h1>
+    <p>یاد بگیر، تمرین کن، پیشرفت کن 🚀</p>
+  </header>
+
+  <main class="container">
+
+    <section class="welcome">
+      <h2>خوش آمدید 👋</h2>
+      <p>
+        به آکادمی آموزشی Arshia Learning خوش آمدید!
+        از اینجا می‌توانید یادگیری زبان انگلیسی را شروع کنید
+        و قدم‌به‌قدم مهارت‌های خود را بهتر کنید.
+      </p>
+    </section>
+
+    <div class="courses">
+
+      <div class="course" onclick="location.href='english.html'">
+        <div class="icon">🇬🇧</div>
+        <h3>زبان انگلیسی</h3>
+        <p>یادگیری زبان انگلیسی</p>
+      </>
+
+      <div class="course" onclick="openCourse('لغات')">
+        <div class="icon">📖</div>
+        <h3>لغات</h3>
+        <p>یادگیری کلمات جدید</p>
+      </div>
+
+      <div class="course" onclick="openCourse('گرامر')">
+        <div class="icon">✏️</div>
+        <h3>گرامر</h3>
+        <p>تقویت گرامر انگلیسی</p>
+      </div>
+
+      <div class="course" onclick="openCourse('شنیداری')">
+        <div class="icon">🎧</div>
+        <h3>شنیداری</h3>
+        <p>تقویت مهارت شنیداری</p>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer>
+    © 2026 Arshia Learning
+  </footer>
+
+  <script>
+    function openCourse(course) {
+      alert("شما بخش «" + course + "» را انتخاب کردید.");
+    }
+  </script>
+
+</body>
+</html>
