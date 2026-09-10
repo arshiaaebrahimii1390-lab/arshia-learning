@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>درس ۴ | وسایل اطراف ما</title>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+
+      background:
+        radial-gradient(circle at 15% 10%, #dbeafe, transparent 35%),
+        radial-gradient(circle at 90% 80%, #e9d5ff, transparent 35%),
+        #f5f7fb;
+
+      color: #172033;
+    }
+
+    .container {
+      width: 92%;
+      max-width: 650px;
+      margin: auto;
+      padding-bottom: 40px;
+    }
+
+    header {
+      margin: 20px 0;
+      padding: 23px;
+
+      border-radius: 28px;
+
+      background: rgba(255,255,255,0.58);
+      backdrop-filter: blur(25px);
+      -webkit-backdrop-filter: blur(25px);
+
+      border: 1px solid rgba(255,255,255,0.8);
+
+      box-shadow: 0 10px 35px rgba(0,0,0,0.08);
+    }
+
+    .back {
+      color: #667085;
+      font-size: 14px;
+      cursor: pointer;
+      margin-bottom: 15px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 27px;
+    }
+
+    header p {
+      color: #7b8494;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .card {
+      margin-top: 18px;
+      padding: 20px;
+
+      border-radius: 24px;
+
+      background: rgba(255,255,255,0.58);
+
+      backdrop-filter: blur(25px);
+      -webkit-backdrop-filter: blur(25px);
+
+      border: 1px solid rgba(255,255,255,0.8);
+
+      box-shadow: 0 8px 28px rgba(0,0,0,0.07);
+    }
+
+    .card h2 {
+      margin-top: 0;
+      font-size: 20px;
+    }
+
+    .card p {
+      line-height: 2;
+      color: #4b5565;
+    }
+
+    /* WORDS */
+
+    .word {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      padding: 13px;
+      margin-top: 10px;
+
+      border-radius: 18px;
+
+      background: rgba(255,255,255,0.68);
+    }
+
+    .word-info {
+      flex: 1;
+    }
+
+    .english {
+      font-size: 17px;
+      font-weight: bold;
+    }
+
+    .pronunciation {
+      margin-top: 4px;
+      color: #667085;
+      font-size: 13px;
+    }
+
+    .meaning {
+      margin-top: 3px;
+      color: #7b8494;
+      font-size: 13px;
+    }
+
+    .speak-btn {
+      border: none;
+
+      width: 42px;
+      height: 42px;
+
+      border-radius: 14px;
+
+      background: #4f7cff;
+      color: white;
+
+      font-size: 18px;
+
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .speak-btn:active {
+      transform: scale(0.92);
+    }
+
+    /* SENTENCES */
+
+    .sentence {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      padding: 14px;
+      margin-top: 10px;
+
+      border-radius: 18px;
+
+      background: rgba(255,255,255,0.68);
+    }
+
+    .sentence-info {
+      flex: 1;
+    }
+
+    .sentence-en {
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .sentence-pron {
+      margin-top: 5px;
+      color: #667085;
+      font-size: 13px;
+    }
+
+    .sentence-fa {
+      margin-top: 5px;
+      color: #7b8494;
+      font-size: 13px;
+    }
+
+    /* VOWELS */
+
+    .vowels {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 5px 0 10px;
+      scrollbar-width: none;
+    }
+
+    .vowels::-webkit-scrollbar {
+      display: none;
+    }
+
+    .vowel {
+      min-width: 62px;
+      padding: 13px 8px;
+
+      border-radius: 17px;
+
+      text-align: center;
+
+      background: rgba(255,255,255,0.75);
+
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+
+    .vowel-letter {
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .vowel-pron {
+      margin-top: 5px;
+      color: #667085;
+      font-size: 12px;
+    }
+
+    .vowel button {
+      margin-top: 8px;
+
+      border: none;
+      background: #4f7cff;
+      color: white;
+
+      width: 32px;
+      height: 32px;
+
+      border-radius: 10px;
+
+      cursor: pointer;
+    }
+
+    /* GRAMMAR */
+
+    .grammar-box {
+      margin-top: 12px;
+      padding: 16px;
+
+      border-radius: 18px;
+
+      background: rgba(79,124,255,0.09);
+
+      line-height: 2;
+    }
+
+    /* PRACTICE */
+
+    .question {
+      margin-top: 18px;
+      padding: 16px;
+
+      border-radius: 19px;
+
+      background: rgba(255,255,255,0.68);
+    }
+
+    .question-title {
+      font-weight: bold;
+      line-height: 1.9;
+    }
+
+    .answer {
+      display: block;
+
+      width: 100%;
+
+      margin-top: 8px;
+      padding: 12px;
+
+      border: none;
+      border-radius: 14px;
+
+      background: rgba(255,255,255,0.9);
+
+      text-align: right;
+
+      font-size: 14px;
+
+      cursor: pointer;
+
+      transition: 0.2s;
+    }
+
+    .answer:active {
+      transform: scale(0.98);
+    }
+
+    .correct {
+      background: #d1fae5 !important;
+    }
+
+    .wrong {
+      background: #fee2e2 !important;
+    }
+
+    .result {
+      margin-top: 10px;
+      font-weight: bold;
+      font-size: 13px;
+    }
+
+    .finish {
+      margin-top: 20px;
+      padding: 20px;
+
+      text-align: center;
+
+      border-radius: 23px;
+
+      background: rgba(255,255,255,0.62);
+
+      line-height: 2;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 0 10px;
+
+      color: #8a93a3;
+      font-size: 12px;
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+  <main class="container">
+
+
+    <!-- HEADER -->
+
+    <header>
+
+      <div
+        class="back"
+        onclick="location.href='english.html'">
+
+        ← بازگشت به درس‌ها
+
+      </div>
+
+      <h1>
+        درس ۴ 🏠
+      </h1>
+
+      <p>
+        وسایل اطراف ما — Objects Around Us
+      </p>
+
+    </header>
+
+
+    <!-- INTRO -->
+
+    <div class="card">
+
+      <h2>
+        🏠 امروز چی یاد می‌گیریم؟
+      </h2>
+
+      <p>
+        در این درس با چند وسیله‌ی پرکاربرد اطرافمان آشنا می‌شویم
+        و یاد می‌گیریم درباره‌ی آن‌ها جمله‌های ساده بسازیم.
+      </p>
+
+      <div class="grammar-box">
+
+        🎯 هدف درس:
+
+        <br>
+
+        یادگیری نام وسایل + ساخت جمله با
+        <b>This is</b>
+        و
+        <b>That is</b>
+
+      </div>
+
+    </div>
+
+
+    <!-- WORDS -->
+
+    <div class="card">
+
+      <h2>
+        📚 بخش ۱ — کلمات جدید
+      </h2>
+
+      <p>
+        روی 🔊 بزن تا تلفظ انگلیسی هر کلمه را بشنوی.
+      </p>
+
+
+      <div class="word">
+
+        <div class="word-info">
+          <div class="english">Book</div>
+          <div class="pronunciation">بوک</div>
+          <div class="meaning">کتاب 📖</div>
+        </div>
+
+        <button class="speak-btn" onclick="speak('Book')">
+          🔊
+        </button>
+
+      </div>
+
+
+      <div class="word">
+
+        <div class="word-info">
+          <div class="english">Pen</div>
+          <div class="pronunciation">پِن</div>
+          <div class="meaning">خودکار 🖊️</div>
+        </div>
+
+        <button class="speak-btn" onclick="speak('Pen')">
+          🔊
+        </button>
+
+      </div>
+
+
+      <div class="word">
+
+        <div class="word-info">
+          <div class="english">Pencil</div>
+          <div class="pronunciation">پِنسِل</div>
+          <div class="meaning">مداد ✏️</div>
+        </div>
+
+        <button class="speak-btn" onclick="speak('Pencil')">
+          🔊
+        </button>
+
+      </div>
+
+
+      <div class="word">
+
+        <div class="word-info">
+          <div class="english">Bag</div>
+          <div class="pronunciation">بَگ</div>
+          <div class="meaning">کیف 🎒</div>
+        </div>
+
+        <button class="speak-btn" onclick="speak('Bag')">
+          🔊
+        </button>
+
+      </div>
+
+
+      <div class="word">
+
+        <div class="word-info">
+          <div class="english">Chair</div>
+          <div class="pronunciation">چِر</div>
+          <div class="meaning">صندلی 🪑</div>
+        </div>
+
+        <button class="speak-btn" onclick="speak('Chair')">
+          🔊
+        </button>
+
+      </div>
+
+
+      <div class="word">
+
+        <div class="word-info">
+          <div class="english">Table</div>
+          <div class="pronunciation">تِیبِل</div>
+          <div class="meaning">میز</div>
+        </div>
+
+        <button class="speak-btn" onclick="speak('Table')">
+          🔊
+        </button>
+
+      </div>
+
+
+      <div class="word">
+
+        <div class="word-info">
+          <div class="english">Door</div>
+          <div class="pronunciation">دور</div>
+          <div class="meaning">در 🚪</div>
+        </div>
+
+        <button class="speak-btn" onclick="speak('Door')">
+          🔊
+        </button>
+
+      </div>
+
+
+      <div class="word">
+
+        <div class="word-info">
+          <div class="english">Window</div>
+          <div class="pronunciation">ویندو</div>
+          <div class="meaning">پنجره 🪟</div>
+        </div>
+
+        <button class="speak-btn" onclick="speak('Window')">
+          🔊
+        </button>
+
+      </div>
+
+
+      <div class="word">
+
+        <div class="word-info">
+          <div class="english">Phone</div>
+          <div class="pronunciation">فون</div>
+          <div class="meaning">گوشی 📱</div>
+        </div>
+
+        <button class="speak-btn" onclick="speak('Phone')">
+          🔊
+        </button>
+
+      </div>
+
+
+      <div class="word">
+
+        <div class="word-info">
+          <div class="english">Computer</div>
+          <div class="pronunciation">کامپیوتِر</div>
+          <div class="meaning">کامپیوتر 💻</div>
+        </div>
+
+        <button class="speak-btn" onclick="speak('Computer')">
+          🔊
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- VOWELS -->
+
+    <div class="card">
+
+      <h2>
+        🔤 بخش ۲ — حروف صدادار
+      </h2>
+
+      <p>
+        در انگلیسی ۵ حرف صدادار اصلی داریم.
+        به آن‌ها <b>Vowels</b> می‌گوییم.
+      </p>
+
+
+      <div class="vowels">
+
+
+        <div class="vowel">
+
+          <div class="vowel-letter">
+            A
+          </div>
+
+          <div class="vowel-pron">
+            اِی
+          </div>
+
+          <button onclick="speak('A')">
+            🔊
+          </button>
+
+        </div>
+
+
+        <div class="vowel">
+
+          <div class="vowel-letter">
+            E
+          </div>
+
+          <div class="vowel-pron">
+            ای
+          </div>
+
+          <button onclick="speak('E')">
+            🔊
+          </button>
+
+        </div>
+
+
+        <div class="vowel">
+
+          <div class="vowel-letter">
+            I
+          </div>
+
+          <div class="vowel-pron">
+            آی
+          </div>
+
+          <button onclick="speak('I')">
+            🔊
+          </button>
+
+        </div>
+
+
+        <div class="vowel">
+
+          <div class="vowel-letter">
+            O
+          </div>
+
+          <div class="vowel-pron">
+            اُو
+          </div>
+
+          <button onclick="speak('O')">
+            🔊
+          </button>
+
+        </div>
+
+
+        <div class="vowel">
+
+          <div class="vowel-letter">
+            U
+          </div>
+
+          <div class="vowel-pron">
+            یو
+          </div>
+
+          <button onclick="speak('U')">
+            🔊
+          </button>
+
+        </div>
+
+
+      </div>
+
+
+      <div class="grammar-box">
+
+        🔤 <b>A, E, I, O, U</b>
+
+        <br><br>
+
+        این ۵ حرف، حروف صدادار اصلی انگلیسی هستند.
+
+        <br>
+
+        <b>Vowels</b> = حروف صدادار
+
+      </div>
+
+    </div>
+
+
+    <!-- THIS THAT -->
+
+    <div class="card">
+
+      <h2>
+        👈 بخش ۳ — This و That
+      </h2>
+
+      <p>
+        برای اشاره به چیزی که نزدیک ماست، از
+        <b>This</b>
+        استفاده می‌کنیم.
+      </p>
+
+      <div class="sentence">
+
+        <div class="sentence-info">
+
+          <div class="sentence-en">
+            This
+          </div>
+
+          <div class="sentence-pron">
+            دیس
+          </div>
+
+          <div class="sentence-fa">
+            این 👈
+          </div>
+
+        </div>
+
+        <button class="speak-btn" onclick="speak('This')">
+          🔊
+        </button>
+
+      </div>
+
+
+      <p>
+        برای اشاره به چیزی که دورتر است، از
+        <b>That</b>
+        استفاده می‌کنیم.
+      </p>
+
+
+      <div class="sentence">
+
+        <div class="sentence-info">
+
+          <div class="sentence-en">
+            That
+          </div>
+
+          <div class="sentence-pron">
+            ذَت
+          </div>
+
+          <div class="sentence-fa">
+            آن 👉
+          </div>
+
+        </div>
+
+        <button class="speak-btn" onclick="speak('That')">
+          🔊
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- A AN -->
+
+    <div class="card">
+
+      <h2>
+        🧠 بخش ۴ — a و an
+      </h2>
+
+      <p>
+        وقتی درباره‌ی <b>یک</b> چیز صحبت می‌کنیم،
+        قبل از اسم معمولاً از
+        <b>a</b>
+        یا
+        <b>an</b>
+        استفاده می‌کنیم.
+      </p>
+
+
+      <div class="grammar-box">
+
+        اگر کلمه با <b>صدای بی‌صدا</b> شروع شود،
+        معمولاً از <b>a</b> استفاده می‌کنیم:
+
+        <br><br>
+
+        <b>a book</b> 📖
+        <br>
+        ا بوک
+
+        <br><br>
+
+        <b>a pen</b> 🖊️
+        <br>
+        ا پِن
+
+        <br><br>
+
+        <b>a chair</b> 🪑
+        <br>
+        ا چِر
+
+      </div>
+
+
+      <div class="grammar-box">
+
+        اگر کلمه با <b>صدای صدادار</b> شروع شود،
+        معمولاً از <b>an</b> استفاده می‌کنیم:
+
+        <br><br>
+
+        <b>an apple</b> 🍎
+        <br>
+        اَن اَپِل
+
+        <br><br>
+
+        <b>an orange</b> 🍊
+        <br>
+        اَن اُرِنج
+
+      </div>
+
+
+      <p>
+        ⭐ نکته مهم:
+        برای <b>a / an</b> بیشتر به <b>صدا</b> توجه می‌کنیم،
+        نه فقط به حرف اول کلمه.
+      </p>
+
+    </div>
+
+
+    <!-- SENTENCES -->
+
+    <div class="card">
+
+      <h2>
+        💬 بخش ۵ — جمله‌سازی
+      </h2>
+
+
+      <div class="sentence">
+
+        <div class="sentence-info">
+
+          <div class="sentence-en">
+            This is a book.
+          </div>
+
+          <div class="sentence-pron">
+            دیس ایز ا بوک
+          </div>
+
+          <div class="sentence-fa">
+            این یک کتاب است.
+          </div>
+
+        </div>
+
+        <button class="speak-btn"
+          onclick="speak('This is a book.')">
+          🔊
+        </button>
+
+      </div>
+
+
+      <div class="sentence">
+
+        <div class="sentence-info">
+
+          <div class="sentence-en">
+            This is a pen.
+          </div>
+
+          <div class="sentence-pron">
+            دیس ایز ا پِن
+          </div>
+
+          <div class="sentence-fa">
+            این یک خودکار است.
+          </div>
+
+        </div>
+
+        <button class="speak-btn"
+          onclick="speak('This is a pen.')">
+          🔊
+        </button>
+
+      </div>
+
+
+      <div class="sentence">
+
+        <div class="sentence-info">
+
+          <div class="sentence-en">
+            That is a chair.
+          </div>
+
+          <div class="sentence-pron">
+            ذَت ایز ا چِر
+          </div>
+
+          <div class="sentence-fa">
+            آن یک صندلی است.
+          </div>
+
+        </div>
+
+        <button class="speak-btn"
+          onclick="speak('That is a chair.')">
+          🔊
+        </button>
+
+      </div>
+
+
+      <div class="sentence">
+
+        <div class="sentence-info">
+
+          <div class="sentence-en">
+            This is my phone.
+          </div>
+
+          <div class="sentence-pron">
+            دیس ایز مای فون
+          </div>
+
+          <div class="sentence-fa">
+            این گوشی من است.
+          </div>
+
+        </div>
+
+        <button class="speak-btn"
+          onclick="speak('This is my phone.')">
+          🔊
+        </button>
+
+      </div>
+
+
+      <div class="sentence">
+
+        <div class="sentence-info">
+
+          <div class="sentence-en">
+            This is my bag.
+          </div>
+
+          <div class="sentence-pron">
+            دیس ایز مای بَگ
+          </div>
+
+          <div class="sentence-fa">
+            این کیف من است.
+          </div>
+
+        </div>
+
+        <button class="speak-btn"
+          onclick="speak('This is my bag.')">
+          🔊
+        </button>
+
+      </div>
+
+
+      <div class="sentence">
+
+        <div class="sentence-info">
+
+          <div class="sentence-en">
+            That is a window.
+          </div>
+
+          <div class="sentence-pron">
+            ذَت ایز ا ویندو
+          </div>
+
+          <div class="sentence-fa">
+            آن یک پنجره است.
+          </div>
+
+        </div>
+
+        <button class="speak-btn"
+          onclick="speak('That is a window.')">
+          🔊
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- PRACTICE -->
+
+    <div class="card">
+
+      <h2>
+        📝 بخش ۶ — تمرین
+      </h2>
+
+
+      <!-- Q1 -->
+
+      <div class="question">
+
+        <div class="question-title">
+          ۱. معنی <b>Book</b> چیست؟
+        </div>
+
+        <button class="answer"
+          onclick="check(this,true,'r1')">
+          📖 کتاب
+        </button>
+
+        <button class="answer"
+          onclick="check(this,false,'r1')">
+          🪑 صندلی
+        </button>
+
+        <button class="answer"
+          onclick="check(this,false,'r1')">
+          🚪 در
+        </button>
+
+        <div class="result" id="r1"></div>
+
+      </div>
+
+
+      <!-- Q2 -->
+
+      <div class="question">
+
+        <div class="question-title">
+          ۲. کدام جمله درست است؟
+        </div>
+
+        <button class="answer"
+          onclick="check(this,true,'r2')">
+          This is a pen.
+        </button>
+
+        <button class="answer"
+          onclick="check(this,false,'r2')">
+          This are a pen.
+        </button>
+
+        <button class="answer"
+          onclick="check(this,false,'r2')">
+          This am a pen.
+        </button>
+
+        <div class="result" id="r2"></div>
+
+      </div>
+
+
+      <!-- Q3 -->
+
+      <div class="question">
+
+        <div class="question-title">
+          ۳. کدام گزینه حروف صدادار اصلی انگلیسی را نشان می‌دهد؟
+        </div>
+
+        <button class="answer"
+          onclick="check(this,true,'r3')">
+          A, E, I, O, U
+        </button>
+
+        <button class="answer"
+          onclick="check(this,false,'r3')">
+          B, C, D, F, G
+        </button>
+
+        <button class="answer"
+          onclick="check(this,false,'r3')">
+          J, K, L, M, N
+        </button>
+
+        <div class="result" id="r3"></div>
+
+      </div>
+
+
+      <!-- Q4 -->
+
+      <div class="question">
+
+        <div class="question-title">
+          ۴. کدام گزینه درست است؟
+          <br>
+          ___ apple
+        </div>
+
+        <button class="answer"
+          onclick="check(this,false,'r4')">
+          a apple
+        </button>
+
+        <button class="answer"
+          onclick="check(this,true,'r4')">
+          an apple
+        </button>
+
+        <button class="answer"
+          onclick="check(this,false,'r4')">
+          a an apple
+        </button>
+
+        <div class="result" id="r4"></div>
+
+      </div>
+
+
+      <!-- Q5 -->
+
+      <div class="question">
+
+        <div class="question-title">
+          ۵. برای چیزی که نزدیک ماست از کدام استفاده می‌کنیم؟
+        </div>
+
+        <button class="answer"
+          onclick="check(this,true,'r5')">
+          This
+        </button>
+
+        <button class="answer"
+          onclick="check(this,false,'r5')">
+          That
+        </button>
+
+        <button class="answer"
+          onclick="check(this,false,'r5')">
+          They
+        </button>
+
+        <div class="result" id="r5"></div>
+
+      </div>
+
+
+      <!-- Q6 -->
+
+      <div class="question">
+
+        <div class="question-title">
+          ۶. جمله‌ی «این گوشی من است» کدام است؟
+        </div>
+
+        <button class="answer"
+          onclick="check(this,true,'r6')">
+          This is my phone.
+        </button>
+
+        <button class="answer"
+          onclick="check(this,false,'r6')">
+          That are my phone.
+        </button>
+
+        <button class="answer"
+          onclick="check(this,false,'r6')">
+          This am my phone.
+        </button>
+
+        <div class="result" id="r6"></div>
+
+      </div>
+
+
+    </div>
+
+
+    <!-- FINISH -->
+
+    <div class="finish">
+
+      🎉 آفرین!
+
+      <br>
+
+      درس ۴ را تمام کردی.
+
+      <br>
+
+      حالا می‌توانی چند وسیله‌ی اطراف خودت را
+      به انگلیسی معرفی کنی. 🏠🇬🇧
+
+      <br><br>
+
+      <b>This is a book.</b> 📖
+
+      <br>
+
+      <b>That is a chair.</b> 🪑
+
+    </div>
+
+
+    <footer>
+      © 2026 Arshia Learning 📚
+    </footer>
+
+
+  </main>
+
+
+  <script>
+
+    function speak(text) {
+
+      const speech =
+        new SpeechSynthesisUtterance(text);
+
+      speech.lang = "en-US";
+      speech.rate = 0.8;
+      speech.pitch = 1;
+
+      window.speechSynthesis.cancel();
+
+      window.speechSynthesis.speak(speech);
+
+    }
+
+
+    function check(button, correct, resultId) {
+
+      const result =
+        document.getElementById(resultId);
+
+      if (correct) {
+
+        button.classList.add("correct");
+
+        result.innerText =
+          "✅ آفرین! جواب درست است.";
+
+      } else {
+
+        button.classList.add("wrong");
+
+        result.innerText =
+          "❌ جواب اشتباه است. دوباره تلاش کن.";
+
+      }
+
+    }
+
+  </script>
+
+</body>
+
+</html>
