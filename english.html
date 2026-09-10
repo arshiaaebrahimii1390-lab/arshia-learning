@@ -5,357 +5,531 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>English | Arshia Learning</title>
+  <title>آموزش زبان انگلیسی | Arshia Learning</title>
 
   <style>
+
     * {
       box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: Tahoma, Arial, sans-serif;
+      font-family: Arial, sans-serif;
     }
 
     body {
-      background: #f4f7fb;
-      color: #222;
-    }
+      margin: 0;
+      min-height: 100vh;
 
-    header {
-      background: #4f46e5;
-      color: white;
-      text-align: center;
-      padding: 30px 18px;
-      border-radius: 0 0 28px 28px;
-    }
+      background:
+        radial-gradient(circle at 15% 10%, #dbeafe, transparent 35%),
+        radial-gradient(circle at 90% 80%, #e9d5ff, transparent 35%),
+        #f5f7fb;
 
-    header .icon {
-      font-size: 38px;
-      margin-bottom: 8px;
-    }
-
-    header h1 {
-      font-size: 27px;
-      margin-bottom: 8px;
-    }
-
-    header p {
-      font-size: 14px;
-      opacity: 0.95;
+      color: #172033;
     }
 
     .container {
-      max-width: 700px;
+      width: 92%;
+      max-width: 650px;
       margin: auto;
-      padding: 22px 18px 35px;
+      padding-bottom: 30px;
     }
 
-    .title {
-      font-size: 20px;
+    /* HEADER */
+
+    header {
+      margin: 20px 0;
+      padding: 23px;
+
+      border-radius: 28px;
+
+      background: rgba(255,255,255,0.58);
+      backdrop-filter: blur(25px);
+      -webkit-backdrop-filter: blur(25px);
+
+      border: 1px solid rgba(255,255,255,0.8);
+
+      box-shadow: 0 10px 35px rgba(0,0,0,0.08);
+    }
+
+    .back {
+      font-size: 14px;
+      color: #667085;
+      cursor: pointer;
       margin-bottom: 15px;
     }
 
-    .lesson {
-      background: white;
-      padding: 20px;
-      margin-bottom: 16px;
+    header h1 {
+      margin: 0;
+      font-size: 27px;
+    }
+
+    header p {
+      margin: 8px 0 0;
+      color: #7b8494;
+      font-size: 14px;
+    }
+
+    /* LEVELS */
+
+    .level-title {
+      margin: 25px 0 12px;
+      font-size: 18px;
+    }
+
+    .levels {
+      display: flex;
+      gap: 9px;
+      overflow-x: auto;
+      padding: 4px 2px 12px;
+
+      scrollbar-width: none;
+    }
+
+    .levels::-webkit-scrollbar {
+      display: none;
+    }
+
+    .level {
+      min-width: 65px;
+      padding: 12px 8px;
+
       border-radius: 18px;
-      box-shadow: 0 5px 18px rgba(0,0,0,0.07);
+
+      text-align: center;
+      font-weight: bold;
+
+      background: rgba(255,255,255,0.55);
+
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+
+      border: 1px solid rgba(255,255,255,0.8);
+
+      box-shadow: 0 5px 18px rgba(0,0,0,0.05);
+
+      cursor: pointer;
+
+      transition: 0.2s;
+    }
+
+    .level:active {
+      transform: scale(0.94);
+    }
+
+    .level.active {
+      background: rgba(255,255,255,0.9);
+      box-shadow: 0 7px 22px rgba(0,0,0,0.1);
+      border: 2px solid #4f7cff;
+    }
+
+    .level.locked {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    .level small {
+      display: block;
+      margin-top: 5px;
+      font-size: 10px;
+      font-weight: normal;
+      color: #7b8494;
+    }
+
+    /* SECTION */
+
+    .section-title {
+      margin: 20px 0 12px;
+      font-size: 20px;
+    }
+
+    /* LESSONS */
+
+    .lessons {
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+    }
+
+    .lesson {
+      padding: 18px;
+
+      border-radius: 24px;
+
+      background: rgba(255,255,255,0.58);
+
+      backdrop-filter: blur(25px);
+      -webkit-backdrop-filter: blur(25px);
+
+      border: 1px solid rgba(255,255,255,0.8);
+
+      box-shadow: 0 8px 28px rgba(0,0,0,0.07);
     }
 
     .lesson-top {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      margin-bottom: 12px;
+      gap: 14px;
     }
 
     .lesson-number {
-      color: #4f46e5;
-      font-size: 14px;
+      width: 50px;
+      height: 50px;
+
+      border-radius: 17px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: rgba(255,255,255,0.8);
+
       font-weight: bold;
+      font-size: 18px;
+    }
+
+    .lesson-info {
+      flex: 1;
+    }
+
+    .lesson-info h3 {
+      margin: 0 0 6px;
+      font-size: 17px;
+    }
+
+    .lesson-info p {
+      margin: 0;
+      color: #7b8494;
+      font-size: 13px;
     }
 
     .status {
-      background: #e8e8ff;
-      color: #4f46e5;
-      padding: 5px 9px;
-      border-radius: 8px;
       font-size: 12px;
-      font-weight: bold;
-    }
-
-    .lesson h2 {
-      font-size: 20px;
-      margin-bottom: 9px;
-    }
-
-    .lesson p {
-      color: #666;
-      line-height: 1.9;
-    }
-
-    .topics {
-      margin-top: 14px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 7px;
-    }
-
-    .topic {
-      background: #f0f1ff;
-      color: #4f46e5;
-      padding: 7px 10px;
-      border-radius: 9px;
-      font-size: 12px;
+      margin-top: 9px;
+      display: inline-block;
     }
 
     .start-btn {
-      display: block;
-      width: 100%;
-      border: none;
-      background: #4f46e5;
-      color: white;
-      padding: 14px;
-      border-radius: 13px;
-      font-size: 16px;
-      cursor: pointer;
-      margin-top: 17px;
-    }
+  margin-top: 14px;
+  width: 100%;
 
-    .start-btn:active {
-      transform: scale(0.98);
-    }
+  border: none;
+  border-radius: 16px;
+
+  padding: 13px;
+
+  background: #4f7cff;
+  color: white;
+
+  font-size: 14px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.start-btn:active {
+  transform: scale(0.97);
+  opacity: 0.85;
+}
 
     .locked {
-      opacity: 0.7;
+      opacity: 0.5;
     }
 
-    .locked-btn {
-      display: block;
-      width: 100%;
-      border: none;
-      background: #e5e5e5;
-      color: #777;
-      padding: 14px;
-      border-radius: 13px;
-      font-size: 16px;
-      margin-top: 17px;
+    .locked .start-btn {
+      cursor: not-allowed;
     }
 
-    .progress-card {
-      background: white;
-      padding: 20px;
-      border-radius: 18px;
-      margin-bottom: 22px;
-      box-shadow: 0 5px 18px rgba(0,0,0,0.07);
-    }
-
-    .progress-text {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 10px;
-      font-size: 14px;
-      font-weight: bold;
-    }
-
-    .progress-bar {
-      width: 100%;
-      height: 10px;
-      background: #eeeeee;
-      border-radius: 20px;
-      overflow: hidden;
-    }
-
-    .progress-fill {
-      width: 10%;
-      height: 100%;
-      background: #4f46e5;
-      border-radius: 20px;
-    }
-
-    .back-btn {
-      display: block;
+    footer {
       text-align: center;
-      text-decoration: none;
-      color: #4f46e5;
-      margin-top: 25px;
-      font-weight: bold;
+      padding: 30px 0 20px;
+
+      color: #8a93a3;
+      font-size: 12px;
     }
+
   </style>
 </head>
 
+
 <body>
-
-  <header>
-
-    <div class="icon">🇬🇧</div>
-
-    <h1>آموزش زبان انگلیسی</h1>
-
-    <p>
-      قدم‌به‌قدم انگلیسی یاد بگیر 🚀
-    </p>
-
-  </header>
-
 
   <main class="container">
 
+    <!-- HEADER -->
 
+    <header>
 
-
-
-    <h2 class="title">
-      📚 درس‌ها
-    </h2>
-
-
-    <!-- درس ۱ -->
-    <div class="lesson">
-
-      <div class="lesson-top">
-
-        <div class="lesson-number">
-          درس ۱
-        </div>
-
-        <div class="status">
-          فعال ✅
-        </div>
-
+      <div
+        class="back"
+        onclick="location.href='index.html'">
+        ← بازگشت به صفحه اصلی
       </div>
 
-      <h2>
-        Am / Is / Are 🧠
-      </h2>
+      <h1>
+        🇬🇧 آموزش زبان انگلیسی
+      </h1>
 
       <p>
-        در این درس با ضمیرهای فاعلی و فعل‌های
-        <b>am</b>، <b>is</b> و <b>are</b>
-        آشنا می‌شویم و شکل مخفف آن‌ها را یاد می‌گیریم.
+        سطح خودت را انتخاب کن و شروع به یادگیری کن 🚀
       </p>
 
-      <div class="topics">
+    </header>
 
-        <span class="topic">👤 ضمیرها</span>
 
-        <span class="topic">🔵 Am</span>
+    <!-- LEVELS -->
 
-        <span class="topic">🟢 Is</span>
+    <div class="level-title">
+      سطح زبان انگلیسی 🎯
+    </div>
 
-        <span class="topic">🟠 Are</span>
 
-        <span class="topic">✂️ مخفف‌ها</span>
+    <div class="levels">
 
-        <span class="topic">📝 تمرین</span>
-
+      <div class="level active">
+        A1
+        <small>مبتدی</small>
       </div>
 
-      <button
-        class="start-btn"
-        onclick="location.href='lesson1.html'">
+      <div
+        class="level locked"
+        onclick="lockedLevel()">
+        A2
+        <small>پایه</small>
+      </div>
 
-        شروع درس ▶️
+      <div
+        class="level locked"
+        onclick="lockedLevel()">
+        B1
+        <small>متوسط</small>
+      </div>
 
-      </button>
+      <div
+        class="level locked"
+        onclick="lockedLevel()">
+        B2
+        <small>متوسط+</small>
+      </div>
+
+      <div
+        class="level locked"
+        onclick="lockedLevel()">
+        C1
+        <small>پیشرفته</small>
+      </div>
+
+      <div
+        class="level locked"
+        onclick="lockedLevel()">
+        C2
+        <small>حرفه‌ای</small>
+      </div>
 
     </div>
 
 
-    <!-- درس ۲ -->
-    <div class="lesson">
+    <!-- A1 -->
 
-      <div class="lesson-top">
+    <div class="section-title">
+      A1 — سطح مبتدی 🟢
+    </div>
 
-        <div class="lesson-number">
-          درس ۲
+
+    <div class="lessons">
+
+
+      <!-- LESSON 1 -->
+
+      <div class="lesson">
+
+        <div class="lesson-top">
+
+          <div class="lesson-number">
+            ۱
+          </div>
+
+          <div class="lesson-info">
+
+            <h3>
+              Am / Is / Are 🧠
+            </h3>
+
+            <p>
+              آشنایی با فعل to be
+            </p>
+
+            <span class="status">
+              فعال ✅
+            </span>
+
+          </div>
+
         </div>
 
-        <span class="status">فعال ✅</span>
+
+        <button
+          class="start-btn"
+          onclick="location.href='lesson1.html'">
+
+          شروع درس ▶️
+
+        </button>
 
       </div>
 
-      <h2>
-        معرفی خودمان 👋
-      </h2>
 
-      <p>
-        در این درس یاد می‌گیریم چطور درباره اسم،
-        سن و اطلاعات ساده درباره خودمان صحبت کنیم.
-      </p>
+      <!-- LESSON 2 -->
 
-      <button class="start-btn" onclick="location.href='lesson2.html'">
-  شروع درس ▶️
-      </button>
+      <div class="lesson">
 
-    </>
+        <div class="lesson-top">
 
+          <div class="lesson-number">
+            ۲
+          </div>
 
-    <!-- درس ۳ -->
-    <div class="lesson">
+          <div class="lesson-info">
 
-      <div class="lesson-top">
+            <h3>
+              معرفی خودمان 👋
+            </h3>
 
-        <div class="lesson-number">
-          درس ۳
+            <p>
+              What’s your name? / How old are you?
+            </p>
+
+            <span class="status">
+              فعال ✅
+            </span>
+
+          </div>
+
         </div>
 
-        <span class="status">فعال ✅</span>
+
+        <button
+          class="start-btn"
+          onclick="location.href='lesson2.html'">
+
+          شروع درس ▶️
+
+        </button>
 
       </div>
 
-      <h2>
-        خانواده 👨‍👩‍👧‍👦
-      </h2>
 
-      <p>
-        یاد می‌گیریم درباره اعضای خانواده صحبت کنیم
-        و کلمات مربوط به خانواده را یاد بگیریم.
-      </p>
+      <!-- LESSON 3 -->
 
-      <button class="start-btn" onclick="location.href='lesson3.html'">
-  شروع درس ▶️
-      </button>
+      <div class="lesson">
 
-    </>
+        <div class="lesson-top">
 
+          <div class="lesson-number">
+            ۳
+          </div>
 
-    <!-- درس ۴ -->
-    <div class="lesson locked">
+          <div class="lesson-info">
 
-      <div class="lesson-top">
+            <h3>
+              خانواده 👨‍👩‍👧‍👦
+            </h3>
 
-        <div class="lesson-number">
-          درس ۴
+            <p>
+              Family / Mother / Father / Brother / Sister
+            </p>
+
+            <span class="status">
+              فعال ✅
+            </span>
+
+          </div>
+
         </div>
 
-        <div class="status">
+
+        <button
+          class="start-btn"
+          onclick="location.href='lesson3.html'">
+
+          شروع درس ▶️
+
+        </button>
+
+      </div>
+
+
+      <!-- LESSON 4 -->
+
+      <div class="lesson locked">
+
+        <div class="lesson-top">
+
+          <div class="lesson-number">
+            ۴
+          </div>
+
+          <div class="lesson-info">
+
+            <h3>
+              وسایل اطراف ما 🏠
+            </h3>
+
+            <p>
+              Objects around us
+            </p>
+
+            <span class="status">
+              قفل 🔒
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <button
+          class="start-btn"
+          onclick="lockedLesson()">
+
           🔒 به‌زودی
-        </div>
+
+        </button>
 
       </div>
 
-      <h2>
-        وسایل اطراف ما 🏠
-      </h2>
-
-      <p>
-        با کلمات ساده برای وسایل و چیزهای اطرافمان
-        آشنا می‌شویم.
-      </p>
-
-      <button class="locked-btn" disabled>
-        🔒 به‌زودی
-      </button>
 
     </div>
 
 
-    <a class="back-btn" href="index.html">
-      ← بازگشت به صفحه اصلی
-    </a>
+    <footer>
+      © 2026 Arshia Learning 📚
+    </footer>
 
   </main>
+
+
+  <script>
+
+    function lockedLevel() {
+
+      alert(
+        "این سطح هنوز قفل است 🔒\n\nبا تکمیل سطح A1، سطح بعدی باز می‌شود 🚀"
+      );
+
+    }
+
+
+    function lockedLesson() {
+
+      alert(
+        "این درس هنوز آماده نشده است 🔒"
+      );
+
+    }
+
+  </script>
+
 
 </body>
 
