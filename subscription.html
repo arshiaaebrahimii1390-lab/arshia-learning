@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>خرید اشتراک | Arshia Learning</title>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #eef4ff, #f8fbff);
+      color: #172033;
+    }
+
+    .container {
+      width: 92%;
+      max-width: 650px;
+      margin: auto;
+      padding: 20px 0 40px;
+    }
+
+    .back {
+      display: inline-block;
+      text-decoration: none;
+      color: #4f7cff;
+      font-weight: bold;
+      margin-bottom: 18px;
+    }
+
+    .header {
+      background: rgba(255,255,255,0.8);
+      backdrop-filter: blur(15px);
+      border-radius: 24px;
+      padding: 25px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+      margin-bottom: 20px;
+    }
+
+    .header h1 {
+      margin: 0 0 10px;
+      font-size: 27px;
+    }
+
+    .header p {
+      margin: 0;
+      color: #68738a;
+      font-size: 14px;
+    }
+
+    .plan {
+      background: rgba(255,255,255,0.82);
+      backdrop-filter: blur(15px);
+      border-radius: 24px;
+      padding: 22px;
+      margin-bottom: 18px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+      border: 3px solid;
+    }
+
+    .plan-icon {
+      font-size: 34px;
+      margin-bottom: 5px;
+    }
+
+    .plan h2 {
+      margin: 0 0 8px;
+      font-size: 23px;
+    }
+
+    .duration {
+      font-size: 15px;
+      color: #68738a;
+      margin-bottom: 8px;
+    }
+
+    .price {
+      font-size: 24px;
+      font-weight: bold;
+      color: #172033;
+      margin: 12px 0;
+    }
+
+    .buy-btn {
+      width: 100%;
+      border: none;
+      border-radius: 16px;
+      padding: 14px;
+      background: #4f7cff;
+      color: white;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .buy-btn:active {
+      transform: scale(0.97);
+      opacity: 0.85;
+    }
+
+
+    /* برنزی */
+
+    .bronze {
+      border-color: #e88932;
+    }
+
+    .bronze h2 {
+      color: #c96d19;
+    }
+
+
+    /* نقره‌ای */
+
+    .silver {
+      border-color: #b8bec7;
+    }
+
+    .silver h2 {
+      color: #707780;
+    }
+
+
+    /* طلایی */
+
+    .gold {
+      border-color: #f1c40f;
+    }
+
+    .gold h2 {
+      color: #d39f00;
+    }
+
+
+    /* الماسی */
+
+    .diamond {
+      border-color: #4f9cff;
+    }
+
+    .diamond h2 {
+      color: #2878d4;
+    }
+
+
+    .note {
+      background: #fff8df;
+      border-radius: 18px;
+      padding: 16px;
+      font-size: 13px;
+      line-height: 1.9;
+      margin-top: 20px;
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+  <div class="container">
+
+    <a href="index.html" class="back">
+      ← برگشت به صفحه اصلی
+    </a>
+
+
+    <div class="header">
+
+      <h1>💳 خرید اشتراک</h1>
+
+      <p>
+        اشتراک مناسب خودت را انتخاب کن 👇
+      </p>
+
+    </div>
+
+
+    <!-- اشتراک برنزی -->
+
+    <div class="plan bronze">
+
+      <div class="plan-icon">
+        🟠
+      </div>
+
+      <h2>
+        اشتراک برنزی
+      </h2>
+
+      <div class="duration">
+        📅 مدت اشتراک: <b>۱ ماه</b>
+      </div>
+
+      <div class="price">
+        ۳۹۹٬۰۰۰ تومان
+      </div>
+
+      <button
+        class="buy-btn"
+        onclick="buySubscription('برنزی')">
+
+        💳 خرید اشتراک برنزی
+
+      </button>
+
+    </div>
+
+
+    <!-- اشتراک نقره‌ای -->
+
+    <div class="plan silver">
+
+      <div class="plan-icon">
+        ⚪
+      </div>
+
+      <h2>
+        اشتراک نقره‌ای
+      </h2>
+
+      <div class="duration">
+        📅 مدت اشتراک: <b>۳ ماه</b>
+      </div>
+
+      <div class="price">
+        ۵۹۰٬۰۰۰ تومان
+      </div>
+
+      <button
+        class="buy-btn"
+        onclick="buySubscription('نقره‌ای')">
+
+        💳 خرید اشتراک نقره‌ای
+
+      </button>
+
+    </div>
+
+
+    <!-- اشتراک طلایی -->
+
+    <div class="plan gold">
+
+      <div class="plan-icon">
+        🟡
+      </div>
+
+      <h2>
+        اشتراک طلایی
+      </h2>
+
+      <div class="duration">
+        📅 مدت اشتراک: <b>۶ ماه</b>
+      </div>
+
+      <div class="price">
+        ۸۰۰٬۰۰۰ تومان
+      </div>
+
+      <button
+        class="buy-btn"
+        onclick="buySubscription('طلایی')">
+
+        💳 خرید اشتراک طلایی
+
+      </button>
+
+    </div>
+
+
+    <!-- اشتراک الماسی -->
+
+    <div class="plan diamond">
+
+      <div class="plan-icon">
+        🔵
+      </div>
+
+      <h2>
+        اشتراک الماسی
+      </h2>
+
+      <div class="duration">
+        📅 مدت اشتراک: <b>۱ سال</b>
+      </div>
+
+      <div class="price">
+        ۱٬۲۰۰٬۰۰۰ تومان
+      </div>
+
+      <button
+        class="buy-btn"
+        onclick="buySubscription('الماسی')">
+
+        💳 خرید اشتراک الماسی
+
+      </button>
+
+    </div>
+
+
+    <div class="note">
+
+      ⚠️ <b>توجه:</b>
+
+      <br>
+
+      درگاه پرداخت هنوز متصل نشده است.
+      بعداً می‌توانیم پرداخت واقعی و فعال شدن خودکار اشتراک را اضافه کنیم.
+
+    </div>
+
+  </div>
+
+
+  <script>
+
+    function buySubscription(plan) {
+
+      alert(
+        "اشتراک " + plan +
+        " انتخاب شد 💳\n\nدرگاه پرداخت هنوز متصل نشده است."
+      );
+
+    }
+
+  </script>
+
+</body>
+
+</html>
