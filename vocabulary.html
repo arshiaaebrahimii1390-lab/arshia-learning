@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>لغات A1 | Arshia Learning</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #eef4ff, #f8fbff);
+      color: #172033;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    header h1 {
+      margin-bottom: 8px;
+      font-size: 30px;
+    }
+
+    header p {
+      color: #667085;
+    }
+
+    /* Progress */
+
+    .progress-box {
+      background: white;
+      padding: 15px;
+      border-radius: 18px;
+      margin-bottom: 20px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+    }
+
+    .progress-text {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+
+    .progress {
+      width: 100%;
+      height: 9px;
+      background: #e5e7eb;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      height: 100%;
+      width: 10%;
+      background: #4f7cff;
+      transition: 0.3s;
+    }
+
+    /* Word Card */
+
+    .word-card {
+      background: white;
+      border-radius: 25px;
+      padding: 28px 22px;
+      text-align: center;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    }
+
+    .word {
+      font-size: 38px;
+      font-weight: bold;
+      direction: ltr;
+      margin-bottom: 10px;
+    }
+
+    .pronunciation {
+      color: #4f7cff;
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .meaning {
+      font-size: 21px;
+      font-weight: bold;
+      margin-bottom: 25px;
+    }
+
+    .example-title {
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .example {
+      direction: ltr;
+      background: #f4f7ff;
+      padding: 15px;
+      border-radius: 15px;
+      font-size: 17px;
+      margin-bottom: 8px;
+    }
+
+    .example-pronunciation {
+      color: #4f7cff;
+      font-size: 15px;
+      margin-bottom: 7px;
+    }
+
+    .translation {
+      color: #667085;
+      font-size: 15px;
+    }
+
+    button {
+      border: none;
+      border-radius: 15px;
+      padding: 14px 22px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .next-btn {
+      width: 100%;
+      background: #4f7cff;
+      color: white;
+      margin-top: 25px;
+    }
+
+    .next-btn:hover {
+      opacity: 0.9;
+    }
+
+    /* Quiz */
+
+    .quiz {
+      display: none;
+    }
+
+    .quiz h2 {
+      text-align: center;
+    }
+
+    .question {
+      background: white;
+      padding: 20px;
+      border-radius: 20px;
+      margin-bottom: 18px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+    }
+
+    .question-text {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .option {
+      display: block;
+      width: 100%;
+      background: #f3f5f9;
+      margin-top: 9px;
+      text-align: right;
+
+      /* برای دور گزینه */
+      border: 3px solid transparent;
+    }
+
+    .option:hover {
+      background: #e8edff;
+    }
+
+    /* جواب درست */
+
+    .option.correct {
+      background: #d9f7df !important;
+      border-color: #28a745 !important;
+      color: #176b2c;
+    }
+
+    /* جواب غلط */
+
+    .option.wrong {
+      background: #ffe0e0 !important;
+      border-color: #dc3545 !important;
+      color: #9b1c1c;
+    }
+
+    .option:disabled {
+      cursor: default;
+    }
+
+    /* Result */
+
+    .result {
+      display: none;
+      background: white;
+      padding: 25px;
+      border-radius: 22px;
+      text-align: center;
+      margin-top: 20px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    }
+
+    .result-score {
+      font-size: 35px;
+      font-weight: bold;
+      color: #4f7cff;
+    }
+
+    .restart-btn {
+      background: #4f7cff;
+      color: white;
+      margin-top: 15px;
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+<div class="container">
+
+  <!-- Header -->
+
+  <header>
+    <h1>📚 لغات A1</h1>
+
+    <p>
+      هر بار ۱۰ کلمه یاد بگیر و بعد امتحان بده
+    </p>
+  </header>
+
+
+  <!-- ===================== -->
+  <!-- بخش یادگیری لغات -->
+  <!-- ===================== -->
+
+  <div id="learning">
+
+    <div class="progress-box">
+
+      <div class="progress-text">
+
+        <span>
+          پیشرفت
+        </span>
+
+        <span id="progressText">
+          کلمه 1 از 10
+        </span>
+
+      </div>
+
+
+      <div class="progress">
+
+        <div
+          class="progress-bar"
+          id="progressBar">
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="word-card">
+
+      <!-- Word -->
+
+      <div
+        class="word"
+        id="word">
+        Hello
+      </div>
+
+
+      <!-- Word pronunciation -->
+
+      <div
+        class="pronunciation"
+        id="pronunciation">
+
+        🔊 هِلُو
+
+      </div>
+
+
+      <!-- Meaning -->
+
+      <div
+        class="meaning"
+        id="meaning">
+
+        سلام
+
+      </div>
+
+
+      <!-- Example -->
+
+      <div class="example-title">
+        مثال:
+      </div>
+
+
+      <div
+        class="example"
+        id="example">
+
+        Hello, how are you?
+
+      </div>
+
+
+      <!-- Example pronunciation -->
+
+      <div
+        class="example-pronunciation"
+        id="examplePronunciation">
+
+        🔊 هِلُو، هاو آر یو؟
+
+      </div>
+
+
+      <!-- Translation -->
+
+      <div
+        class="translation"
+        id="translation">
+
+        سلام، حالت چطوره؟
+
+      </div>
+
+
+      <!-- Next -->
+
+      <button
+        class="next-btn"
+        onclick="nextWord()">
+
+        کلمه بعدی ➜
+
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- ===================== -->
+  <!-- بخش امتحان -->
+  <!-- ===================== -->
+
+  <div
+    class="quiz"
+    id="quiz">
+
+    <h2>
+      📝 امتحان ۱۰ کلمه
+    </h2>
+
+    <p
+      style="text-align:center;color:#667085;">
+
+      ببینیم چقدر خوب یاد گرفتی! 😎
+
+    </p>
+
+
+    <div id="questions"></div>
+
+
+    <button
+      class="next-btn"
+      onclick="finishQuiz()">
+
+      پایان امتحان
+
+    </button>
+
+  </div>
+
+
+  <!-- ===================== -->
+  <!-- نتیجه -->
+  <!-- ===================== -->
+
+  <div
+    class="result"
+    id="result">
+
+    <h2>
+      🎉 نتیجه امتحان
+    </h2>
+
+
+    <p>
+      امتیاز شما:
+    </p>
+
+
+    <div
+      class="result-score"
+      id="score">
+
+      0 / 10
+
+    </div>
+
+
+    <p id="resultMessage"></p>
+
+
+    <button
+      class="restart-btn"
+      onclick="restart()">
+
+      دوباره امتحان بده
+
+    </button>
+
+  </div>
+
+</div>
+
+
+
+<script>
+
+/* =========================
+   کلمات
+========================= */
+
+const words = [
+
+  {
+    word: "Hello",
+    pronunciation: "هِلُو",
+    meaning: "سلام",
+
+    example: "Hello, how are you?",
+    examplePronunciation: "هِلُو، هاو آر یو؟",
+    translation: "سلام، حالت چطوره؟"
+  },
+
+
+  {
+    word: "Goodbye",
+    pronunciation: "گودبای",
+    meaning: "خداحافظ",
+
+    example: "Goodbye, see you tomorrow.",
+    examplePronunciation: "گودبای، سی یو تومارو.",
+    translation: "خداحافظ، فردا می‌بینمت."
+  },
+
+
+  {
+    word: "Thank",
+    pronunciation: "ثَنک",
+    meaning: "تشکر کردن",
+
+    example: "Thank you for your help.",
+    examplePronunciation: "ثَنک یو فور یور هِلپ.",
+    translation: "از کمکت ممنونم."
+  },
+
+
+  {
+    word: "Friend",
+    pronunciation: "فِرِند",
+    meaning: "دوست",
+
+    example: "Ali is my friend.",
+    examplePronunciation: "علی ایز مای فِرِند.",
+    translation: "علی دوست من است."
+  },
+
+
+  {
+    word: "Family",
+    pronunciation: "فَمِلی",
+    meaning: "خانواده",
+
+    example: "I love my family.",
+    examplePronunciation: "آی لاو مای فَمِلی.",
+    translation: "من خانواده‌ام را دوست دارم."
+  },
+
+
+  {
+    word: "House",
+    pronunciation: "هاوس",
+    meaning: "خانه",
+
+    example: "This is my house.",
+    examplePronunciation: "دیس ایز مای هاوس.",
+    translation: "این خانه من است."
+  },
+
+
+  {
+    word: "Book",
+    pronunciation: "بوک",
+    meaning: "کتاب",
+
+    example: "I have a new book.",
+    examplePronunciation: "آی هَو ا نیو بوک.",
+    translation: "من یک کتاب جدید دارم."
+  },
+
+
+  {
+    word: "Water",
+    pronunciation: "واتِر",
+    meaning: "آب",
+
+    example: "I drink water every day.",
+    examplePronunciation: "آی درینک واتِر اِوری دِی.",
+    translation: "من هر روز آب می‌نوشم."
+  },
+
+
+  {
+    word: "School",
+    pronunciation: "اِسکول",
+    meaning: "مدرسه",
+
+    example: "I go to school every day.",
+    examplePronunciation: "آی گو تو اِسکول اِوری دِی.",
+    translation: "من هر روز به مدرسه می‌روم."
+  },
+
+
+  {
+    word: "Happy",
+    pronunciation: "هَپی",
+    meaning: "خوشحال",
+
+    example: "I am very happy today.",
+    examplePronunciation: "آی اَم وِری هَپی تِدِی.",
+    translation: "من امروز خیلی خوشحالم."
+  }
+
+];
+
+
+
+/* =========================
+   متغیرها
+========================= */
+
+let currentWord = 0;
+
+let answers = [];
+
+
+
+/* =========================
+   نمایش کلمه
+========================= */
+
+function showWord() {
+
+  const item = words[currentWord];
+
+
+  document.getElementById("word").textContent =
+    item.word;
+
+
+  document.getElementById("pronunciation").textContent =
+    "🔊 " + item.pronunciation;
+
+
+  document.getElementById("meaning").textContent =
+    item.meaning;
+
+
+  document.getElementById("example").textContent =
+    item.example;
+
+
+  document.getElementById("examplePronunciation").textContent =
+    "🔊 " + item.examplePronunciation;
+
+
+  document.getElementById("translation").textContent =
+    item.translation;
+
+
+  document.getElementById("progressText").textContent =
+    "کلمه " + (currentWord + 1) + " از 10";
+
+
+  document.getElementById("progressBar").style.width =
+    ((currentWord + 1) * 10) + "%";
+
+}
+
+
+
+/* =========================
+   کلمه بعدی
+========================= */
+
+function nextWord() {
+
+  if (currentWord < words.length - 1) {
+
+    currentWord++;
+
+    showWord();
+
+  }
+
+  else {
+
+    startQuiz();
+
+  }
+
+}
+
+
+
+/* =========================
+   شروع امتحان
+========================= */
+
+function startQuiz() {
+
+  document.getElementById("learning").style.display =
+    "none";
+
+
+  document.getElementById("quiz").style.display =
+    "block";
+
+
+  createQuiz();
+
+}
+
+
+
+/* =========================
+   ساخت سؤال‌ها
+========================= */
+
+function createQuiz() {
+
+  const questions =
+    document.getElementById("questions");
+
+
+  questions.innerHTML = "";
+
+
+  words.forEach((item, index) => {
+
+
+    /* انتخاب ۳ معنی اشتباه */
+
+    let wrongOptions = words
+      .filter(w => w.meaning !== item.meaning)
+      .map(w => w.meaning)
+      .sort(() => Math.random() - 0.5)
+      .slice(0, 3);
+
+
+    /* اضافه کردن جواب درست */
+
+    let options = [
+      item.meaning,
+      ...wrongOptions
+    ];
+
+
+    /* مخلوط کردن گزینه‌ها */
+
+    options =
+      options.sort(() => Math.random() - 0.5);
+
+
+    const div =
+      document.createElement("div");
+
+
+    div.className =
+      "question";
+
+
+    div.innerHTML = `
+
+      <div class="question-text">
+
+        ${index + 1}.
+        معنی "${item.word}" چیست؟
+
+      </div>
+
+      ${options.map((option, optionIndex) => `
+
+        <button
+          class="option"
+          data-index="${index}"
+          data-answer="${option.replace(/"/g, '&quot;')}"
+          onclick="selectAnswer(
+            ${index},
+            this
+          )">
+
+          ${option}
+
+        </button>
+
+      `).join("")}
+
+    `;
+
+
+    questions.appendChild(div);
+
+  });
+
+}
+
+
+
+/* =========================
+   انتخاب جواب
+========================= */
+
+function selectAnswer(index, button) {
+
+  /* اگر قبلاً جواب داده شده باشد،
+     دوباره اجازه انتخاب نده */
+
+  if (answers[index] !== undefined) {
+    return;
+  }
+
+
+  const selectedAnswer =
+    button.getAttribute("data-answer");
+
+
+  answers[index] =
+    selectedAnswer;
+
+
+  const question =
+    document.querySelectorAll(".question")[index];
+
+
+  const buttons =
+    question.querySelectorAll(".option");
+
+
+  const correctAnswer =
+    words[index].meaning;
+
+
+  /* همه گزینه‌ها را غیرفعال می‌کنیم */
+
+  buttons.forEach(btn => {
+
+    btn.disabled = true;
+
+  });
+
+
+  /* اگر درست بود */
+
+  if (selectedAnswer === correctAnswer) {
+
+    button.classList.add("correct");
+
+  }
+
+
+  /* اگر غلط بود */
+
+  else {
+
+    button.classList.add("wrong");
+
+
+    /* پیدا کردن جواب درست */
+
+    buttons.forEach(btn => {
+
+      const answer =
+        btn.getAttribute("data-answer");
+
+
+      if (answer === correctAnswer) {
+
+        btn.classList.add("correct");
+
+      }
+
+    });
+
+  }
+
+}
+
+
+
+/* =========================
+   پایان امتحان
+========================= */
+
+function finishQuiz() {
+
+  let score = 0;
+
+
+  words.forEach((item, index) => {
+
+    if (answers[index] === item.meaning) {
+
+      score++;
+
+    }
+
+  });
+
+
+  document.getElementById("quiz").style.display =
+    "none";
+
+
+  document.getElementById("result").style.display =
+    "block";
+
+
+  document.getElementById("score").textContent =
+    score + " / 10";
+
+
+  if (score === 10) {
+
+    document.getElementById("resultMessage").textContent =
+      "🔥 فوق‌العاده! همه کلمات رو درست زدی!";
+
+  }
+
+
+  else if (score >= 7) {
+
+    document.getElementById("resultMessage").textContent =
+      "👏 عالی بود! بیشتر کلمات رو یاد گرفتی.";
+
+  }
+
+
+  else if (score >= 5) {
+
+    document.getElementById("resultMessage").textContent =
+      "🙂 خوبه! ولی یک بار دیگه مرور کنی بهتر میشه.";
+
+  }
+
+
+  else {
+
+    document.getElementById("resultMessage").textContent =
+      "📚 دوباره کلمات رو مرور کن و امتحان بده.";
+
+  }
+
+}
+
+
+
+/* =========================
+   شروع دوباره
+========================= */
+
+function restart() {
+
+  currentWord = 0;
+
+  answers = [];
+
+
+  document.getElementById("result").style.display =
+    "none";
+
+
+  document.getElementById("learning").style.display =
+    "block";
+
+
+  showWord();
+
+}
+
+
+
+/* =========================
+   اجرای اولیه
+========================= */
+
+showWord();
+
+</script>
+
+</body>
+
+</html>
