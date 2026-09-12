@@ -8,6 +8,7 @@
   <title>لغات A1 | Arshia Learning</title>
 
   <style>
+
     * {
       box-sizing: border-box;
       font-family: Arial, sans-serif;
@@ -91,13 +92,32 @@
     .pronunciation {
       color: #4f7cff;
       font-size: 18px;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
 
     .meaning {
       font-size: 21px;
       font-weight: bold;
-      margin-bottom: 25px;
+      margin-bottom: 20px;
+    }
+
+    /* Speech Buttons */
+
+    .speak-btn,
+    .speak-example-btn {
+      border: none;
+      background: #eef3ff;
+      color: #4f7cff;
+      font-weight: bold;
+      padding: 11px 17px;
+      border-radius: 14px;
+      cursor: pointer;
+      margin-bottom: 22px;
+    }
+
+    .speak-btn:hover,
+    .speak-example-btn:hover {
+      background: #dfe7ff;
     }
 
     .example-title {
@@ -117,12 +137,13 @@
     .example-pronunciation {
       color: #4f7cff;
       font-size: 15px;
-      margin-bottom: 7px;
+      margin-bottom: 8px;
     }
 
     .translation {
       color: #667085;
       font-size: 15px;
+      margin-bottom: 5px;
     }
 
     button {
@@ -138,7 +159,7 @@
       width: 100%;
       background: #4f7cff;
       color: white;
-      margin-top: 25px;
+      margin-top: 10px;
     }
 
     .next-btn:hover {
@@ -175,8 +196,6 @@
       background: #f3f5f9;
       margin-top: 9px;
       text-align: right;
-
-      /* برای دور گزینه */
       border: 3px solid transparent;
     }
 
@@ -184,15 +203,11 @@
       background: #e8edff;
     }
 
-    /* جواب درست */
-
     .option.correct {
       background: #d9f7df !important;
       border-color: #28a745 !important;
       color: #176b2c;
     }
-
-    /* جواب غلط */
 
     .option.wrong {
       background: #ffe0e0 !important;
@@ -229,6 +244,7 @@
     }
 
   </style>
+
 </head>
 
 
@@ -239,16 +255,18 @@
   <!-- Header -->
 
   <header>
+
     <h1>📚 لغات A1</h1>
 
     <p>
       هر بار ۱۰ کلمه یاد بگیر و بعد امتحان بده
     </p>
+
   </header>
 
 
   <!-- ===================== -->
-  <!-- بخش یادگیری لغات -->
+  <!-- بخش یادگیری -->
   <!-- ===================== -->
 
   <div id="learning">
@@ -291,7 +309,7 @@
       </div>
 
 
-      <!-- Word pronunciation -->
+      <!-- Pronunciation -->
 
       <div
         class="pronunciation"
@@ -300,6 +318,17 @@
         🔊 هِلُو
 
       </div>
+
+
+      <!-- Real pronunciation button -->
+
+      <button
+        class="speak-btn"
+        onclick="speakWord()">
+
+        🔊 شنیدن تلفظ
+
+      </button>
 
 
       <!-- Meaning -->
@@ -316,7 +345,9 @@
       <!-- Example -->
 
       <div class="example-title">
+
         مثال:
+
       </div>
 
 
@@ -338,6 +369,17 @@
         🔊 هِلُو، هاو آر یو؟
 
       </div>
+
+
+      <!-- Example speech -->
+
+      <button
+        class="speak-example-btn"
+        onclick="speakExample()">
+
+        🔊 شنیدن مثال
+
+      </button>
 
 
       <!-- Translation -->
@@ -443,7 +485,6 @@
 </div>
 
 
-
 <script>
 
 /* =========================
@@ -456,113 +497,93 @@ const words = [
     word: "Hello",
     pronunciation: "هِلُو",
     meaning: "سلام",
-
     example: "Hello, how are you?",
     examplePronunciation: "هِلُو، هاو آر یو؟",
     translation: "سلام، حالت چطوره؟"
   },
 
-
   {
     word: "Goodbye",
     pronunciation: "گودبای",
     meaning: "خداحافظ",
-
     example: "Goodbye, see you tomorrow.",
     examplePronunciation: "گودبای، سی یو تومارو.",
     translation: "خداحافظ، فردا می‌بینمت."
   },
 
-
   {
     word: "Thank",
     pronunciation: "ثَنک",
     meaning: "تشکر کردن",
-
     example: "Thank you for your help.",
     examplePronunciation: "ثَنک یو فور یور هِلپ.",
     translation: "از کمکت ممنونم."
   },
 
-
   {
     word: "Friend",
     pronunciation: "فِرِند",
     meaning: "دوست",
-
     example: "Ali is my friend.",
     examplePronunciation: "علی ایز مای فِرِند.",
     translation: "علی دوست من است."
   },
 
-
   {
     word: "Family",
     pronunciation: "فَمِلی",
     meaning: "خانواده",
-
     example: "I love my family.",
     examplePronunciation: "آی لاو مای فَمِلی.",
     translation: "من خانواده‌ام را دوست دارم."
   },
 
-
   {
     word: "House",
     pronunciation: "هاوس",
     meaning: "خانه",
-
     example: "This is my house.",
     examplePronunciation: "دیس ایز مای هاوس.",
     translation: "این خانه من است."
   },
 
-
   {
     word: "Book",
     pronunciation: "بوک",
     meaning: "کتاب",
-
     example: "I have a new book.",
     examplePronunciation: "آی هَو ا نیو بوک.",
     translation: "من یک کتاب جدید دارم."
   },
 
-
   {
     word: "Water",
     pronunciation: "واتِر",
     meaning: "آب",
-
     example: "I drink water every day.",
     examplePronunciation: "آی درینک واتِر اِوری دِی.",
     translation: "من هر روز آب می‌نوشم."
   },
 
-
   {
     word: "School",
     pronunciation: "اِسکول",
     meaning: "مدرسه",
-
     example: "I go to school every day.",
     examplePronunciation: "آی گو تو اِسکول اِوری دِی.",
     translation: "من هر روز به مدرسه می‌روم."
   },
 
-
   {
     word: "Happy",
     pronunciation: "هَپی",
     meaning: "خوشحال",
-
     example: "I am very happy today.",
     examplePronunciation: "آی اَم وِری هَپی تِدِی.",
     translation: "من امروز خیلی خوشحالم."
   }
 
 ];
-
 
 
 /* =========================
@@ -574,6 +595,83 @@ let currentWord = 0;
 let answers = [];
 
 
+/* =========================
+   سیستم تلفظ
+========================= */
+
+function speakText(text) {
+
+  if (!("speechSynthesis" in window)) {
+
+    alert(
+      "متأسفانه مرورگر شما از تلفظ صوتی پشتیبانی نمی‌کند."
+    );
+
+    return;
+  }
+
+
+  // توقف صدای قبلی
+
+  speechSynthesis.cancel();
+
+
+  const speech =
+    new SpeechSynthesisUtterance(text);
+
+
+  // انگلیسی آمریکایی
+
+  speech.lang = "en-US";
+
+
+  // سرعت مناسب برای یادگیری
+
+  speech.rate = 0.85;
+
+
+  // حالت طبیعی صدا
+
+  speech.pitch = 1;
+
+
+  speech.volume = 1;
+
+
+  speechSynthesis.speak(speech);
+
+}
+
+
+/* =========================
+   تلفظ کلمه
+========================= */
+
+function speakWord() {
+
+  const word =
+    document.getElementById("word").textContent;
+
+
+  speakText(word);
+
+}
+
+
+/* =========================
+   تلفظ مثال
+========================= */
+
+function speakExample() {
+
+  const example =
+    document.getElementById("example").textContent;
+
+
+  speakText(example);
+
+}
+
 
 /* =========================
    نمایش کلمه
@@ -581,7 +679,8 @@ let answers = [];
 
 function showWord() {
 
-  const item = words[currentWord];
+  const item =
+    words[currentWord];
 
 
   document.getElementById("word").textContent =
@@ -618,7 +717,6 @@ function showWord() {
 }
 
 
-
 /* =========================
    کلمه بعدی
 ========================= */
@@ -642,12 +740,14 @@ function nextWord() {
 }
 
 
-
 /* =========================
    شروع امتحان
 ========================= */
 
 function startQuiz() {
+
+  speechSynthesis.cancel();
+
 
   document.getElementById("learning").style.display =
     "none";
@@ -660,7 +760,6 @@ function startQuiz() {
   createQuiz();
 
 }
-
 
 
 /* =========================
@@ -679,27 +778,36 @@ function createQuiz() {
   words.forEach((item, index) => {
 
 
-    /* انتخاب ۳ معنی اشتباه */
-
     let wrongOptions = words
-      .filter(w => w.meaning !== item.meaning)
-      .map(w => w.meaning)
-      .sort(() => Math.random() - 0.5)
+
+      .filter(w =>
+        w.meaning !== item.meaning
+      )
+
+      .map(w =>
+        w.meaning
+      )
+
+      .sort(() =>
+        Math.random() - 0.5
+      )
+
       .slice(0, 3);
 
 
-    /* اضافه کردن جواب درست */
-
     let options = [
+
       item.meaning,
+
       ...wrongOptions
+
     ];
 
 
-    /* مخلوط کردن گزینه‌ها */
-
     options =
-      options.sort(() => Math.random() - 0.5);
+      options.sort(() =>
+        Math.random() - 0.5
+      );
 
 
     const div =
@@ -719,16 +827,12 @@ function createQuiz() {
 
       </div>
 
-      ${options.map((option, optionIndex) => `
+      ${options.map(option => `
 
         <button
           class="option"
-          data-index="${index}"
           data-answer="${option.replace(/"/g, '&quot;')}"
-          onclick="selectAnswer(
-            ${index},
-            this
-          )">
+          onclick="selectAnswer(${index}, this)">
 
           ${option}
 
@@ -746,18 +850,16 @@ function createQuiz() {
 }
 
 
-
 /* =========================
    انتخاب جواب
 ========================= */
 
 function selectAnswer(index, button) {
 
-  /* اگر قبلاً جواب داده شده باشد،
-     دوباره اجازه انتخاب نده */
-
   if (answers[index] !== undefined) {
+
     return;
+
   }
 
 
@@ -781,8 +883,6 @@ function selectAnswer(index, button) {
     words[index].meaning;
 
 
-  /* همه گزینه‌ها را غیرفعال می‌کنیم */
-
   buttons.forEach(btn => {
 
     btn.disabled = true;
@@ -790,23 +890,16 @@ function selectAnswer(index, button) {
   });
 
 
-  /* اگر درست بود */
-
   if (selectedAnswer === correctAnswer) {
 
     button.classList.add("correct");
 
   }
 
-
-  /* اگر غلط بود */
-
   else {
 
     button.classList.add("wrong");
 
-
-    /* پیدا کردن جواب درست */
 
     buttons.forEach(btn => {
 
@@ -827,7 +920,6 @@ function selectAnswer(index, button) {
 }
 
 
-
 /* =========================
    پایان امتحان
 ========================= */
@@ -839,7 +931,9 @@ function finishQuiz() {
 
   words.forEach((item, index) => {
 
-    if (answers[index] === item.meaning) {
+    if (
+      answers[index] === item.meaning
+    ) {
 
       score++;
 
@@ -867,7 +961,6 @@ function finishQuiz() {
 
   }
 
-
   else if (score >= 7) {
 
     document.getElementById("resultMessage").textContent =
@@ -875,14 +968,12 @@ function finishQuiz() {
 
   }
 
-
   else if (score >= 5) {
 
     document.getElementById("resultMessage").textContent =
       "🙂 خوبه! ولی یک بار دیگه مرور کنی بهتر میشه.";
 
   }
-
 
   else {
 
@@ -894,12 +985,14 @@ function finishQuiz() {
 }
 
 
-
 /* =========================
    شروع دوباره
 ========================= */
 
 function restart() {
+
+  speechSynthesis.cancel();
+
 
   currentWord = 0;
 
@@ -914,10 +1007,13 @@ function restart() {
     "block";
 
 
+  document.getElementById("quiz").style.display =
+    "none";
+
+
   showWord();
 
 }
-
 
 
 /* =========================
