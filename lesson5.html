@@ -1,333 +1,261 @@
 <!DOCTYPE html>
-<html lang="fa">
-<head>
+<html lang="fa" dir="rtl">
 
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>درس ۵ | سلام و احوالپرسی</title>
+<title>درس ۵ - Greetings & How Are You</title>
 
 <style>
-
-* {
-  box-sizing: border-box;
+*{
+box-sizing:border-box;
 }
 
-body {
-  margin: 0;
-  direction: rtl;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #eef4ff, #f7f0ff);
-  color: #222;
-  padding: 20px 14px 40px;
+body{
+margin:0;
+padding:18px;
+font-family:Tahoma,Arial,sans-serif;
+background:linear-gradient(135deg,#edf3ff,#f9fbff);
+color:#222;
 }
 
-.container {
-  max-width: 700px;
-  margin: auto;
+.container{
+max-width:850px;
+margin:auto;
 }
 
-.back {
-  display: block;
-  text-decoration: none;
-  color: #4f7cff;
-  font-weight: bold;
-  margin-bottom: 15px;
+.back{
+display:inline-block;
+margin-bottom:15px;
+text-decoration:none;
+color:#4f7cff;
+font-weight:bold;
 }
 
-.header {
-  background: rgba(255,255,255,0.72);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255,255,255,0.8);
-  border-radius: 28px;
-  padding: 25px 20px;
-  text-align: center;
-  box-shadow: 0 10px 35px rgba(50,80,150,0.12);
-  margin-bottom: 18px;
+.header{
+background:rgba(255,255,255,.78);
+backdrop-filter:blur(15px);
+padding:25px 15px;
+border-radius:25px;
+text-align:center;
+box-shadow:0 8px 30px rgba(0,0,0,.08);
+margin-bottom:18px;
 }
 
-.header h1 {
-  margin: 0 0 10px;
-  font-size: 27px;
+.header h1{
+margin:0 0 10px;
+font-size:28px;
 }
 
-.header p {
-  color: #777;
-  line-height: 1.9;
-  margin: 0;
+.header p{
+margin:7px;
+color:#666;
 }
 
-.audio-box {
-  margin-top: 20px;
-  padding: 18px;
-  border-radius: 20px;
-  background: rgba(79,124,255,0.10);
+.card{
+background:rgba(255,255,255,.82);
+backdrop-filter:blur(15px);
+border-radius:22px;
+padding:20px;
+margin-bottom:18px;
+box-shadow:0 8px 25px rgba(0,0,0,.07);
 }
 
-.audio-btn {
-  border: none;
-  border-radius: 15px;
-  padding: 13px 20px;
-  background: #4f7cff;
-  color: white;
-  font-size: 15px;
-  font-weight: bold;
-  cursor: pointer;
+.card h2{
+color:#315dcc;
+margin-top:0;
 }
 
-.card {
-  background: rgba(255,255,255,0.75);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255,255,255,0.85);
-  border-radius: 25px;
-  padding: 22px;
-  margin-bottom: 18px;
-  box-shadow: 0 8px 30px rgba(50,80,150,0.10);
+.word{
+background:#f5f7ff;
+border-radius:16px;
+padding:14px;
+margin:10px 0;
 }
 
-.card h2 {
-  margin-top: 0;
-  font-size: 21px;
+.english{
+direction:ltr;
+text-align:left;
+font-size:19px;
+font-weight:bold;
 }
 
-.card p {
-  line-height: 2;
+.pron{
+color:#7654c7;
+margin-top:7px;
 }
 
-.word {
-  background: rgba(245,247,255,0.9);
-  border-radius: 18px;
-  padding: 16px;
-  margin: 12px 0;
+.meaning{
+color:#555;
+margin-top:7px;
+line-height:1.9;
 }
 
-.english {
-  direction: ltr;
-  text-align: left;
-  font-size: 19px;
-  font-weight: bold;
+.speak{
+border:none;
+background:#4f7cff;
+color:white;
+border-radius:12px;
+padding:8px 13px;
+margin-top:9px;
+cursor:pointer;
+font-weight:bold;
 }
 
-.pronunciation {
-  color: #4f7cff;
-  margin-top: 7px;
+.speak:active{
+transform:scale(.96);
+opacity:.85;
 }
 
-.meaning {
-  color: #666;
-  margin-top: 5px;
+.example{
+background:#f5f7ff;
+border-right:4px solid #4f7cff;
+border-radius:15px;
+padding:15px;
+margin:12px 0;
 }
 
-.speak-btn {
-  border: none;
-  border-radius: 12px;
-  padding: 8px 13px;
-  background: #4f7cff;
-  color: white;
-  cursor: pointer;
-  margin-top: 10px;
+.note{
+background:#fff7dc;
+border-radius:16px;
+padding:16px;
+line-height:2;
+margin-top:12px;
 }
 
-.example {
-  background: rgba(238,244,255,0.9);
-  border-right: 4px solid #4f7cff;
-  border-radius: 15px;
-  padding: 14px;
-  margin: 12px 0;
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:12px;
 }
 
-.example .sentence {
-  direction: ltr;
-  text-align: left;
-  font-size: 18px;
-  font-weight: bold;
+th,td{
+border:1px solid #ddd;
+padding:11px 7px;
+text-align:center;
 }
 
-.example .fa {
-  color: #555;
-  margin-top: 7px;
+th{
+background:#edf2ff;
 }
 
-.tip {
-  background: rgba(255,246,210,0.9);
-  border-radius: 17px;
-  padding: 15px;
-  line-height: 2;
-  margin-top: 12px;
+td{
+background:rgba(255,255,255,.7);
 }
 
-.warning {
-  background: rgba(255,235,235,0.9);
-  border-radius: 17px;
-  padding: 15px;
-  line-height: 2;
-  margin-top: 12px;
+.exam-start{
+width:100%;
+padding:15px;
+border:none;
+border-radius:17px;
+background:#4f7cff;
+color:white;
+font-size:17px;
+font-weight:bold;
+cursor:pointer;
 }
 
-.conversation {
-  background: rgba(245,245,250,0.9);
-  border-radius: 20px;
-  padding: 17px;
-  line-height: 2.4;
+#exam{
+display:none;
 }
 
-.conversation .en {
-  direction: ltr;
-  text-align: left;
-  font-weight: bold;
+.question{
+background:#f7f8ff;
+border-radius:18px;
+padding:16px;
+margin:15px 0;
 }
 
-.question {
-  margin-top: 20px;
-  padding: 17px;
-  background: rgba(248,249,255,0.95);
-  border-radius: 18px;
+.question-title{
+font-weight:bold;
+font-size:17px;
+margin-bottom:12px;
+line-height:1.9;
 }
 
-.question-title {
-  font-weight: bold;
-  margin-bottom: 12px;
-  line-height: 1.9;
+.option{
+width:100%;
+border:2px solid #ddd;
+background:white;
+border-radius:13px;
+padding:12px;
+margin:5px 0;
+text-align:right;
+font-size:15px;
+cursor:pointer;
 }
 
-.answer-btn {
-  width: 100%;
-  border: 2px solid transparent;
-  border-radius: 14px;
-  padding: 12px;
-  margin: 6px 0;
-  background: white;
-  text-align: right;
-  direction: rtl;
-  cursor: pointer;
-  font-size: 15px;
-  transition: 0.2s;
+.option.correct{
+background:#b9f6c3;
+border-color:#25a244;
 }
 
-.answer-btn.correct {
-  background: #d9f7df;
-  border-color: #35a853;
-  color: #176b2b;
+.option.wrong{
+background:#ffc1c1;
+border-color:#e63946;
 }
 
-.answer-btn.wrong {
-  background: #ffdede;
-  border-color: #e53935;
-  color: #9b1c1c;
+.option:disabled{
+cursor:default;
 }
 
-.result {
-  margin-top: 8px;
-  font-weight: bold;
-  min-height: 22px;
+#result{
+display:none;
+text-align:center;
+background:#eef7ff;
+border-radius:18px;
+padding:20px;
+font-size:19px;
+font-weight:bold;
+margin-top:20px;
 }
-
-.finish {
-  text-align: center;
-  font-size: 18px;
-  font-weight: bold;
-  padding: 20px;
-}
-
 </style>
-
 </head>
+
 
 <body>
 
 <div class="container">
 
 <a href="english.html" class="back">
-← بازگشت به درس‌ها
+⬅️ بازگشت به درس‌های انگلیسی
 </a>
 
-
-<!-- HEADER -->
 
 <div class="header">
 
 <h1>درس ۵ 👋</h1>
 
-<p>
-سلام و احوالپرسی<br>
-Greetings & Introductions
-</p>
+<p><b>Greetings & How Are You?</b></p>
 
-<div class="audio-box">
-
-<p>
-🎧 توضیح صوتی کامل درس
-</p>
-
-<button class="audio-btn" onclick="teacherAudio()">
-▶️ گوش دادن به توضیح درس
-</button>
-
-</div>
+<p>سلام و احوالپرسی</p>
 
 </div>
 
 
-<!-- INTRO -->
+
+<!-- GREETINGS -->
 
 <div class="card">
 
-<h2>👋 شروع درس</h2>
-
-<p>
-در این درس یاد می‌گیریم چطور به انگلیسی سلام کنیم،
-احوال دیگران را بپرسیم، جواب بدهیم و در پایان خداحافظی کنیم.
-</p>
-
-<p>
-این جمله‌ها از مهم‌ترین جمله‌های انگلیسی هستند و در مکالمه‌های روزمره خیلی استفاده می‌شوند.
-</p>
-
-</div>
-
-
-<!-- WORDS -->
-
-<div class="card">
-
-<h2>📚 کلمات و عبارت‌های مهم</h2>
-
-
-<div class="word">
-
-<div class="english">Hello</div>
-
-<div class="pronunciation">
-هِلُو
-</div>
-
-<div class="meaning">
-سلام
-</div>
-
-<button class="speak-btn" onclick="speak('Hello')">
-🔊 پخش تلفظ
-</button>
-
-</div>
+<h2>👋 کلمات و عبارت‌های سلام و احوالپرسی</h2>
 
 
 <div class="word">
 
 <div class="english">Hi</div>
 
-<div class="pronunciation">
-های
+<div class="pron">
+تلفظ نوشتاری: های
 </div>
 
 <div class="meaning">
-سلام — دوستانه‌تر
+معنی: سلام
 </div>
 
-<button class="speak-btn" onclick="speak('Hi')">
-🔊 پخش تلفظ
+<button class="speak" onclick="speak('Hi')">
+🔊 تلفظ انگلیسی
 </button>
 
 </div>
@@ -335,18 +263,112 @@ Greetings & Introductions
 
 <div class="word">
 
-<div class="english">Good morning</div>
+<div class="english">Hello</div>
 
-<div class="pronunciation">
-گود مورنینگ
+<div class="pron">
+تلفظ نوشتاری: هِلُو
 </div>
 
 <div class="meaning">
-صبح بخیر
+معنی: سلام
 </div>
 
-<button class="speak-btn" onclick="speak('Good morning')">
-🔊 پخش تلفظ
+<button class="speak" onclick="speak('Hello')">
+🔊 تلفظ انگلیسی
+</button>
+
+</div>
+
+
+<div class="note">
+
+💡 فرق <b>Hi</b> و <b>Hello</b>:
+
+<br><br>
+
+هر دو معنی «سلام» می‌دهند.
+
+<br><br>
+
+<b>Hi</b> معمولاً کوتاه‌تر و دوستانه‌تر است.
+
+<br>
+
+<b>Hello</b> کمی عمومی‌تر است و در موقعیت‌های مختلف استفاده می‌شود.
+
+<br><br>
+
+هر دو کاملاً درست هستند. 😊
+
+</div>
+
+
+<div class="example">
+
+<div class="english">
+Hi, Arshia!
+</div>
+
+<div class="pron">
+های، عرشیا!
+</div>
+
+<div class="meaning">
+سلام عرشیا!
+</div>
+
+<button class="speak" onclick="speak('Hi, Arshia!')">
+🔊 تلفظ انگلیسی
+</button>
+
+</div>
+
+
+<div class="example">
+
+<div class="english">
+Hello, how are you?
+</div>
+
+<div class="pron">
+هِلُو، هاو آر یو؟
+</div>
+
+<div class="meaning">
+سلام، حالت چطوره؟
+</div>
+
+<button class="speak" onclick="speak('Hello, how are you?')">
+🔊 تلفظ انگلیسی
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- TIMES -->
+
+<div class="card">
+
+<h2>🕐 سلام کردن در زمان‌های مختلف</h2>
+
+
+<div class="word">
+
+<div class="english">Good morning</div>
+
+<div class="pron">
+تلفظ نوشتاری: گود مورنینگ
+</div>
+
+<div class="meaning">
+معنی: صبح بخیر
+</div>
+
+<button class="speak" onclick="speak('Good morning')">
+🔊 تلفظ انگلیسی
 </button>
 
 </div>
@@ -356,16 +378,16 @@ Greetings & Introductions
 
 <div class="english">Good afternoon</div>
 
-<div class="pronunciation">
-گود اَفتِرنون
+<div class="pron">
+تلفظ نوشتاری: گود اَفتِرنون
 </div>
 
 <div class="meaning">
-عصر بخیر / بعدازظهر بخیر
+معنی: بعدازظهر بخیر
 </div>
 
-<button class="speak-btn" onclick="speak('Good afternoon')">
-🔊 پخش تلفظ
+<button class="speak" onclick="speak('Good afternoon')">
+🔊 تلفظ انگلیسی
 </button>
 
 </div>
@@ -375,16 +397,16 @@ Greetings & Introductions
 
 <div class="english">Good evening</div>
 
-<div class="pronunciation">
-گود ایونینگ
+<div class="pron">
+تلفظ نوشتاری: گود ایونینگ
 </div>
 
 <div class="meaning">
-عصر بخیر / شب بخیر هنگام سلام کردن
+معنی: عصر بخیر / شب بخیر هنگام دیدار
 </div>
 
-<button class="speak-btn" onclick="speak('Good evening')">
-🔊 پخش تلفظ
+<button class="speak" onclick="speak('Good evening')">
+🔊 تلفظ انگلیسی
 </button>
 
 </div>
@@ -394,76 +416,124 @@ Greetings & Introductions
 
 <div class="english">Good night</div>
 
-<div class="pronunciation">
-گود نایت
+<div class="pron">
+تلفظ نوشتاری: گود نایت
 </div>
 
 <div class="meaning">
-شب بخیر هنگام خداحافظی یا خوابیدن
+معنی: شب بخیر؛ معمولاً هنگام خداحافظی یا قبل از خواب
 </div>
 
-<button class="speak-btn" onclick="speak('Good night')">
-🔊 پخش تلفظ
+<button class="speak" onclick="speak('Good night')">
+🔊 تلفظ انگلیسی
 </button>
 
 </div>
 
+
+<div class="note">
+
+⭐ نکته:
+
+<br><br>
+
+<b>Good morning</b> → صبح
+
+<br>
+
+<b>Good afternoon</b> → بعدازظهر
+
+<br>
+
+<b>Good evening</b> → عصر و اوایل شب، هنگام سلام کردن
+
+<br>
+
+<b>Good night</b> → معمولاً هنگام خداحافظی شبانه یا قبل از خواب
+
 </div>
+
+</div>
+
 
 
 <!-- HOW ARE YOU -->
 
 <div class="card">
 
-<h2>🙂 پرسیدن حال دیگران</h2>
+<h2>😊 How are you?</h2>
 
-<div class="example">
 
-<div class="sentence">
-How are you?
+<div class="word">
+
+<div class="english">How are you?</div>
+
+<div class="pron">
+تلفظ نوشتاری: هاو آر یو؟
 </div>
 
-<div class="fa">
-هاو آر یو؟
-<br>
-حالت چطوره؟
+<div class="meaning">
+معنی: حالت چطوره؟ / حال شما چطوره؟
 </div>
 
-<button class="speak-btn" onclick="speak('How are you?')">
-🔊 پخش تلفظ
+<button class="speak" onclick="speak('How are you?')">
+🔊 تلفظ انگلیسی
 </button>
 
 </div>
 
 
-<p>
-این جمله یکی از رایج‌ترین روش‌ها برای پرسیدن حال یک نفر است.
-</p>
+<div class="note">
+
+💡 این جمله برای پرسیدن حال یک نفر استفاده می‌شود.
+
+<br><br>
+
+<b>How</b> = چطور / چگونه
+
+<br>
+
+<b>are</b> = هستی / هستید
+
+<br>
+
+<b>you</b> = تو / شما
+
+<br><br>
+
+پس:
+
+<br>
+
+<b>How are you?</b>
+
+<br>
+
+یعنی: «حالت چطوره؟»
 
 </div>
 
 
-<!-- ANSWERS -->
 
-<div class="card">
-
-<h2>😊 چطور جواب بدهیم؟</h2>
+<h3>✅ جواب‌های رایج</h3>
 
 
 <div class="example">
 
-<div class="sentence">
-I'm fine.
+<div class="english">
+I'm fine, thank you.
 </div>
 
-<div class="fa">
-آیم فاین
-<br>
-خوبم.
+<div class="pron">
+آیم فاین، ثَنک یو.
 </div>
 
-<button class="speak-btn" onclick="speak(&quot;I'm fine.&quot;)">
-🔊 پخش تلفظ
+<div class="meaning">
+خوبم، ممنون.
+</div>
+
+<button class="speak" onclick="speak('I am fine, thank you.')">
+🔊 تلفظ انگلیسی
 </button>
 
 </div>
@@ -471,18 +541,20 @@ I'm fine.
 
 <div class="example">
 
-<div class="sentence">
-I'm good.
+<div class="english">
+I'm good, thank you.
 </div>
 
-<div class="fa">
-آیم گود
-<br>
-خوبم.
+<div class="pron">
+آیم گود، ثَنک یو.
 </div>
 
-<button class="speak-btn" onclick="speak(&quot;I'm good.&quot;)">
-🔊 پخش تلفظ
+<div class="meaning">
+خوبم، ممنون.
+</div>
+
+<button class="speak" onclick="speak('I am good, thank you.')">
+🔊 تلفظ انگلیسی
 </button>
 
 </div>
@@ -490,18 +562,20 @@ I'm good.
 
 <div class="example">
 
-<div class="sentence">
+<div class="english">
 I'm great!
 </div>
 
-<div class="fa">
+<div class="pron">
 آیم گریت!
-<br>
+</div>
+
+<div class="meaning">
 عالی‌ام!
 </div>
 
-<button class="speak-btn" onclick="speak(&quot;I'm great!&quot;)">
-🔊 پخش تلفظ
+<button class="speak" onclick="speak('I am great!')">
+🔊 تلفظ انگلیسی
 </button>
 
 </div>
@@ -509,18 +583,41 @@ I'm great!
 
 <div class="example">
 
-<div class="sentence">
+<div class="english">
+I'm very well.
+</div>
+
+<div class="pron">
+آیم وِری وِل.
+</div>
+
+<div class="meaning">
+خیلی خوبم.
+</div>
+
+<button class="speak" onclick="speak('I am very well.')">
+🔊 تلفظ انگلیسی
+</button>
+
+</div>
+
+
+<div class="example">
+
+<div class="english">
 I'm okay.
 </div>
 
-<div class="fa">
-آیم اُکِی
-<br>
+<div class="pron">
+آیم اوکِی.
+</div>
+
+<div class="meaning">
 خوبم / بد نیستم.
 </div>
 
-<button class="speak-btn" onclick="speak(&quot;I'm okay.&quot;)">
-🔊 پخش تلفظ
+<button class="speak" onclick="speak('I am okay.')">
+🔊 تلفظ انگلیسی
 </button>
 
 </div>
@@ -528,235 +625,404 @@ I'm okay.
 
 <div class="example">
 
-<div class="sentence">
+<div class="english">
 I'm not bad.
 </div>
 
-<div class="fa">
-آیم نات بَد
-<br>
+<div class="pron">
+آیم نات بَد.
+</div>
+
+<div class="meaning">
 بد نیستم.
 </div>
 
-<button class="speak-btn" onclick="speak(&quot;I'm not bad.&quot;)">
-🔊 پخش تلفظ
+<button class="speak" onclick="speak('I am not bad.')">
+🔊 تلفظ انگلیسی
 </button>
 
 </div>
 
 
+<div class="note">
+
+⭐ نکته:
+
+<br><br>
+
+بعد از جواب دادن می‌توانیم بگوییم:
+
+<br><br>
+
+<b>How about you?</b>
+
+<br>
+
+هاو اَبَوت یو؟
+
+<br>
+
+«تو چطور؟»
+
+<br><br>
+
+مثلاً:
+
+<br>
+
+<b>I'm good, thank you. How about you?</b>
+
+<br>
+
+خوبم، ممنون. تو چطور؟
+
+</div>
+
 </div>
 
 
-<!-- AND YOU -->
+
+<!-- NOT -->
 
 <div class="card">
 
-<h2>🔄 پرسیدن حال طرف مقابل</h2>
+<h2>❌ گرامر Not</h2>
+
+
+<div class="word">
+
+<div class="english">Not</div>
+
+<div class="pron">
+تلفظ نوشتاری: نات
+</div>
+
+<div class="meaning">
+معنی: نه / نیست / نیستم / نیستی و...
+</div>
+
+<button class="speak" onclick="speak('Not')">
+🔊 تلفظ انگلیسی
+</button>
+
+</div>
+
+
+<div class="note">
+
+💡 <b>Not</b> برای منفی کردن جمله استفاده می‌شود.
+
+<br><br>
+
+مثلاً:
+
+<br><br>
+
+<b>I am happy.</b>
+
+<br>
+
+من خوشحالم.
+
+<br><br>
+
+با اضافه کردن <b>not</b>:
+
+<br><br>
+
+<b>I am not happy.</b>
+
+<br>
+
+من خوشحال نیستم.
+
+</div>
+
+
+<h3>🔹 مخفف کردن Not</h3>
+
 
 <div class="example">
 
-<div class="sentence">
-And you?
+<div class="english">
+I am not → I'm not
 </div>
 
-<div class="fa">
-اَند یو؟
+<div class="pron">
+آی اَم نات → آیم نات
+</div>
+
+<div class="meaning">
+من نیستم
+</div>
+
+<button class="speak" onclick="speak('I am not')">
+🔊 تلفظ انگلیسی
+</button>
+
+</div>
+
+
+<div class="example">
+
+<div class="english">
+is not → isn't
+</div>
+
+<div class="pron">
+ایز نات → ایزِنت
+</div>
+
+<div class="meaning">
+نیست
+</div>
+
+<button class="speak" onclick="speak('is not')">
+🔊 تلفظ انگلیسی
+</button>
+
+</div>
+
+
+<div class="example">
+
+<div class="english">
+are not → aren't
+</div>
+
+<div class="pron">
+آر نات → آرِنت
+</div>
+
+<div class="meaning">
+نیستند / نیستی / نیستید
+</div>
+
+<button class="speak" onclick="speak('are not')">
+🔊 تلفظ انگلیسی
+</button>
+
+</div>
+
+
+<div class="example">
+
+<div class="english">
+I am not tired.
+</div>
+
+<div class="pron">
+آیم نات تایِرد.
+</div>
+
+<div class="meaning">
+من خسته نیستم.
+</div>
+
+<button class="speak" onclick="speak('I am not tired.')">
+🔊 تلفظ انگلیسی
+</button>
+
+</div>
+
+
+<div class="example">
+
+<div class="english">
+He isn't happy.
+</div>
+
+<div class="pron">
+هی ایزِنت هَپی.
+</div>
+
+<div class="meaning">
+او خوشحال نیست.
+</div>
+
+<button class="speak" onclick="speak('He isn’t happy.')">
+🔊 تلفظ انگلیسی
+</button>
+
+</div>
+
+
+<div class="example">
+
+<div class="english">
+They aren't tired.
+</div>
+
+<div class="pron">
+ذِی آرِنت تایِرد.
+</div>
+
+<div class="meaning">
+آن‌ها خسته نیستند.
+</div>
+
+<button class="speak" onclick="speak('They aren’t tired.')">
+🔊 تلفظ انگلیسی
+</button>
+
+</div>
+
+
+<div class="note">
+
+⚠️ نکته مهم:
+
+<br><br>
+
+<b>I am not</b> معمولاً به شکل <b>I'm not</b> کوتاه می‌شود.
+
+<br><br>
+
+ولی نمی‌گوییم:
+
 <br>
-و تو؟
-</div>
 
-<button class="speak-btn" onclick="speak('And you?')">
-🔊 پخش تلفظ
-</button>
-
-</div>
-
-<p>
-بعد از اینکه کسی حال شما را پرسید و جواب دادید،
-می‌توانید برای پرسیدن حال او بگویید:
-<strong>And you?</strong>
-</p>
-
-</div>
-
-
-<!-- IMPORTANT NOTE -->
-
-<div class="card">
-
-<h2>💡 نکته خیلی مهم</h2>
-
-<div class="tip">
-
-<strong>Good evening</strong> و <strong>Good night</strong>
-هر دو مربوط به شب هستند، اما کاربردشان یکی نیست.
+❌ I amn't
 
 <br><br>
 
-🌆 وقتی کسی را می‌بینیم و می‌خواهیم سلام کنیم:
+برای <b>is not</b>:
+
 <br>
-<strong>Good evening!</strong>
+
+<b>isn't</b>
 
 <br><br>
 
-🌙 وقتی می‌خواهیم خداحافظی کنیم یا کسی می‌خواهد بخوابد:
+برای <b>are not</b>:
+
 <br>
-<strong>Good night!</strong>
 
-</div>
-
-
-<div class="warning">
-
-❌ معمولاً وقتی تازه کسی را می‌بینید نمی‌گوییم:
-<br>
-<strong>Good night!</strong>
-
-<br><br>
-
-✅ برای سلام کردن در عصر و شب:
-<br>
-<strong>Good evening!</strong>
+<b>aren't</b>
 
 </div>
 
 </div>
 
-
-<!-- CONVERSATION -->
-
-<div class="card">
-
-<h2>🗣️ یک مکالمه واقعی</h2>
-
-<div class="conversation">
-
-<div class="en">
-A: Hello!
-</div>
-
-فارسی:
-هِلُو! — سلام!
-
-<button class="speak-btn" onclick="speak('Hello!')">
-🔊
-</button>
-
-
-<br><br>
-
-<div class="en">
-B: Hi!
-</div>
-
-فارسی:
-های! — سلام!
-
-<button class="speak-btn" onclick="speak('Hi!')">
-🔊
-</button>
-
-
-<br><br>
-
-<div class="en">
-A: How are you?
-</div>
-
-فارسی:
-هاو آر یو؟ — حالت چطوره؟
-
-<button class="speak-btn" onclick="speak('How are you?')">
-🔊
-</button>
-
-
-<br><br>
-
-<div class="en">
-B: I'm great! And you?
-</div>
-
-فارسی:
-آیم گریت! اَند یو؟ — عالی‌ام! و تو؟
-
-<button class="speak-btn" onclick="speak(&quot;I'm great! And you?&quot;)">
-🔊
-</button>
-
-
-<br><br>
-
-<div class="en">
-A: I'm good, thank you.
-</div>
-
-فارسی:
-آیم گود، ثَنک یو — خوبم، ممنون.
-
-<button class="speak-btn" onclick="speak('I'm good, thank you.')">
-🔊
-</button>
-
-
-<br><br>
-
-<div class="en">
-B: Good evening!
-</div>
-
-فارسی:
-گود ایونینگ! — عصر بخیر!
-
-<button class="speak-btn" onclick="speak('Good evening!')">
-🔊
-</button>
-
-</div>
-
-</div>
 
 
 <!-- THANK YOU -->
 
 <div class="card">
 
-<h2>🙏 یک عبارت خیلی کاربردی</h2>
+<h2>🙏 Thank you و You're welcome</h2>
 
-<div class="example">
 
-<div class="sentence">
-Thank you.
+<div class="word">
+
+<div class="english">Thank you</div>
+
+<div class="pron">
+تلفظ نوشتاری: ثَنک یو
 </div>
 
-<div class="fa">
-ثَنک یو
-<br>
-ممنون / متشکرم
+<div class="meaning">
+معنی: متشکرم / ممنون
 </div>
 
-<button class="speak-btn" onclick="speak('Thank you.')">
-🔊 پخش تلفظ
+<button class="speak" onclick="speak('Thank you')">
+🔊 تلفظ انگلیسی
 </button>
 
 </div>
 
 
-<div class="example">
+<div class="word">
 
-<div class="sentence">
-You're welcome.
+<div class="english">You're welcome</div>
+
+<div class="pron">
+تلفظ نوشتاری: یور وِلکِم
 </div>
 
-<div class="fa">
-یور وِلکِم
+<div class="meaning">
+معنی: خواهش می‌کنم
+</div>
+
+<button class="speak" onclick="speak('You are welcome')">
+🔊 تلفظ انگلیسی
+</button>
+
+</div>
+
+
+<div class="note">
+
+⭐ نکته:
+
+<br><br>
+
+وقتی کسی از ما تشکر می‌کند:
+
+<br><br>
+
+<b>Thank you.</b>
+
 <br>
+
+ممنون.
+
+<br><br>
+
+ما می‌توانیم جواب بدهیم:
+
+<br><br>
+
+<b>You're welcome.</b>
+
+<br>
+
 خواهش می‌کنم.
+
+<br><br>
+
+<b>You're</b> مخفف <b>You are</b> است.
+
 </div>
 
-<button class="speak-btn" onclick="speak(&quot;You're welcome.&quot;)">
-🔊 پخش تلفظ
+
+<div class="example">
+
+<div class="english">
+A: Thank you!
+</div>
+
+<div class="pron">
+اِی: ثَنک یو!
+</div>
+
+<div class="meaning">
+الف: ممنون!
+</div>
+
+<button class="speak" onclick="speak('Thank you!')">
+🔊 تلفظ انگلیسی
+</button>
+
+</div>
+
+
+<div class="example">
+
+<div class="english">
+B: You're welcome!
+</div>
+
+<div class="pron">
+بی: یور وِلکِم!
+</div>
+
+<div class="meaning">
+ب: خواهش می‌کنم!
+</div>
+
+<button class="speak" onclick="speak('You are welcome!')">
+🔊 تلفظ انگلیسی
 </button>
 
 </div>
@@ -764,414 +1030,627 @@ You're welcome.
 </div>
 
 
-<!-- PRONUNCIATION -->
+
+<!-- CONVERSATION -->
 
 <div class="card">
 
-<h2>🗣️ نکته تلفظی</h2>
+<h2>🗣️ مکالمه کاربردی</h2>
 
-<p>
-در انگلیسی بعضی صداها دقیقاً مثل فارسی نیستند.
-پس تلفظ فارسی فقط یک راهنمای تقریبی است و بهترین کار این است که چند بار به تلفظ 🔊 گوش بدهی و تکرار کنی.
-</p>
 
-<div class="tip">
+<div class="example">
 
-<strong>How are you?</strong>
+<div class="english">
+A: Good morning!
+</div>
+
+<div class="pron">
+اِی: گود مورنینگ!
+</div>
+
+<div class="meaning">
+الف: صبح بخیر!
+</div>
+
+<button class="speak" onclick="speak('Good morning!')">
+🔊 تلفظ انگلیسی
+</button>
+
+</div>
+
+
+<div class="example">
+
+<div class="english">
+B: Good morning! How are you?
+</div>
+
+<div class="pron">
+بی: گود مورنینگ! هاو آر یو؟
+</div>
+
+<div class="meaning">
+ب: صبح بخیر! حالت چطوره؟
+</div>
+
+<button class="speak" onclick="speak('Good morning! How are you?')">
+🔊 تلفظ انگلیسی
+</button>
+
+</div>
+
+
+<div class="example">
+
+<div class="english">
+A: I'm good, thank you. How about you?
+</div>
+
+<div class="pron">
+اِی: آیم گود، ثَنک یو. هاو اَبَوت یو؟
+</div>
+
+<div class="meaning">
+الف: خوبم، ممنون. تو چطور؟
+</div>
+
+<button class="speak" onclick="speak('I am good, thank you. How about you?')">
+🔊 تلفظ انگلیسی
+</button>
+
+</div>
+
+
+<div class="example">
+
+<div class="english">
+B: I'm great!
+</div>
+
+<div class="pron">
+بی: آیم گریت!
+</div>
+
+<div class="meaning">
+ب: عالی‌ام!
+</div>
+
+<button class="speak" onclick="speak('I am great!')">
+🔊 تلفظ انگلیسی
+</button>
+
+</div>
+
+
+<div class="example">
+
+<div class="english">
+A: Thank you for your help.
+</div>
+
+<div class="pron">
+اِی: ثَنک یو فور یور هِلپ.
+</div>
+
+<div class="meaning">
+الف: بابت کمکت ممنونم.
+</div>
+
+<button class="speak" onclick="speak('Thank you for your help.')">
+🔊 تلفظ انگلیسی
+</button>
+
+</div>
+
+
+<div class="example">
+
+<div class="english">
+B: You're welcome!
+</div>
+
+<div class="pron">
+بی: یور وِلکِم!
+</div>
+
+<div class="meaning">
+ب: خواهش می‌کنم!
+</div>
+
+<button class="speak" onclick="speak('You are welcome!')">
+🔊 تلفظ انگلیسی
+</button>
+
+</div>
+
+
+<div class="example">
+
+<div class="english">
+A: Are you tired?
+</div>
+
+<div class="pron">
+اِی: آر یو تایِرد؟
+</div>
+
+<div class="meaning">
+الف: خسته‌ای؟
+</div>
+
+<button class="speak" onclick="speak('Are you tired?')">
+🔊 تلفظ انگلیسی
+</button>
+
+</div>
+
+
+<div class="example">
+
+<div class="english">
+B: No, I'm not tired.
+</div>
+
+<div class="pron">
+بی: نو، آیم نات تایِرد.
+</div>
+
+<div class="meaning">
+ب: نه، خسته نیستم.
+</div>
+
+<button class="speak" onclick="speak('No, I am not tired.')">
+🔊 تلفظ انگلیسی
+</button>
+
+</div>
+
+
+<div class="example">
+
+<div class="english">
+A: Good night!
+</div>
+
+<div class="pron">
+اِی: گود نایت!
+</div>
+
+<div class="meaning">
+الف: شب بخیر!
+</div>
+
+<button class="speak" onclick="speak('Good night!')">
+🔊 تلفظ انگلیسی
+</button>
+
+</div>
+
+
+<div class="example">
+
+<div class="english">
+B: Good night!
+</div>
+
+<div class="pron">
+بی: گود نایت!
+</div>
+
+<div class="meaning">
+ب: شب بخیر!
+</div>
+
+<button class="speak" onclick="speak('Good night!')">
+🔊 تلفظ انگلیسی
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- IMPORTANT NOTES -->
+
+<div class="card">
+
+<h2>💡 نکات مهم درس ۵</h2>
+
+<div class="note">
+
+1️⃣ <b>Hi</b> و <b>Hello</b> هر دو یعنی «سلام».
+
+<br><br>
+
+2️⃣ <b>Good morning</b> → صبح بخیر
 
 <br>
 
-در مکالمه طبیعی ممکن است کلمات به هم نزدیک‌تر شنیده شوند.
-پس فقط به تلفظ فارسی تکیه نکن و حتماً صدای انگلیسی را هم گوش بده.
+3️⃣ <b>Good afternoon</b> → بعدازظهر بخیر
+
+<br>
+
+4️⃣ <b>Good evening</b> → عصر بخیر / شب بخیر هنگام دیدار
+
+<br>
+
+5️⃣ <b>Good night</b> → شب بخیر هنگام خداحافظی یا قبل از خواب
+
+<br><br>
+
+6️⃣ برای پرسیدن حال کسی:
+
+<br>
+
+<b>How are you?</b>
+
+<br><br>
+
+7️⃣ جواب رایج:
+
+<br>
+
+<b>I'm good, thank you.</b>
+
+<br><br>
+
+8️⃣ برای برگرداندن سؤال:
+
+<br>
+
+<b>How about you?</b>
+
+<br><br>
+
+9️⃣ برای منفی کردن جمله از <b>not</b> استفاده می‌کنیم.
+
+<br><br>
+
+🔟 <b>I am not → I'm not</b>
+
+<br>
+
+<b>is not → isn't</b>
+
+<br>
+
+<b>are not → aren't</b>
+
+<br><br>
+
+1️⃣1️⃣ تشکر:
+
+<br>
+
+<b>Thank you.</b>
+
+<br><br>
+
+1️⃣2️⃣ جواب تشکر:
+
+<br>
+
+<b>You're welcome.</b>
 
 </div>
 
 </div>
 
 
-<!-- EXERCISES -->
+
+<!-- EXAM -->
 
 <div class="card">
 
-<h2>📝 تمرین‌های درس ۵</h2>
+<h2>📝 آزمون درس ۵</h2>
 
 <p>
-روی جواب موردنظرت بزن. جواب درست سبز و جواب اشتباه قرمز می‌شود.
+حالا وقت امتحانه 😎🔥
 </p>
 
-
-<!-- Q1 -->
-
-<div class="question">
-
-<div class="question-title">
-1️⃣ برای سلام کردن در حالت معمول کدام گزینه درست است؟
-</div>
-
-<button class="answer-btn"
-onclick="check(this, true, 'r1')">
-Hello
+<button class="exam-start" onclick="startExam()">
+▶️ شروع آزمون
 </button>
-
-<button class="answer-btn"
-onclick="check(this, false, 'r1')">
-Good night
-</button>
-
-<button class="answer-btn"
-onclick="check(this, false, 'r1')">
-Thank you
-</button>
-
-<div class="result" id="r1"></div>
 
 </div>
 
 
-<!-- Q2 -->
+<div class="card" id="exam">
 
-<div class="question">
+<h2>🧠 آزمون</h2>
 
-<div class="question-title">
-2️⃣ معنی How are you? چیست؟
-</div>
+<div id="questions"></div>
 
-<button class="answer-btn"
-onclick="check(this, true, 'r2')">
-حالت چطوره؟
-</button>
-
-<button class="answer-btn"
-onclick="check(this, false, 'r2')">
-اسمت چیه؟
-</button>
-
-<button class="answer-btn"
-onclick="check(this, false, 'r2')">
-چند سالته؟
-</button>
-
-<div class="result" id="r2"></div>
-
-</div>
-
-
-<!-- Q3 -->
-
-<div class="question">
-
-<div class="question-title">
-3️⃣ کدام جواب برای How are you? مناسب است؟
-</div>
-
-<button class="answer-btn"
-onclick="check(this, false, 'r3')">
-My name is Arshia.
-</button>
-
-<button class="answer-btn"
-onclick="check(this, true, 'r3')">
-I'm fine.
-</button>
-
-<button class="answer-btn"
-onclick="check(this, false, 'r3')">
-Good night.
-</button>
-
-<div class="result" id="r3"></div>
-
-</div>
-
-
-<!-- Q4 -->
-
-<div class="question">
-
-<div class="question-title">
-4️⃣ برای خداحافظی هنگام خواب کدام مناسب‌تر است؟
-</div>
-
-<button class="answer-btn"
-onclick="check(this, false, 'r4')">
-Good evening
-</button>
-
-<button class="answer-btn"
-onclick="check(this, true, 'r4')">
-Good night
-</button>
-
-<button class="answer-btn"
-onclick="check(this, false, 'r4')">
-Good morning
-</button>
-
-<div class="result" id="r4"></div>
-
-</div>
-
-
-<!-- Q5 -->
-
-<div class="question">
-
-<div class="question-title">
-5️⃣ معنی And you? چیست؟
-</div>
-
-<button class="answer-btn"
-onclick="check(this, false, 'r5')">
-خداحافظ
-</button>
-
-<button class="answer-btn"
-onclick="check(this, true, 'r5')">
-و تو؟
-</button>
-
-<button class="answer-btn"
-onclick="check(this, false, 'r5')">
-ممنون
-</button>
-
-<div class="result" id="r5"></div>
-
-</div>
-
-
-<!-- Q6 -->
-
-<div class="question">
-
-<div class="question-title">
-6️⃣ کدام گزینه یعنی «ممنون»؟
-</div>
-
-<button class="answer-btn"
-onclick="check(this, true, 'r6')">
-Thank you.
-</button>
-
-<button class="answer-btn"
-onclick="check(this, false, 'r6')">
-You're welcome.
-</button>
-
-<button class="answer-btn"
-onclick="check(this, false, 'r6')">
-How are you?
-</button>
-
-<div class="result" id="r6"></div>
-
-</div>
-
-
-<!-- Q7 -->
-
-<div class="question">
-
-<div class="question-title">
-7️⃣ برای سلام کردن در عصر و شب کدام درست است؟
-</div>
-
-<button class="answer-btn"
-onclick="check(this, true, 'r7')">
-Good evening
-</button>
-
-<button class="answer-btn"
-onclick="check(this, false, 'r7')">
-Good night
-</button>
-
-<button class="answer-btn"
-onclick="check(this, false, 'r7')">
-Good morning
-</button>
-
-<div class="result" id="r7"></div>
-
-</div>
-
-
-<!-- Q8 -->
-
-<div class="question">
-
-<div class="question-title">
-8️⃣ جواب مناسب برای Thank you چیست؟
-</div>
-
-<button class="answer-btn"
-onclick="check(this, false, 'r8')">
-How are you?
-</button>
-
-<button class="answer-btn"
-onclick="check(this, true, 'r8')">
-You're welcome.
-</button>
-
-<button class="answer-btn"
-onclick="check(this, false, 'r8')">
-Good morning.
-</button>
-
-<div class="result" id="r8"></div>
-
-</div>
-
-
-<!-- Q9 -->
-
-<div class="question">
-
-<div class="question-title">
-9️⃣ کدام گزینه یعنی «عالی‌ام»؟
-</div>
-
-<button class="answer-btn"
-onclick="check(this, false, 'r9')">
-I'm okay.
-</button>
-
-<button class="answer-btn"
-onclick="check(this, true, 'r9')">
-I'm great!
-</button>
-
-<button class="answer-btn"
-onclick="check(this, false, 'r9')">
-I'm not bad.
-</button>
-
-<div class="result" id="r9"></div>
-
-</div>
-
-
-<!-- Q10 -->
-
-<div class="question">
-
-<div class="question-title">
-🔟 جای خالی را کامل کن:
-
-Hello! How ___ you?
-</div>
-
-<button class="answer-btn"
-onclick="check(this, true, 'r10')">
-are
-</button>
-
-<button class="answer-btn"
-onclick="check(this, false, 'r10')">
-is
-</button>
-
-<button class="answer-btn"
-onclick="check(this, false, 'r10')">
-am
-</button>
-
-<div class="result" id="r10"></div>
-
-</div>
-
-</div>
-
-
-<div class="card finish">
-
-🎉 آفرین!
-
-اگر این درس را کامل یاد گرفتی،
-حالا می‌توانی یک مکالمه ساده برای سلام و احوالپرسی داشته باشی. 👋🇬🇧
+<div id="result"></div>
 
 </div>
 
 
 </div>
+
 
 
 <script>
 
-// تلفظ انگلیسی
-function speak(text) {
+function speak(text){
 
-  if (!("speechSynthesis" in window)) {
-    alert("مرورگر شما از پخش صدا پشتیبانی نمی‌کند.");
-    return;
-  }
+window.speechSynthesis.cancel();
 
-  window.speechSynthesis.cancel();
+const speech =
+new SpeechSynthesisUtterance(text);
 
-  const speech = new SpeechSynthesisUtterance(text);
+speech.lang="en-US";
 
-  speech.lang = "en-US";
-  speech.rate = 0.8;
-  speech.pitch = 1;
+speech.rate=0.8;
 
-  window.speechSynthesis.speak(speech);
+window.speechSynthesis.speak(speech);
+
 }
 
 
-// توضیح صوتی معلم به فارسی
-function teacherAudio() {
 
-  if (!("speechSynthesis" in window)) {
-    alert("مرورگر شما از پخش صدا پشتیبانی نمی‌کند.");
-    return;
-  }
+const questions=[
 
-  window.speechSynthesis.cancel();
+{
+q:"کدام گزینه یعنی «سلام»؟",
+options:[
+"Hi",
+"Night",
+"Thank you"
+],
+answer:0
+},
 
-  const text =
-  "سلام! به درس پنجم آرشیا لرنینگ خوش آمدید. " +
-  "در این درس می خواهیم سلام و احوالپرسی به زبان انگلیسی را یاد بگیریم. " +
-  "برای سلام کردن می توانیم بگوییم Hello یا Hi. " +
-  "Hello کمی عمومی تر است و Hi حالت دوستانه تری دارد. " +
-  "صبح بخیر می شود Good morning. " +
-  "برای بعدازظهر می توانیم بگوییم Good afternoon. " +
-  "برای سلام کردن در عصر و شب می گوییم Good evening. " +
-  "اما Good night معمولاً برای خداحافظی در شب یا قبل از خواب استفاده می شود. " +
-  "برای پرسیدن حال یک نفر می گوییم How are you? یعنی حالت چطوره؟ " +
-  "برای جواب دادن می توانیم بگوییم I'm fine، I'm good، I'm great یا I'm okay. " +
-  "بعد می توانیم بگوییم And you? یعنی و تو؟ " +
-  "همچنین Thank you یعنی ممنون و You're welcome یعنی خواهش می کنم. " +
-  "حالا مکالمه را چند بار تمرین کنید و به تلفظ جمله ها گوش دهید.";
+{
+q:"کدام عبارت برای صبح استفاده می‌شود؟",
+options:[
+"Good night",
+"Good morning",
+"Good evening"
+],
+answer:1
+},
 
-  const speech = new SpeechSynthesisUtterance(text);
+{
+q:"معنی How are you? چیست؟",
+options:[
+"اسمت چیست؟",
+"کجا هستی؟",
+"حالت چطوره؟"
+],
+answer:2
+},
 
-  speech.lang = "fa-IR";
-  speech.rate = 0.85;
-  speech.pitch = 1;
+{
+q:"کدام جواب برای How are you? مناسب است؟",
+options:[
+"I'm good, thank you.",
+"Good night.",
+"You're welcome."
+],
+answer:0
+},
 
-  window.speechSynthesis.speak(speech);
+{
+q:"کدام گزینه شکل کوتاه I am not است؟",
+options:[
+"I isn't",
+"I'm not",
+"I aren't"
+],
+answer:1
+},
+
+{
+q:"شکل کوتاه is not کدام است؟",
+options:[
+"isn't",
+"aren't",
+"I'm not"
+],
+answer:0
+},
+
+{
+q:"شکل کوتاه are not کدام است؟",
+options:[
+"isn't",
+"aren't",
+"I'm not"
+],
+answer:1
+},
+
+{
+q:"وقتی کسی می‌گوید Thank you، کدام جواب مناسب است؟",
+options:[
+"Good morning",
+"You're welcome",
+"How are you?"
+],
+answer:1
+},
+
+{
+q:"کدام جمله درست است؟",
+options:[
+"I'm not tired.",
+"I not am tired.",
+"I amn't tired."
+],
+answer:0
+},
+
+{
+q:"کدام مکالمه درست است؟",
+options:[
+"How are you? — I'm good, thank you.",
+"How are you? — You're welcome.",
+"Thank you. — Good morning."
+],
+answer:0
+}
+
+];
+
+
+
+let score=0;
+let answered=0;
+
+
+
+function startExam(){
+
+const exam=
+document.getElementById("exam");
+
+exam.style.display="block";
+
+exam.scrollIntoView({
+behavior:"smooth"
+});
+
+const container=
+document.getElementById("questions");
+
+container.innerHTML="";
+
+document.getElementById("result").style.display="none";
+
+score=0;
+answered=0;
+
+
+
+questions.forEach((question,index)=>{
+
+const box=
+document.createElement("div");
+
+box.className="question";
+
+
+const title=
+document.createElement("div");
+
+title.className="question-title";
+
+title.innerText=
+(index+1)+". "+question.q;
+
+box.appendChild(title);
+
+
+
+question.options.forEach((option,optIndex)=>{
+
+const btn=
+document.createElement("button");
+
+btn.className="option";
+
+btn.innerText=option;
+
+
+btn.onclick=function(){
+
+const buttons=
+box.querySelectorAll(".option");
+
+buttons.forEach(b=>{
+b.disabled=true;
+});
+
+
+if(optIndex===question.answer){
+
+btn.classList.add("correct");
+
+score++;
+
+}else{
+
+btn.classList.add("wrong");
+
+buttons[question.answer]
+.classList.add("correct");
+
 }
 
 
-// تمرین
-function check(button, correct, resultId) {
+answered++;
 
-  const result = document.getElementById(resultId);
+checkResult();
 
-  if (correct) {
+};
 
-    button.classList.add("correct");
 
-    result.innerText = "✅ آفرین! جواب درست است.";
+box.appendChild(btn);
 
-  } else {
+});
 
-    button.classList.add("wrong");
 
-    result.innerText = "❌ جواب اشتباه است. دوباره تلاش کن.";
+container.appendChild(box);
 
-  }
+});
+
+}
+
+
+
+function checkResult(){
+
+if(answered===questions.length){
+
+const result=
+document.getElementById("result");
+
+result.style.display="block";
+
+result.innerHTML=
+"🎉 نمره شما: "+
+score+
+" از 10";
+
+
+if(score===10){
+
+result.innerHTML+=
+"<br>🏆 فوق‌العاده! همه جواب‌ها درست بود!";
+
+}
+
+else if(score>=8){
+
+result.innerHTML+=
+"<br>🔥 عالی بود!";
+
+}
+
+else if(score>=6){
+
+result.innerHTML+=
+"<br>👏 خیلی خوب بود!";
+
+}
+
+else if(score>=4){
+
+result.innerHTML+=
+"<br>👍 خوبه! درس رو یک بار دیگه مرور کن.";
+
+}
+
+else{
+
+result.innerHTML+=
+"<br>📚 بهتره درس رو دوباره مرور کنی و دوباره امتحان بدی.";
+
+}
+
+}
 
 }
 

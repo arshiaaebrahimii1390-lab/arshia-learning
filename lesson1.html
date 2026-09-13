@@ -2,983 +2,1243 @@
 <html lang="fa" dir="rtl">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>درس ۱ | Am / Is / Are</title>
+<title>درس ۱ | Arshia Learning</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: Tahoma, Arial, sans-serif;
-    }
+<style>
 
-    body {
-      background: #f4f7fb;
-      color: #222;
-    }
+* {
+  box-sizing: border-box;
+}
 
-    header {
-      background: #4f46e5;
-      color: white;
-      text-align: center;
-      padding: 28px 15px;
-      border-radius: 0 0 25px 25px;
-    }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #eef3ff, #f8faff);
+  color: #1d2433;
+}
 
-    header h1 {
-      font-size: 28px;
-      margin-bottom: 8px;
-    }
+.container {
+  max-width: 700px;
+  margin: auto;
+  padding: 20px;
+}
 
-    header p {
-      font-size: 15px;
-    }
+.back {
+  display: inline-block;
+  margin-bottom: 15px;
+  text-decoration: none;
+  color: #4f7cff;
+  font-weight: bold;
+}
 
-    .container {
-      max-width: 700px;
-      margin: auto;
-      padding: 22px 18px;
-    }
+.header {
+  padding: 25px;
+  border-radius: 28px;
+  background: rgba(255,255,255,0.65);
+  backdrop-filter: blur(20px);
+  text-align: center;
+  margin-bottom: 20px;
+}
 
-    .card {
-      background: white;
-      padding: 22px;
-      border-radius: 18px;
-      margin-bottom: 18px;
-      box-shadow: 0 5px 18px rgba(0,0,0,0.07);
-    }
+.header h1 {
+  margin: 0 0 10px;
+}
 
-    .card h2 {
-      margin-bottom: 14px;
-      color: #333;
-    }
+.card {
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(255,255,255,0.8);
+  box-shadow: 0 8px 25px rgba(50,70,120,0.08);
+}
 
-    .card p {
-      color: #555;
-      line-height: 2;
-      margin-bottom: 10px;
-    }
+h2 {
+  margin-top: 0;
+}
 
-    .english {
-      direction: ltr;
-      text-align: left;
-      background: #f0f1ff;
-      padding: 15px;
-      border-radius: 12px;
-      margin-top: 12px;
-      line-height: 2;
-    }
+h3 {
+  margin-bottom: 8px;
+}
 
-    .word {
-      font-size: 21px;
-      font-weight: bold;
-    }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
 
-    .translation {
-      color: #666;
-      font-size: 14px;
-    }
+th,
+td {
+  padding: 12px 7px;
+  text-align: center;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
 
-    .pronunciation {
-      color: #777;
-      font-size: 14px;
-    }
+th {
+  background: rgba(79,124,255,0.12);
+}
 
-    .speak-btn {
-      border: none;
-      background: #4f46e5;
-      color: white;
-      padding: 9px 14px;
-      border-radius: 9px;
-      margin-top: 8px;
-      cursor: pointer;
-      font-size: 14px;
-    }
+.pronunciation {
+  color: #555;
+  font-size: 13px;
+}
 
-    .table-box {
-      overflow-x: auto;
-      margin-top: 15px;
-    }
+.example {
+  padding: 14px;
+  margin-top: 12px;
+  border-radius: 16px;
+  background: rgba(79,124,255,0.08);
+  line-height: 1.8;
+}
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      text-align: center;
-    }
+.note {
+  padding: 15px;
+  border-radius: 16px;
+  background: #fff7d6;
+  margin-top: 15px;
+  line-height: 1.8;
+}
 
-    th, td {
-      border: 1px solid #ddd;
-      padding: 12px 8px;
-    }
+.speak-btn {
+  border: none;
+  border-radius: 12px;
+  padding: 8px 12px;
+  margin-top: 8px;
+  background: #4f7cff;
+  color: white;
+  cursor: pointer;
+}
 
-    th {
-      background: #f0f1ff;
-    }
+.start-test {
+  width: 100%;
+  border: none;
+  border-radius: 18px;
+  padding: 16px;
+  background: #4f7cff;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
 
-    .important {
-      background: #fff8df;
-      padding: 15px;
-      border-radius: 12px;
-      margin-top: 15px;
-      line-height: 2;
-    }
+.question {
+  padding: 18px;
+  margin-bottom: 18px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.7);
+}
 
-    .question {
-      background: #f8f8f8;
-      padding: 15px;
-      border-radius: 12px;
-      margin-top: 15px;
-    }
+.question-number {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
 
-    .question-title {
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
+.option {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  border: 2px solid transparent;
+  border-radius: 13px;
+  background: rgba(79,124,255,0.08);
+  cursor: pointer;
+  text-align: right;
+  font-size: 14px;
+}
 
-    .answer-btn {
-      width: 100%;
-      border: none;
-      padding: 13px;
-      margin-top: 9px;
-      border-radius: 10px;
-      background: #eeeeee;
-      font-size: 16px;
-      cursor: pointer;
-    }
+.option.correct {
+  background: #c9f7d5;
+  border-color: #27ae60;
+}
 
-    .answer-btn:active {
-      transform: scale(0.98);
-    }
+.option.wrong {
+  background: #ffd1d1;
+  border-color: #e74c3c;
+}
 
-    .answer-result {
-      margin-top: 10px;
-      font-weight: bold;
-      text-align: center;
-      min-height: 25px;
-    }
+.option:disabled {
+  cursor: default;
+}
 
-    .score-box {
-      text-align: center;
-      background: #f0f1ff;
-      padding: 20px;
-      border-radius: 15px;
-      margin-top: 10px;
-    }
+.result {
+  text-align: center;
+  padding: 20px;
+  border-radius: 20px;
+  background: rgba(79,124,255,0.1);
+  font-size: 18px;
+  font-weight: bold;
+}
 
-    .score {
-      font-size: 30px;
-      font-weight: bold;
-      color: #4f46e5;
-    }
+.hidden {
+  display: none;
+}
 
-    .back {
-      display: block;
-      text-align: center;
-      text-decoration: none;
-      color: #4f46e5;
-      font-weight: bold;
-      margin: 28px 0;
-    }
-  </style>
+.small {
+  font-size: 13px;
+  color: #666;
+}
+
+</style>
 </head>
 
 <body>
 
-<header>
-  <h1>📚 درس ۱</h1>
-  <p>Am / Is / Are</p>
-</header>
+<div class="container">
+
+<a href="english.html" class="back">
+⬅️ بازگشت به درس‌ها
+</a>
+
+
+<!-- عنوان -->
+
+<div class="header">
+
+<h1>درس ۱ 🧠</h1>
+
+<h2>Am / Is / Are</h2>
+
+<p>
+ضمیرها و فعل To Be
+</p>
+
+</div>
+
+
+<!-- ضمیرها -->
+
+<div class="card">
+
+<h2>👤 ضمیرهای انگلیسی</h2>
+
+<p>
+ضمیرها کلماتی هستند که به جای اسم افراد یا چیزها استفاده می‌شوند.
+</p>
 
-<main class="container">
+<table>
 
+<tr>
+<th>ضمیر</th>
+<th>تلفظ 🔊</th>
+<th>معنی</th>
+</tr>
 
-  <!-- مقدمه -->
-  <div class="card">
+<tr>
+<td><b>I</b></td>
+<td>
+آی
+<br>
+<button class="speak-btn" onclick="speak('I')">🔊</button>
+</td>
+<td>من</td>
+</tr>
 
-    <h2>🧠 امروز چی یاد می‌گیریم؟</h2>
+<tr>
+<td><b>You</b></td>
+<td>
+یو
+<br>
+<button class="speak-btn" onclick="speak('You')">🔊</button>
+</td>
+<td>تو / شما</td>
+</tr>
 
-    <p>
-      در این درس یاد می‌گیریم چطور از
-      <b>am</b>، <b>is</b> و <b>are</b>
-      در جمله‌های انگلیسی استفاده کنیم.
-    </p>
+<tr>
+<td><b>He</b></td>
+<td>
+هی
+<br>
+<button class="speak-btn" onclick="speak('He')">🔊</button>
+</td>
+<td>او (مذکر)</td>
+</tr>
+
+<tr>
+<td><b>She</b></td>
+<td>
+شی
+<br>
+<button class="speak-btn" onclick="speak('She')">🔊</button>
+</td>
+<td>او (مونث)</td>
+</tr>
+
+<tr>
+<td><b>It</b></td>
+<td>
+اِت
+<br>
+<button class="speak-btn" onclick="speak('It')">🔊</button>
+</td>
+<td>آن / این</td>
+</tr>
+
+<tr>
+<td><b>We</b></td>
+<td>
+وی
+<br>
+<button class="speak-btn" onclick="speak('We')">🔊</button>
+</td>
+<td>ما</td>
+</tr>
+
+<tr>
+<td><b>They</b></td>
+<td>
+ذِی
+<br>
+<button class="speak-btn" onclick="speak('They')">🔊</button>
+</td>
+<td>آن‌ها</td>
+</tr>
 
-    <div class="important">
-      ⭐ نکته مهم:
-      <br>
-      انتخاب am، is یا are به <b>فاعل جمله</b> بستگی دارد.
-    </div>
+</table>
 
-  </div>
+</div>
 
 
-  <!-- ضمیرها -->
-  <div class="card">
+<!-- TO BE -->
 
-    <h2>👤 ضمیرهای فاعلی</h2>
+<div class="card">
 
-    <p>
-      اول باید ضمیرهای فاعلی را یاد بگیریم:
-    </p>
+<h2>🧠 فعل To Be</h2>
 
-    <div class="table-box">
+<p>
+فعل <b>To Be</b> در زمان حال به سه شکل استفاده می‌شود:
+</p>
 
-      <table>
+<div class="example">
 
-        <tr>
-          <th>English</th>
-          <th>معنی</th>
-        </tr>
+<b>am / is / are</b>
 
-        <tr>
-          <td>I</td>
-          <td>من</td>
-        </tr>
+<br>
 
-        <tr>
-          <td>You</td>
-          <td>تو / شما</td>
-        </tr>
+تلفظ: اَم / ایز / آر
 
-        <tr>
-          <td>He</td>
-          <td>او (مذکر)</td>
-        </tr>
+<br>
 
-        <tr>
-          <td>She</td>
-          <td>او (مونث)</td>
-        </tr>
+<button class="speak-btn"
+onclick="speak('am, is, are')">
+🔊 تلفظ
+</button>
 
-        <tr>
-          <td>It</td>
-          <td>آن / این (برای چیزها و حیوانات)</td>
-        </tr>
+</div>
 
-        <tr>
-          <td>We</td>
-          <td>ما</td>
-        </tr>
+<p>
+اینکه از <b>am</b>، <b>is</b> یا <b>are</b> استفاده کنیم،
+به ضمیر بستگی دارد.
+</p>
 
-        <tr>
-          <td>They</td>
-          <td>آن‌ها</td>
-        </tr>
+<table>
 
-      </table>
+<tr>
+<th>ضمیر</th>
+<th>To Be</th>
+<th>تلفظ</th>
+</tr>
 
-    </div>
+<tr>
+<td>I</td>
+<td><b>am</b></td>
+<td>اَم</td>
+</tr>
 
-  </div>
+<tr>
+<td>He</td>
+<td><b>is</b></td>
+<td>ایز</td>
+</tr>
 
+<tr>
+<td>She</td>
+<td><b>is</b></td>
+<td>ایز</td>
+</tr>
 
-  <!-- Am -->
-  <div class="card">
+<tr>
+<td>It</td>
+<td><b>is</b></td>
+<td>ایز</td>
+</tr>
 
-    <h2>🔵 AM</h2>
+<tr>
+<td>You</td>
+<td><b>are</b></td>
+<td>آر</td>
+</tr>
 
-    <p>
-      <b>am</b> فقط با ضمیر <b>I</b> استفاده می‌شود.
-    </p>
+<tr>
+<td>We</td>
+<td><b>are</b></td>
+<td>آر</td>
+</tr>
 
-    <div class="english">
+<tr>
+<td>They</td>
+<td><b>are</b></td>
+<td>آر</td>
+</tr>
 
-      <div class="word">I am Arshia.</div>
+</table>
 
-      <div class="translation">
-        من عرشیا هستم.
-      </div>
+</div>
 
-      <div class="pronunciation">
-        تلفظ تقریبی: آی اَم آرشیا
-      </div>
 
-      <button class="speak-btn" onclick="speak('I am Arshia')">
-        🔊 گوش دادن
-      </button>
+<!-- AM -->
 
-    </div>
+<div class="card">
 
-    <div class="important">
-      ❗ نمی‌گوییم:
-      <br>
-      I is ❌
-      <br>
-      I are ❌
-      <br><br>
-      درست:
-      <br>
-      I am ✅
-    </div>
+<h2>🔵 AM</h2>
 
-  </div>
+<p>
+<b>am</b> فقط با ضمیر <b>I</b> استفاده می‌شود.
+</p>
 
+<div class="example">
 
-  <!-- Is -->
-  <div class="card">
+<b>I am Arshia.</b>
 
-    <h2>🟢 IS</h2>
+<br>
 
-    <p>
-      <b>is</b> با <b>He</b>، <b>She</b> و <b>It</b> استفاده می‌شود.
-    </p>
+تلفظ: آی اَم عرشیا
 
-    <div class="english">
+<br>
 
-      <div class="word">He is a student.</div>
+معنی: من عرشیا هستم.
 
-      <div class="translation">
-        او یک دانش‌آموز است.
-      </div>
+<br>
 
-      <div class="pronunciation">
-        تلفظ تقریبی: هی ایز اِ اِستودِنت
-      </div>
+<button class="speak-btn"
+onclick="speak('I am Arshia')">
+🔊 تلفظ جمله
+</button>
 
-      <button class="speak-btn" onclick="speak('He is a student')">
-        🔊 گوش دادن
-      </button>
+</div>
 
-    </div>
+<div class="example">
 
-    <div class="english">
+<b>I am happy.</b>
 
-      <div class="word">She is happy.</div>
+<br>
 
-      <div class="translation">
-        او خوشحال است.
-      </div>
+تلفظ: آی اَم هَپی
 
-      <div class="pronunciation">
-        تلفظ تقریبی: شی ایز هَپی
-      </div>
+<br>
 
-      <button class="speak-btn" onclick="speak('She is happy')">
-        🔊 گوش دادن
-      </button>
+معنی: من خوشحالم.
 
-    </div>
+<br>
 
-    <div class="english">
+<button class="speak-btn"
+onclick="speak('I am happy')">
+🔊 تلفظ جمله
+</button>
 
-      <div class="word">It is a cat.</div>
+</div>
 
-      <div class="translation">
-        آن یک گربه است.
-      </div>
+</div>
 
-      <div class="pronunciation">
-        تلفظ تقریبی: ایت ایز اِ کَت
-      </div>
 
-      <button class="speak-btn" onclick="speak('It is a cat')">
-        🔊 گوش دادن
-      </button>
+<!-- IS -->
 
-    </div>
+<div class="card">
 
-  </div>
+<h2>🟣 IS</h2>
 
+<p>
+<b>is</b> با <b>He / She / It</b> استفاده می‌شود.
+</p>
 
-  <!-- Are -->
-  <div class="card">
+<div class="example">
 
-    <h2>🟠 ARE</h2>
+<b>He is a student.</b>
 
-    <p>
-      <b>are</b> با <b>You</b>، <b>We</b> و <b>They</b> استفاده می‌شود.
-    </p>
+<br>
 
-    <div class="english">
+تلفظ: هی ایز اَ اِستودِنت
 
-      <div class="word">You are a student.</div>
+<br>
 
-      <div class="translation">
-        تو یک دانش‌آموز هستی.
-      </div>
+معنی: او یک دانش‌آموز است.
 
-      <button class="speak-btn" onclick="speak('You are a student')">
-        🔊 گوش دادن
-      </button>
+<br>
 
-    </div>
+<button class="speak-btn"
+onclick="speak('He is a student')">
+🔊 تلفظ جمله
+</button>
 
-    <div class="english">
+</div>
 
-      <div class="word">We are friends.</div>
+<div class="example">
 
-      <div class="translation">
-        ما دوست هستیم.
-      </div>
+<b>She is happy.</b>
 
-      <button class="speak-btn" onclick="speak('We are friends')">
-        🔊 گوش دادن
-      </button>
+<br>
 
-    </div>
+تلفظ: شی ایز هَپی
 
-    <div class="english">
+<br>
 
-      <div class="word">They are happy.</div>
+معنی: او خوشحال است.
 
-      <div class="translation">
-        آن‌ها خوشحال هستند.
-      </div>
+<br>
 
-      <button class="speak-btn" onclick="speak('They are happy')">
-        🔊 گوش دادن
-      </button>
+<button class="speak-btn"
+onclick="speak('She is happy')">
+🔊 تلفظ جمله
+</button>
 
-    </div>
+</div>
 
-  </div>
+<div class="example">
 
+<b>It is a book.</b>
 
-  <!-- جدول اصلی -->
-  <div class="card">
+<br>
 
-    <h2>📌 خلاصه درس</h2>
+تلفظ: اِت ایز اَ بوک
 
-    <div class="table-box">
+<br>
 
-      <table>
+معنی: آن یک کتاب است.
 
-        <tr>
-          <th>ضمیر</th>
-          <th>فعل</th>
-          <th>مثال</th>
-        </tr>
+<br>
 
-        <tr>
-          <td>I</td>
-          <td>am</td>
-          <td>I am happy.</td>
-        </tr>
+<button class="speak-btn"
+onclick="speak('It is a book')">
+🔊 تلفظ جمله
+</button>
 
-        <tr>
-          <td>You</td>
-          <td>are</td>
-          <td>You are happy.</td>
-        </tr>
+</div>
 
-        <tr>
-          <td>He</td>
-          <td>is</td>
-          <td>He is happy.</td>
-        </tr>
+</div>
 
-        <tr>
-          <td>She</td>
-          <td>is</td>
-          <td>She is happy.</td>
-        </tr>
 
-        <tr>
-          <td>It</td>
-          <td>is</td>
-          <td>It is small.</td>
-        </tr>
+<!-- ARE -->
 
-        <tr>
-          <td>We</td>
-          <td>are</td>
-          <td>We are happy.</td>
-        </tr>
+<div class="card">
 
-        <tr>
-          <td>They</td>
-          <td>are</td>
-          <td>They are happy.</td>
-        </tr>
+<h2>🟢 ARE</h2>
 
-      </table>
+<p>
+<b>are</b> با <b>You / We / They</b> استفاده می‌شود.
+</p>
 
-    </div>
+<div class="example">
 
-  </div>
+<b>You are my friend.</b>
 
+<br>
 
-  <!-- مخفف ها -->
-  <div class="card">
+تلفظ: یو آر مای فِرِند
 
-    <h2>✂️ شکل مخفف</h2>
+<br>
 
-    <p>
-      در انگلیسی، مخصوصاً در مکالمه، شکل کوتاه این فعل‌ها خیلی استفاده می‌شود.
-    </p>
+معنی: تو دوست من هستی.
 
-    <div class="english">
+<br>
 
-      <div class="word">I am → I'm</div>
-      <div class="translation">من هستم</div>
+<button class="speak-btn"
+onclick="speak('You are my friend')">
+🔊 تلفظ جمله
+</button>
 
-      <button class="speak-btn" onclick="speak(`I'm`)">
-        🔊 تلفظ
-      </button>
+</div>
 
-    </div>
+<div class="example">
 
-    <div class="english">
+<b>We are students.</b>
 
-      <div class="word">You are → You're</div>
-      <div class="translation">تو هستی / شما هستید</div>
+<br>
 
-      <button class="speak-btn" onclick="speak(`You're`)">
-        🔊 تلفظ
-      </button>
+تلفظ: وی آر اِستودِنتس
 
-    </div>
+<br>
 
-    <div class="english">
+معنی: ما دانش‌آموز هستیم.
 
-      <div class="word">He is → He's</div>
-      <div class="translation">او هست</div>
+<br>
 
-      <button class="speak-btn" onclick="speak(`He's`)">
-        🔊 تلفظ
-      </button>
+<button class="speak-btn"
+onclick="speak('We are students')">
+🔊 تلفظ جمله
+</button>
 
-    </div>
+</div>
 
-    <div class="english">
+<div class="example">
 
-      <div class="word">She is → She's</div>
-      <div class="translation">او هست</div>
+<b>They are happy.</b>
 
-      <button class="speak-btn" onclick="speak(`She's`)">
-        🔊 تلفظ
-      </button>
+<br>
 
-    </div>
+تلفظ: ذِی آر هَپی
 
-    <div class="english">
+<br>
 
-      <div class="word">It is → It's</div>
-      <div class="translation">آن است</div>
+معنی: آن‌ها خوشحال هستند.
 
-      <button class="speak-btn" onclick="speak(`It's`)">
-        🔊 تلفظ
-      </button>
+<br>
 
-    </div>
+<button class="speak-btn"
+onclick="speak('They are happy')">
+🔊 تلفظ جمله
+</button>
 
-    <div class="english">
+</div>
 
-      <div class="word">We are → We're</div>
-      <div class="translation">ما هستیم</div>
+</div>
 
-      <button class="speak-btn" onclick="speak(`We're`)">
-        🔊 تلفظ
-      </button>
 
-    </div>
+<!-- مخفف -->
 
-    <div class="english">
+<div class="card">
 
-      <div class="word">They are → They're</div>
-      <div class="translation">آن‌ها هستند</div>
+<h2>✂️ شکل مخفف To Be</h2>
 
-      <button class="speak-btn" onclick="speak(`They're`)">
-        🔊 تلفظ
-      </button>
+<p>
+در مکالمه و نوشتار غیررسمی، معمولاً شکل کوتاه To Be را می‌بینیم.
+</p>
 
-    </div>
+<table>
 
-  </div>
+<tr>
+<th>شکل کامل</th>
+<th>مخفف</th>
+<th>تلفظ</th>
+</tr>
 
+<tr>
+<td>I am</td>
+<td><b>I'm</b></td>
+<td>آیم</td>
+</tr>
 
-  <!-- تمرین ۱ -->
-  <div class="card">
+<tr>
+<td>You are</td>
+<td><b>You're</b></td>
+<td>یور</td>
+</tr>
 
-    <h2>📝 تمرین ۱</h2>
+<tr>
+<td>He is</td>
+<td><b>He's</b></td>
+<td>هیز</td>
+</tr>
 
-    <div class="question">
+<tr>
+<td>She is</td>
+<td><b>She's</b></td>
+<td>شیز</td>
+</tr>
 
-      <div class="question-title">
-        جای خالی را کامل کن:
-        <br>
-        I ___ happy.
-      </div>
+<tr>
+<td>It is</td>
+<td><b>It's</b></td>
+<td>اِتس</td>
+</tr>
 
-      <button class="answer-btn" onclick="answer(this, true)">
-        am
-      </button>
+<tr>
+<td>We are</td>
+<td><b>We're</b></td>
+<td>ویر</td>
+</tr>
 
-      <button class="answer-btn" onclick="answer(this, false)">
-        is
-      </button>
+<tr>
+<td>They are</td>
+<td><b>They're</b></td>
+<td>ذِر</td>
+</tr>
 
-      <button class="answer-btn" onclick="answer(this, false)">
-        are
-      </button>
+</table>
 
-      <div class="answer-result"></div>
 
-    </div>
+<div class="example">
 
-  </div>
+<b>I'm a student.</b>
 
+<br>
 
-  <!-- تمرین ۲ -->
-  <div class="card">
+تلفظ: آیم اَ اِستودِنت
 
-    <h2>📝 تمرین ۲</h2>
+<br>
 
-    <div class="question">
+معنی: من دانش‌آموز هستم.
 
-      <div class="question-title">
-        She ___ a teacher.
-      </div>
+<br>
 
-      <button class="answer-btn" onclick="answer(this, false)">
-        am
-      </button>
+<button class="speak-btn"
+onclick="speak(`I'm a student`)">
+🔊 تلفظ
+</button>
 
-      <button class="answer-btn" onclick="answer(this, true)">
-        is
-      </button>
+</div>
 
-      <button class="answer-btn" onclick="answer(this, false)">
-        are
-      </button>
 
-      <div class="answer-result"></div>
+<div class="example">
 
-    </div>
+<b>You're my friend.</b>
 
-  </div>
+<br>
 
+تلفظ: یور مای فِرِند
 
-  <!-- تمرین ۳ -->
-  <div class="card">
+<br>
 
-    <h2>📝 تمرین ۳</h2>
+معنی: تو دوست من هستی.
 
-    <div class="question">
+<br>
 
-      <div class="question-title">
-        They ___ friends.
-      </div>
+<button class="speak-btn"
+onclick="speak(`You're my friend`)">
+🔊 تلفظ
+</button>
 
-      <button class="answer-btn" onclick="answer(this, false)">
-        am
-      </button>
+</div>
 
-      <button class="answer-btn" onclick="answer(this, false)">
-        is
-      </button>
 
-      <button class="answer-btn" onclick="answer(this, true)">
-        are
-      </button>
+<div class="example">
 
-      <div class="answer-result"></div>
+<b>He's a student.</b>
 
-    </div>
+<br>
 
-  </div>
+تلفظ: هیز اَ اِستودِنت
 
+<br>
 
-  <!-- تمرین ۴ -->
-  <div class="card">
+معنی: او یک دانش‌آموز است.
 
-    <h2>📝 تمرین ۴</h2>
+<br>
 
-    <div class="question">
+<button class="speak-btn"
+onclick="speak(`He's a student`)">
+🔊 تلفظ
+</button>
 
-      <div class="question-title">
-        کدام جمله درست است؟
-      </div>
+</div>
 
-      <button class="answer-btn" onclick="answer(this, false)">
-        I is a student.
-      </button>
 
-      <button class="answer-btn" onclick="answer(this, true)">
-        I am a student.
-      </button>
+<div class="example">
 
-      <button class="answer-btn" onclick="answer(this, false)">
-        I are a student.
-      </button>
+<b>She's happy.</b>
 
-      <div class="answer-result"></div>
+<br>
 
-    </div>
+تلفظ: شیز هَپی
 
-  </div>
+<br>
 
+معنی: او خوشحال است.
 
-  <!-- تمرین ۵ -->
-  <div class="card">
+<br>
 
-    <h2>📝 تمرین ۵</h2>
+<button class="speak-btn"
+onclick="speak(`She's happy`)">
+🔊 تلفظ
+</button>
 
-    <div class="question">
+</div>
 
-      <div class="question-title">
-        You ___ my friend.
-      </div>
 
-      <button class="answer-btn" onclick="answer(this, false)">
-        am
-      </button>
+<div class="example">
 
-      <button class="answer-btn" onclick="answer(this, false)">
-        is
-      </button>
+<b>It's a book.</b>
 
-      <button class="answer-btn" onclick="answer(this, true)">
-        are
-      </button>
+<br>
 
-      <div class="answer-result"></div>
+تلفظ: اِتس اَ بوک
 
-    </div>
+<br>
 
-  </div>
+معنی: آن یک کتاب است.
 
+<br>
 
-  <!-- تمرین ۶ -->
-  <div class="card">
+<button class="speak-btn"
+onclick="speak(`It's a book`)">
+🔊 تلفظ
+</button>
 
-    <h2>📝 تمرین ۶</h2>
+</div>
 
-    <div class="question">
 
-      <div class="question-title">
-        معنی جمله زیر چیست؟
-        <br><br>
-        We are students.
-      </div>
+<div class="example">
 
-      <button class="answer-btn" onclick="answer(this, false)">
-        من دانش‌آموز هستم.
-      </button>
+<b>We're students.</b>
 
-      <button class="answer-btn" onclick="answer(this, true)">
-        ما دانش‌آموز هستیم.
-      </button>
+<br>
 
-      <button class="answer-btn" onclick="answer(this, false)">
-        آن‌ها دانش‌آموز هستند.
-      </button>
+تلفظ: ویر اِستودِنتس
 
-      <div class="answer-result"></div>
+<br>
 
-    </div>
+معنی: ما دانش‌آموز هستیم.
 
-  </div>
+<br>
 
+<button class="speak-btn"
+onclick="speak(`We're students`)">
+🔊 تلفظ
+</button>
 
-  <!-- تمرین ۷ -->
-  <div class="card">
+</div>
 
-    <h2>📝 تمرین ۷</h2>
 
-    <div class="question">
+<div class="example">
 
-      <div class="question-title">
-        شکل مخفف
-        <br>
-        I am
-        <br>
-        کدام است؟
-      </div>
+<b>They're students.</b>
 
-      <button class="answer-btn" onclick="answer(this, true)">
-        I'm
-      </button>
+<br>
 
-      <button class="answer-btn" onclick="answer(this, false)">
-        I's
-      </button>
+تلفظ: ذِر اِستودِنتس
 
-      <button class="answer-btn" onclick="answer(this, false)">
-        Ire
-      </button>
+<br>
 
-      <div class="answer-result"></div>
+معنی: آن‌ها دانش‌آموز هستند.
 
-    </div>
+<br>
 
-  </div>
+<button class="speak-btn"
+onclick="speak(`They're students`)">
+🔊 تلفظ
+</button>
 
+</div>
 
-  <!-- تمرین ۸ -->
-  <div class="card">
+</div>
 
-    <h2>📝 تمرین ۸</h2>
 
-    <div class="question">
+<!-- نکات -->
 
-      <div class="question-title">
-        شکل کامل You're چیست؟
-      </div>
+<div class="card">
 
-      <button class="answer-btn" onclick="answer(this, false)">
-        You am
-      </button>
+<h2>💡 نکات مهم</h2>
 
-      <button class="answer-btn" onclick="answer(this, true)">
-        You are
-      </button>
+<div class="note">
 
-      <button class="answer-btn" onclick="answer(this, false)">
-        You is
-      </button>
+<b>⭐ نکته ۱:</b>
 
-      <div class="answer-result"></div>
+<br>
 
-    </div>
+با <b>I</b> همیشه از <b>am</b> استفاده می‌کنیم.
 
-  </div>
+<br><br>
 
+I am ✅
 
-  <!-- تمرین ۹ -->
-  <div class="card">
+<br>
 
-    <h2>📝 تمرین ۹</h2>
+I is ❌
 
-    <div class="question">
+</div>
 
-      <div class="question-title">
-        He ___ my brother.
-      </div>
+<div class="note">
 
-      <button class="answer-btn" onclick="answer(this, false)">
-        am
-      </button>
+<b>⭐ نکته ۲:</b>
 
-      <button class="answer-btn" onclick="answer(this, true)">
-        is
-      </button>
+<br>
 
-      <button class="answer-btn" onclick="answer(this, false)">
-        are
-      </button>
+با <b>He / She / It</b> از <b>is</b> استفاده می‌کنیم.
 
-      <div class="answer-result"></div>
+</div>
 
-    </div>
+<div class="note">
 
-  </div>
+<b>⭐ نکته ۳:</b>
 
+<br>
 
-  <!-- تمرین ۱۰ -->
-  <div class="card">
+با <b>You / We / They</b> از <b>are</b> استفاده می‌کنیم.
 
-    <h2>🏆 تمرین ۱۰</h2>
+</div>
 
-    <div class="question">
+<div class="note">
 
-      <div class="question-title">
-        کدام گزینه درست است؟
-      </div>
+<b>⭐ نکته ۴:</b>
 
-      <button class="answer-btn" onclick="answer(this, false)">
-        They is happy.
-      </button>
+<br>
 
-      <button class="answer-btn" onclick="answer(this, true)">
-        They are happy.
-      </button>
+در انگلیسی معمولاً To Be را حذف نمی‌کنیم.
 
-      <button class="answer-btn" onclick="answer(this, false)">
-        They am happy.
-      </button>
+<br><br>
 
-      <div class="answer-result"></div>
+I am happy. ✅
 
-    </div>
+<br>
 
-  </div>
+I happy. ❌
 
+</div>
 
-  <!-- پایان -->
-  <div class="card">
+</div>
 
-    <h2>🎉 پایان درس</h2>
 
-    <p>
-      عالی! حالا باید بدانیم:
-    </p>
+<!-- شروع امتحان -->
 
-    <div class="important">
-      I → am
-      <br>
-      You → are
-      <br>
-      He → is
-      <br>
-      She → is
-      <br>
-      It → is
-      <br>
-      We → are
-      <br>
-      They → are
-    </div>
+<div class="card">
 
-    <div class="score-box">
-      <div>آماده‌ای برای درس بعدی؟ 🚀</div>
-      <div class="score">⭐</div>
-    </div>
+<h2>📝 آماده‌ای امتحان بدی؟</h2>
 
-  </div>
+<p>
+حالا ۱۰ سؤال از چیزهایی که در این درس یاد گرفتی داری.
+</p>
 
 
-  <a class="back" href="english.html">
-    ← بازگشت به درس‌ها
-  </a>
+<button
+class="start-test"
+onclick="startTest()">
 
-</main>
+📝 شروع امتحان
+
+</button>
+
+</div>
+
+
+<!-- امتحان -->
+
+<div id="testSection" class="hidden">
+
+<div class="card">
+
+<h2>📝 امتحان درس ۱</h2>
+
+<div id="questions"></div>
+
+<div id="finalResult"></div>
+
+</div>
+
+</div>
+
+</div>
 
 
 <script>
 
-  /* تلفظ انگلیسی */
+/* =====================
+   تلفظ انگلیسی
+===================== */
 
-  function speak(text) {
+function speak(text) {
 
-    if (!("speechSynthesis" in window)) {
-      alert("مرورگر دستگاه شما از پخش تلفظ پشتیبانی نمی‌کند.");
-      return;
+  window.speechSynthesis.cancel();
+
+  const speech =
+    new SpeechSynthesisUtterance(text);
+
+  speech.lang = "en-US";
+
+  speech.rate = 0.8;
+
+  window.speechSynthesis.speak(speech);
+
+}
+
+
+/* =====================
+   سوالات امتحان
+===================== */
+
+const questions = [
+
+{
+  question: "کدام گزینه برای I درست است؟",
+  options: ["am", "is", "are"],
+  answer: 0
+},
+
+{
+  question: "کدام گزینه معنی You است؟",
+  options: ["من", "تو / شما", "آن‌ها"],
+  answer: 1
+},
+
+{
+  question: "کدام جمله درست است؟",
+  options: [
+    "I is happy.",
+    "I am happy.",
+    "I are happy."
+  ],
+  answer: 1
+},
+
+{
+  question: "He ___ a student.",
+  options: ["am", "is", "are"],
+  answer: 1
+},
+
+{
+  question: "They ___ happy.",
+  options: ["am", "is", "are"],
+  answer: 2
+},
+
+{
+  question: "کدام گزینه شکل مخفف We are است؟",
+  options: ["Were", "We're", "We's"],
+  answer: 1
+},
+
+{
+  question: "She ___ my friend.",
+  options: ["am", "is", "are"],
+  answer: 1
+},
+
+{
+  question: "کدام جمله درست است؟",
+  options: [
+    "They is students.",
+    "We am students.",
+    "They are students."
+  ],
+  answer: 2
+},
+
+{
+  question: "کدام گزینه شکل مخفف They are است؟",
+  options: [
+    "They's",
+    "They're",
+    "They'm"
+  ],
+  answer: 1
+},
+
+{
+  question: "جمله «ما خوشحال هستیم» کدام است؟",
+  options: [
+    "We are happy.",
+    "We is happy.",
+    "We am happy."
+  ],
+  answer: 0
+}
+
+];
+
+
+let score = 0;
+let answered = 0;
+
+
+/* =====================
+   شروع امتحان
+===================== */
+
+function startTest() {
+
+  document
+    .getElementById("testSection")
+    .classList.remove("hidden");
+
+  const questionsBox =
+    document.getElementById("questions");
+
+  questionsBox.innerHTML = "";
+
+  score = 0;
+  answered = 0;
+
+  questions.forEach(
+    function(q, index) {
+
+      const questionDiv =
+        document.createElement("div");
+
+      questionDiv.className = "question";
+
+      questionDiv.innerHTML = `
+
+        <div class="question-number">
+          سؤال ${index + 1}
+        </div>
+
+        <div>
+          ${q.question}
+        </div>
+
+      `;
+
+      q.options.forEach(
+        function(option, optionIndex) {
+
+          const button =
+            document.createElement("button");
+
+          button.className = "option";
+
+          button.innerText = option;
+
+          button.onclick =
+            function() {
+
+              checkAnswer(
+                button,
+                index,
+                optionIndex,
+                questionDiv
+              );
+
+            };
+
+          questionDiv.appendChild(button);
+
+        }
+      );
+
+      questionsBox.appendChild(
+        questionDiv
+      );
+
     }
+  );
 
-    window.speechSynthesis.cancel();
+  document
+    .getElementById("finalResult")
+    .innerHTML = "";
 
-    const speech = new SpeechSynthesisUtterance(text);
+  setTimeout(
+    function() {
 
-    speech.lang = "en-US";
-    speech.rate = 0.8;
-    speech.pitch = 1;
+      document
+        .getElementById("testSection")
+        .scrollIntoView({
+          behavior: "smooth"
+        });
 
-    window.speechSynthesis.speak(speech);
+    },
+    100
+  );
+
+}
+
+
+/* =====================
+   بررسی جواب
+===================== */
+
+function checkAnswer(
+  button,
+  questionIndex,
+  selectedIndex,
+  questionDiv
+) {
+
+  const buttons =
+    questionDiv.querySelectorAll(
+      ".option"
+    );
+
+  buttons.forEach(
+    function(btn) {
+
+      btn.disabled = true;
+
+    }
+  );
+
+  const correctIndex =
+    questions[questionIndex].answer;
+
+  if (
+    selectedIndex === correctIndex
+  ) {
+
+    button.classList.add("correct");
+
+    score++;
+
   }
 
+  else {
 
-  /* بررسی تمرین */
+    button.classList.add("wrong");
 
-  function answer(button, correct) {
-
-    const question = button.parentElement;
-    const result = question.querySelector(".answer-result");
-
-    if (correct) {
-
-      result.innerHTML = "🎉 آفرین! پاسخ درست است.";
-
-    } else {
-
-      result.innerHTML = "❌ اشتباهه! دوباره فکر کن.";
-
-    }
+    buttons[
+      correctIndex
+    ].classList.add("correct");
 
   }
+
+  answered++;
+
+  if (answered === questions.length) {
+
+    showResult();
+
+  }
+
+}
+
+
+/* =====================
+   نتیجه
+===================== */
+
+function showResult() {
+
+  const result =
+    document.getElementById(
+      "finalResult"
+    );
+
+  let message = "";
+
+  if (score === 10) {
+
+    message =
+      "🏆 عالی! همه جواب‌ها درست بود!";
+
+  }
+
+  else if (score >= 8) {
+
+    message =
+      "🔥 خیلی خوب بود!";
+
+  }
+
+  else if (score >= 6) {
+
+    message =
+      "👏 خوبه! یک بار دیگه درس رو مرور کن.";
+
+  }
+
+  else {
+
+    message =
+      "💪 اشکالی نداره! درس رو دوباره مرور کن و دوباره امتحان بده.";
+
+  }
+
+  result.innerHTML = `
+
+    <div class="result">
+
+      ${message}
+
+      <br><br>
+
+      نمره شما:
+
+      ${score} از 10
+
+    </div>
+
+  `;
+
+}
 
 </script>
 
