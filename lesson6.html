@@ -1,0 +1,2032 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>درس ۶ | Arshia Learning</title>
+
+<style>
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:linear-gradient(135deg,#eef3ff,#f8f9ff);
+  color:#222;
+}
+
+.container{
+  max-width:600px;
+  margin:auto;
+  padding:20px;
+}
+
+.back{
+  display:inline-block;
+  text-decoration:none;
+  color:#4f7cff;
+  font-weight:bold;
+  margin-bottom:20px;
+}
+
+.header{
+  text-align:center;
+  margin-bottom:25px;
+}
+
+.header h1{
+  margin:0;
+  font-size:28px;
+}
+
+.header p{
+  opacity:.6;
+}
+
+.card{
+  background:rgba(255,255,255,.75);
+  backdrop-filter:blur(20px);
+  border-radius:25px;
+  padding:20px;
+  margin-bottom:18px;
+  box-shadow:0 10px 30px rgba(0,0,0,.07);
+}
+
+.card h2{
+  margin-top:0;
+  font-size:20px;
+}
+
+.item{
+  background:rgba(245,247,252,.95);
+  border-radius:17px;
+  padding:14px;
+  margin:10px 0;
+}
+
+.english{
+  font-size:17px;
+  font-weight:bold;
+}
+
+.pron{
+  margin-top:6px;
+  color:#555;
+}
+
+.meaning{
+  margin-top:5px;
+  color:#666;
+}
+
+.sound{
+  margin-top:10px;
+  border:none;
+  border-radius:12px;
+  padding:8px 13px;
+  background:#4f7cff;
+  color:white;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.sound:active{
+  transform:scale(.96);
+}
+
+.note{
+  background:#fff7d6;
+  border-radius:17px;
+  padding:15px;
+  margin-top:12px;
+  line-height:1.9;
+}
+
+.example{
+  background:#eef4ff;
+  border-radius:17px;
+  padding:15px;
+  margin:10px 0;
+  line-height:1.9;
+}
+
+.conversation{
+  background:#f4f1ff;
+  border-radius:17px;
+  padding:15px;
+}
+
+.line{
+  margin:15px 0;
+  line-height:1.9;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:10px;
+}
+
+th,td{
+  padding:11px 5px;
+  border-bottom:1px solid #ddd;
+  text-align:center;
+}
+
+th{
+  background:#eef3ff;
+}
+
+.start-btn{
+  width:100%;
+  border:none;
+  border-radius:16px;
+  padding:14px;
+  background:#4f7cff;
+  color:white;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.start-btn:active{
+  transform:scale(.98);
+}
+
+.question{
+  background:#f5f6fa;
+  border-radius:18px;
+  padding:15px;
+  margin:14px 0;
+}
+
+.options button{
+  width:100%;
+  border:none;
+  border-radius:13px;
+  padding:12px;
+  margin-top:8px;
+  background:white;
+  font-size:14px;
+  cursor:pointer;
+}
+
+.options button.correct{
+  background:#b9f3c5;
+}
+
+.options button.wrong{
+  background:#ffc1c1;
+}
+
+.options button:disabled{
+  cursor:default;
+}
+
+.result{
+  text-align:center;
+  font-size:19px;
+  font-weight:bold;
+  margin-top:22px;
+  line-height:1.8;
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="container">
+
+
+<!-- BACK -->
+
+<a href="english.html" class="back">
+← برگشت به درس‌ها
+</a>
+
+
+<!-- HEADER -->
+
+<div class="header">
+
+<h1>درس ۶ 🔢🎂</h1>
+
+<p>
+Numbers & How Old Are You?
+</p>
+
+</div>
+
+
+<!-- NUMBERS 0 - 10 -->
+
+<div class="card">
+
+<h2>🔢 اعداد ۰ تا ۱۰</h2>
+
+
+<div class="item">
+<div class="english">Zero</div>
+<div class="pron">زیرو</div>
+<div class="meaning">صفر</div>
+<button class="sound" onclick="speak('Zero')">🔊 پخش صدا</button>
+</div>
+
+
+<div class="item">
+<div class="english">One</div>
+<div class="pron">وان</div>
+<div class="meaning">یک</div>
+<button class="sound" onclick="speak('One')">🔊 پخش صدا</button>
+</div>
+
+
+<div class="item">
+<div class="english">Two</div>
+<div class="pron">تو</div>
+<div class="meaning">دو</div>
+<button class="sound" onclick="speak('Two')">🔊 پخش صدا</button>
+</div>
+
+
+<div class="item">
+<div class="english">Three</div>
+<div class="pron">ثری</div>
+<div class="meaning">سه</div>
+<button class="sound" onclick="speak('Three')">🔊 پخش صدا</button>
+</div>
+
+
+<div class="item">
+<div class="english">Four</div>
+<div class="pron">فور</div>
+<div class="meaning">چهار</div>
+<button class="sound" onclick="speak('Four')">🔊 پخش صدا</button>
+</div>
+
+
+<div class="item">
+<div class="english">Five</div>
+<div class="pron">فایو</div>
+<div class="meaning">پنج</div>
+<button class="sound" onclick="speak('Five')">🔊 پخش صدا</button>
+</div>
+
+
+<div class="item">
+<div class="english">Six</div>
+<div class="pron">سیکس</div>
+<div class="meaning">شش</div>
+<button class="sound" onclick="speak('Six')">🔊 پخش صدا</button>
+</div>
+
+
+<div class="item">
+<div class="english">Seven</div>
+<div class="pron">سِوِن</div>
+<div class="meaning">هفت</div>
+<button class="sound" onclick="speak('Seven')">🔊 پخش صدا</button>
+</div>
+
+
+<div class="item">
+<div class="english">Eight</div>
+<div class="pron">اِیت</div>
+<div class="meaning">هشت</div>
+<button class="sound" onclick="speak('Eight')">🔊 پخش صدا</button>
+</div>
+
+
+<div class="item">
+<div class="english">Nine</div>
+<div class="pron">ناین</div>
+<div class="meaning">نه</div>
+<button class="sound" onclick="speak('Nine')">🔊 پخش صدا</button>
+</div>
+
+
+<div class="item">
+<div class="english">Ten</div>
+<div class="pron">تِن</div>
+<div class="meaning">ده</div>
+<button class="sound" onclick="speak('Ten')">🔊 پخش صدا</button>
+</div>
+
+</div>
+
+
+
+<!-- NUMBERS 11 - 20 -->
+
+<div class="card">
+
+<h2>🔢 اعداد ۱۱ تا ۲۰</h2>
+
+
+<div class="item">
+<div class="english">Eleven</div>
+<div class="pron">اِلِوِن</div>
+<div class="meaning">یازده</div>
+<button class="sound" onclick="speak('Eleven')">🔊</button>
+</div>
+
+
+<div class="item">
+<div class="english">Twelve</div>
+<div class="pron">تْوِلْو</div>
+<div class="meaning">دوازده</div>
+<button class="sound" onclick="speak('Twelve')">🔊</button>
+</div>
+
+
+<div class="item">
+<div class="english">Thirteen</div>
+<div class="pron">ثِرتین</div>
+<div class="meaning">سیزده</div>
+<button class="sound" onclick="speak('Thirteen')">🔊</button>
+</div>
+
+
+<div class="item">
+<div class="english">Fourteen</div>
+<div class="pron">فورتین</div>
+<div class="meaning">چهارده</div>
+<button class="sound" onclick="speak('Fourteen')">🔊</button>
+</div>
+
+
+<div class="item">
+<div class="english">Fifteen</div>
+<div class="pron">فیفتین</div>
+<div class="meaning">پانزده</div>
+<button class="sound" onclick="speak('Fifteen')">🔊</button>
+</div>
+
+
+<div class="item">
+<div class="english">Sixteen</div>
+<div class="pron">سیکستین</div>
+<div class="meaning">شانزده</div>
+<button class="sound" onclick="speak('Sixteen')">🔊</button>
+</div>
+
+
+<div class="item">
+<div class="english">Seventeen</div>
+<div class="pron">سِوِنتین</div>
+<div class="meaning">هفده</div>
+<button class="sound" onclick="speak('Seventeen')">🔊</button>
+</div>
+
+
+<div class="item">
+<div class="english">Eighteen</div>
+<div class="pron">اِیتین</div>
+<div class="meaning">هجده</div>
+<button class="sound" onclick="speak('Eighteen')">🔊</button>
+</div>
+
+
+<div class="item">
+<div class="english">Nineteen</div>
+<div class="pron">ناینتین</div>
+<div class="meaning">نوزده</div>
+<button class="sound" onclick="speak('Nineteen')">🔊</button>
+</div>
+
+
+<div class="item">
+<div class="english">Twenty</div>
+<div class="pron">تْوِنتی</div>
+<div class="meaning">بیست</div>
+<button class="sound" onclick="speak('Twenty')">🔊</button>
+</div>
+
+</div>
+
+
+
+<!-- 30 - 100 -->
+
+<div class="card">
+
+<h2>🔢 دهگان‌ها تا ۱۰۰</h2>
+
+<table>
+
+<tr>
+<th>عدد</th>
+<th>English</th>
+<th>تلفظ</th>
+<th>معنی</th>
+</tr>
+
+<tr>
+<td>30</td>
+<td>Thirty</td>
+<td>ثِرتی</td>
+<td>سی</td>
+</tr>
+
+<tr>
+<td>40</td>
+<td>Forty</td>
+<td>فورتی</td>
+<td>چهل</td>
+</tr>
+
+<tr>
+<td>50</td>
+<td>Fifty</td>
+<td>فیفتی</td>
+<td>پنجاه</td>
+</tr>
+
+<tr>
+<td>60</td>
+<td>Sixty</td>
+<td>سیکستی</td>
+<td>شصت</td>
+</tr>
+
+<tr>
+<td>70</td>
+<td>Seventy</td>
+<td>سِوِنتی</td>
+<td>هفتاد</td>
+</tr>
+
+<tr>
+<td>80</td>
+<td>Eighty</td>
+<td>اِیتی</td>
+<td>هشتاد</td>
+</tr>
+
+<tr>
+<td>90</td>
+<td>Ninety</td>
+<td>ناینتی</td>
+<td>نود</td>
+</tr>
+
+<tr>
+<td>100</td>
+<td>One hundred</td>
+<td>وان هاندرد</td>
+<td>صد</td>
+</tr>
+
+</table>
+
+
+<div class="note">
+
+💡 <b>نکته:</b>
+
+<br><br>
+
+اعداد ۱۳ تا ۱۹ معمولاً با
+<b>-teen</b>
+تمام می‌شوند.
+
+<br>
+
+Thirteen – Fourteen – Fifteen
+
+<br><br>
+
+دهگان‌ها معمولاً با
+<b>-ty</b>
+تمام می‌شوند.
+
+<br>
+
+Thirty – Forty – Fifty
+
+<br><br>
+
+مثلاً:
+
+<br>
+
+<b>Thirteen</b> = 13
+
+<br>
+
+<b>Thirty</b> = 30
+
+</div>
+
+</div>
+
+
+
+<!-- HOW OLD -->
+
+<div class="card">
+
+<h2>🎂 How old are you?</h2>
+
+
+<div class="item">
+
+<div class="english">
+How old are you?
+</div>
+
+<div class="pron">
+هاو اُلد آر یو؟
+</div>
+
+<div class="meaning">
+چند سالته؟ / چند سال دارید؟
+</div>
+
+<button class="sound"
+onclick="speak('How old are you?')">
+🔊 پخش صدا
+</button>
+
+</div>
+
+
+<div class="note">
+
+💡 برای پرسیدن سن از ساختار:
+
+<br><br>
+
+<b>How old + am / is / are</b>
+
+<br><br>
+
+استفاده می‌کنیم.
+
+</div>
+
+</div>
+
+
+
+<!-- ALL FORMS -->
+
+<div class="card">
+
+<h2>🧠 همه حالت‌های How old</h2>
+
+
+<div class="item">
+
+<div class="english">
+How old am I?
+</div>
+
+<div class="pron">
+هاو اُلد اَم آی؟
+</div>
+
+<div class="meaning">
+من چند سالمه؟
+</div>
+
+<button class="sound"
+onclick="speak('How old am I?')">
+🔊
+</button>
+
+</div>
+
+
+<div class="item">
+
+<div class="english">
+How old are you?
+</div>
+
+<div class="pron">
+هاو اُلد آر یو؟
+</div>
+
+<div class="meaning">
+تو چند سالته؟ / شما چند سال دارید؟
+</div>
+
+<button class="sound"
+onclick="speak('How old are you?')">
+🔊
+</button>
+
+</div>
+
+
+<div class="item">
+
+<div class="english">
+How old is he?
+</div>
+
+<div class="pron">
+هاو اُلد ایز هی؟
+</div>
+
+<div class="meaning">
+او چند سالشه؟ (مذکر)
+</div>
+
+<button class="sound"
+onclick="speak('How old is he?')">
+🔊
+</button>
+
+</div>
+
+
+<div class="item">
+
+<div class="english">
+How old is she?
+</div>
+
+<div class="pron">
+هاو اُلد ایز شی؟
+</div>
+
+<div class="meaning">
+او چند سالشه؟ (مونث)
+</div>
+
+<button class="sound"
+onclick="speak('How old is she?')">
+🔊
+</button>
+
+</div>
+
+
+<div class="item">
+
+<div class="english">
+How old is it?
+</div>
+
+<div class="pron">
+هاو اُلد ایز اِت؟
+</div>
+
+<div class="meaning">
+آن چند ساله است؟
+</div>
+
+<button class="sound"
+onclick="speak('How old is it?')">
+🔊
+</button>
+
+</div>
+
+
+<div class="item">
+
+<div class="english">
+How old are we?
+</div>
+
+<div class="pron">
+هاو اُلد آر وی؟
+</div>
+
+<div class="meaning">
+ما چند سالمونه؟
+</div>
+
+<button class="sound"
+onclick="speak('How old are we?')">
+🔊
+</button>
+
+</div>
+
+
+<div class="item">
+
+<div class="english">
+How old are they?
+</div>
+
+<div class="pron">
+هاو اُلد آر ذِی؟
+</div>
+
+<div class="meaning">
+آن‌ها چند سالشونه؟
+</div>
+
+<button class="sound"
+onclick="speak('How old are they?')">
+🔊
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- ANSWERS -->
+
+<div class="card">
+
+<h2>🎂 جواب دادن به سن</h2>
+
+
+<div class="example">
+
+<b>I am 14 years old.</b>
+
+<br>
+
+آی اَم فورتین ییرز اُلد.
+
+<br>
+
+من ۱۴ ساله هستم.
+
+<br>
+
+<button class="sound"
+onclick="speak('I am fourteen years old.')">
+🔊
+</button>
+
+</div>
+
+
+<div class="example">
+
+<b>I'm 14.</b>
+
+<br>
+
+آیم فورتین.
+
+<br>
+
+من ۱۴ سالمه.
+
+<br>
+
+<button class="sound"
+onclick="speak('I am fourteen.')">
+🔊
+</button>
+
+</div>
+
+
+<div class="example">
+
+<b>He is 15 years old.</b>
+
+<br>
+
+هی ایز فیفتین ییرز اُلد.
+
+<br>
+
+او ۱۵ سالشه.
+
+<br>
+
+<button class="sound"
+onclick="speak('He is fifteen years old.')">
+🔊
+</button>
+
+</div>
+
+
+<div class="example">
+
+<b>She is 13 years old.</b>
+
+<br>
+
+شی ایز ثرتین ییرز اُلد.
+
+<br>
+
+او ۱۳ سالشه.
+
+<br>
+
+<button class="sound"
+onclick="speak('She is thirteen years old.')">
+🔊
+</button>
+
+</div>
+
+
+<div class="example">
+
+<b>They are 20 years old.</b>
+
+<br>
+
+ذِی آر توِنتی ییرز اُلد.
+
+<br>
+
+آن‌ها ۲۰ سالشونه.
+
+<br>
+
+<button class="sound"
+onclick="speak('They are twenty years old.')">
+🔊
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- FAMILY -->
+
+<div class="card">
+
+<h2>👨‍👩‍👧‍👦 پرسیدن سن خانواده و دوستان</h2>
+
+
+<div class="item">
+
+<div class="english">
+How old is your mother?
+</div>
+
+<div class="pron">
+هاو اُلد ایز یور مادِر؟
+</div>
+
+<div class="meaning">
+مامانت چند سالشه؟
+</div>
+
+<button class="sound"
+onclick="speak('How old is your mother?')">
+🔊
+</button>
+
+</div>
+
+
+<div class="item">
+
+<div class="english">
+How old is your father?
+</div>
+
+<div class="pron">
+هاو اُلد ایز یور فادِر؟
+</div>
+
+<div class="meaning">
+بابات چند سالشه؟
+</div>
+
+<button class="sound"
+onclick="speak('How old is your father?')">
+🔊
+</button>
+
+</div>
+
+
+<div class="item">
+
+<div class="english">
+How old is your sister?
+</div>
+
+<div class="pron">
+هاو اُلد ایز یور سیستِر؟
+</div>
+
+<div class="meaning">
+خواهرت چند سالشه؟
+</div>
+
+<button class="sound"
+onclick="speak('How old is your sister?')">
+🔊
+</button>
+
+</div>
+
+
+<div class="item">
+
+<div class="english">
+How old is your brother?
+</div>
+
+<div class="pron">
+هاو اُلد ایز یور برادِر؟
+</div>
+
+<div class="meaning">
+برادرت چند سالشه؟
+</div>
+
+<button class="sound"
+onclick="speak('How old is your brother?')">
+🔊
+</button>
+
+</div>
+
+
+<div class="item">
+
+<div class="english">
+How old is your friend?
+</div>
+
+<div class="pron">
+هاو اُلد ایز یور فِرِند؟
+</div>
+
+<div class="meaning">
+دوستت چند سالشه؟
+</div>
+
+<button class="sound"
+onclick="speak('How old is your friend?')">
+🔊
+</button>
+
+</div>
+
+
+<div class="item">
+
+<div class="english">
+How old are your parents?
+</div>
+
+<div class="pron">
+هاو اُلد آر یور پِرِنتس؟
+</div>
+
+<div class="meaning">
+پدر و مادرت چند سالشونه؟
+</div>
+
+<button class="sound"
+onclick="speak('How old are your parents?')">
+🔊
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- FAMILY EXAMPLES -->
+
+<div class="card">
+
+<h2>⭐ مثال‌های خانواده و دوستان</h2>
+
+
+<div class="example">
+
+<b>How old is your mother?</b>
+
+<br>
+
+هاو اُلد ایز یور مادِر؟
+
+<br>
+
+مامانت چند سالشه؟
+
+<br><br>
+
+<b>She is 40 years old.</b>
+
+<br>
+
+شی ایز فورتی ییرز اُلد.
+
+<br>
+
+او ۴۰ سالشه.
+
+</div>
+
+
+<div class="example">
+
+<b>How old is your father?</b>
+
+<br>
+
+هاو اُلد ایز یور فادِر؟
+
+<br>
+
+بابات چند سالشه؟
+
+<br><br>
+
+<b>He is 45 years old.</b>
+
+<br>
+
+هی ایز فورتی فایو ییرز اُلد.
+
+<br>
+
+او ۴۵ سالشه.
+
+</div>
+
+
+<div class="example">
+
+<b>How old is your sister?</b>
+
+<br>
+
+هاو اُلد ایز یور سیستِر؟
+
+<br>
+
+خواهرت چند سالشه؟
+
+<br><br>
+
+<b>She is 12 years old.</b>
+
+<br>
+
+شی ایز توِلو ییرز اُلد.
+
+<br>
+
+او ۱۲ سالشه.
+
+</div>
+
+
+<div class="example">
+
+<b>How old is your brother?</b>
+
+<br>
+
+هاو اُلد ایز یور برادِر؟
+
+<br>
+
+برادرت چند سالشه؟
+
+<br><br>
+
+<b>He is 18 years old.</b>
+
+<br>
+
+هی ایز اِیتین ییرز اُلد.
+
+<br>
+
+او ۱۸ سالشه.
+
+</div>
+
+
+<div class="example">
+
+<b>How old is your friend?</b>
+
+<br>
+
+هاو اُلد ایز یور فِرِند؟
+
+<br>
+
+دوستت چند سالشه؟
+
+<br><br>
+
+<b>He is 14 years old.</b>
+
+<br>
+
+هی ایز فورتین ییرز اُلد.
+
+<br>
+
+او ۱۴ سالشه.
+
+</div>
+
+</div>
+
+
+
+<!-- NOTES -->
+
+<div class="card">
+
+<h2>💡 نکات مهم</h2>
+
+
+<div class="note">
+
+🔹 برای <b>I</b> از <b>am</b> استفاده می‌کنیم:
+
+<br><br>
+
+How old <b>am</b> I?
+
+<br><br>
+
+
+🔹 برای <b>He / She / It</b> از <b>is</b> استفاده می‌کنیم:
+
+<br><br>
+
+How old <b>is</b> he?
+
+<br>
+
+How old <b>is</b> she?
+
+<br><br>
+
+
+🔹 برای <b>You / We / They</b> از <b>are</b> استفاده می‌کنیم:
+
+<br><br>
+
+How old <b>are</b> you?
+
+<br>
+
+How old <b>are</b> they?
+
+<br><br>
+
+
+🔹 برای یک نفر معمولاً <b>is</b> می‌آید.
+
+<br><br>
+
+🔹 برای دو نفر یا بیشتر از <b>are</b> استفاده می‌کنیم.
+
+<br><br>
+
+How old <b>are</b> your parents?
+
+<br><br>
+
+
+🔹 برای گفتن سن می‌توانیم بگوییم:
+
+<br>
+
+<b>I am 14 years old.</b>
+
+<br><br>
+
+یا کوتاه‌تر:
+
+<br>
+
+<b>I'm 14.</b>
+
+<br><br>
+
+
+🔹 برای گفتن سن در انگلیسی از
+<b>am / is / are</b>
+استفاده می‌کنیم، نه
+<b>have / has</b>.
+
+</div>
+
+</div>
+
+
+
+<!-- MORE EXAMPLES -->
+
+<div class="card">
+
+<h2>🌟 مثال‌های بیشتر</h2>
+
+
+<div class="example">
+
+<b>How old are you?</b>
+
+<br>
+
+هاو اُلد آر یو؟
+
+<br>
+
+چند سالته؟
+
+<br><br>
+
+<b>I'm 14 years old.</b>
+
+<br>
+
+آیم فورتین ییرز اُلد.
+
+<br>
+
+من ۱۴ سالمه.
+
+</div>
+
+
+<div class="example">
+
+<b>How old are they?</b>
+
+<br>
+
+هاو اُلد آر ذِی؟
+
+<br>
+
+آن‌ها چند سالشونه؟
+
+<br><br>
+
+<b>They are 16 years old.</b>
+
+<br>
+
+ذِی آر سیکستین ییرز اُلد.
+
+<br>
+
+آن‌ها ۱۶ سالشونه.
+
+</div>
+
+
+<div class="example">
+
+<b>How old is your teacher?</b>
+
+<br>
+
+هاو اُلد ایز یور تیچِر؟
+
+<br>
+
+معلمت چند سالشه؟
+
+<br><br>
+
+<b>She is 30 years old.</b>
+
+<br>
+
+شی ایز ثِرتی ییرز اُلد.
+
+<br>
+
+او ۳۰ سالشه.
+
+</div>
+
+
+<div class="example">
+
+<b>How old is your grandfather?</b>
+
+<br>
+
+هاو اُلد ایز یور گِرَندفادِر؟
+
+<br>
+
+پدربزرگت چند سالشه؟
+
+<br><br>
+
+<b>He is 70 years old.</b>
+
+<br>
+
+هی ایز سِوِنتی ییرز اُلد.
+
+<br>
+
+او ۷۰ سالشه.
+
+</div>
+
+</div>
+
+
+
+<!-- CONVERSATION -->
+
+<div class="card">
+
+<h2>🗣️ مکالمه</h2>
+
+
+<div class="conversation">
+
+
+<div class="line">
+
+<b>A:</b> Hi! How old are you?
+
+<br>
+
+های! هاو اُلد آر یو؟
+
+<br>
+
+سلام! چند سالته؟
+
+<br>
+
+<button class="sound"
+onclick="speak('Hi! How old are you?')">
+🔊
+</button>
+
+</div>
+
+
+<div class="line">
+
+<b>B:</b> I'm 14 years old.
+
+<br>
+
+آیم فورتین ییرز اُلد.
+
+<br>
+
+من ۱۴ سالمه.
+
+<br>
+
+<button class="sound"
+onclick="speak('I am fourteen years old.')">
+🔊
+</button>
+
+</div>
+
+
+<div class="line">
+
+<b>A:</b> How old is your brother?
+
+<br>
+
+هاو اُلد ایز یور برادِر؟
+
+<br>
+
+برادرت چند سالشه؟
+
+<br>
+
+<button class="sound"
+onclick="speak('How old is your brother?')">
+🔊
+</button>
+
+</div>
+
+
+<div class="line">
+
+<b>B:</b> He is 18 years old.
+
+<br>
+
+هی ایز اِیتین ییرز اُلد.
+
+<br>
+
+او ۱۸ سالشه.
+
+<br>
+
+<button class="sound"
+onclick="speak('He is eighteen years old.')">
+🔊
+</button>
+
+</div>
+
+
+<div class="line">
+
+<b>A:</b> How old is your sister?
+
+<br>
+
+هاو اُلد ایز یور سیستِر؟
+
+<br>
+
+خواهرت چند سالشه؟
+
+<br>
+
+<button class="sound"
+onclick="speak('How old is your sister?')">
+🔊
+</button>
+
+</div>
+
+
+<div class="line">
+
+<b>B:</b> She is 12 years old.
+
+<br>
+
+شی ایز توِلو ییرز اُلد.
+
+<br>
+
+او ۱۲ سالشه.
+
+<br>
+
+<button class="sound"
+onclick="speak('She is twelve years old.')">
+🔊
+</button>
+
+</div>
+
+
+<div class="line">
+
+<b>A:</b> How old are your parents?
+
+<br>
+
+هاو اُلد آر یور پِرِنتس؟
+
+<br>
+
+پدر و مادرت چند سالشونه؟
+
+<br>
+
+<button class="sound"
+onclick="speak('How old are your parents?')">
+🔊
+</button>
+
+</div>
+
+
+<div class="line">
+
+<b>B:</b> They are 40 and 45 years old.
+
+<br>
+
+ذِی آر فورتی اَند فورتی فایو ییرز اُلد.
+
+<br>
+
+آن‌ها ۴۰ و ۴۵ سالشونه.
+
+<br>
+
+<button class="sound"
+onclick="speak('They are forty and forty-five years old.')">
+🔊
+</button>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+
+<!-- EXAM START -->
+
+<div class="card">
+
+<h2>🎯 امتحان درس ۶</h2>
+
+<p>
+آماده‌ای؟ 😎
+برای شروع امتحان روی دکمه زیر بزن.
+</p>
+
+<button class="start-btn" onclick="startExam()">
+▶️ شروع امتحان
+</button>
+
+</div>
+
+
+
+<!-- EXAM -->
+
+<div class="card" id="examBox" style="display:none;">
+
+<h2>📝 امتحان درس ۶</h2>
+
+<p>
+هر سؤال ۱ امتیاز دارد.
+</p>
+
+
+<!-- QUESTION 1 -->
+
+<div class="question">
+
+<b>
+1. عدد 15 کدام است؟
+</b>
+
+<div class="options">
+
+<button onclick="answer(this,true)">
+Fifteen
+</button>
+
+<button onclick="answer(this,false)">
+Fifty
+</button>
+
+<button onclick="answer(this,false)">
+Five
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- QUESTION 2 -->
+
+<div class="question">
+
+<b>
+2. عدد 40 کدام است؟
+</b>
+
+<div class="options">
+
+<button onclick="answer(this,false)">
+Fourteen
+</button>
+
+<button onclick="answer(this,true)">
+Forty
+</button>
+
+<button onclick="answer(this,false)">
+Four
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- QUESTION 3 -->
+
+<div class="question">
+
+<b>
+3. معنی How old are you? چیست؟
+</b>
+
+<div class="options">
+
+<button onclick="answer(this,true)">
+چند سالته؟
+</button>
+
+<button onclick="answer(this,false)">
+اسمت چیه؟
+</button>
+
+<button onclick="answer(this,false)">
+کجایی؟
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- QUESTION 4 -->
+
+<div class="question">
+
+<b>
+4. جای خالی را کامل کن:
+<br>
+How old ___ you?
+</b>
+
+<div class="options">
+
+<button onclick="answer(this,false)">
+am
+</button>
+
+<button onclick="answer(this,false)">
+is
+</button>
+
+<button onclick="answer(this,true)">
+are
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- QUESTION 5 -->
+
+<div class="question">
+
+<b>
+5. جای خالی را کامل کن:
+<br>
+How old ___ she?
+</b>
+
+<div class="options">
+
+<button onclick="answer(this,false)">
+am
+</button>
+
+<button onclick="answer(this,true)">
+is
+</button>
+
+<button onclick="answer(this,false)">
+are
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- QUESTION 6 -->
+
+<div class="question">
+
+<b>
+6. کدام جمله درست است؟
+</b>
+
+<div class="options">
+
+<button onclick="answer(this,false)">
+I is 14 years old.
+</button>
+
+<button onclick="answer(this,true)">
+I am 14 years old.
+</button>
+
+<button onclick="answer(this,false)">
+I are 14 years old.
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- QUESTION 7 -->
+
+<div class="question">
+
+<b>
+7. «مامانت چند سالشه؟» کدام است؟
+</b>
+
+<div class="options">
+
+<button onclick="answer(this,true)">
+How old is your mother?
+</button>
+
+<button onclick="answer(this,false)">
+How old are your mother?
+</button>
+
+<button onclick="answer(this,false)">
+How old your mother?
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- QUESTION 8 -->
+
+<div class="question">
+
+<b>
+8. برای پرسیدن سن پدر و مادر با هم کدام درست است؟
+</b>
+
+<div class="options">
+
+<button onclick="answer(this,false)">
+How old is your parents?
+</button>
+
+<button onclick="answer(this,true)">
+How old are your parents?
+</button>
+
+<button onclick="answer(this,false)">
+How old am your parents?
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- QUESTION 9 -->
+
+<div class="question">
+
+<b>
+9. کدام جواب برای How old is he? درست است؟
+</b>
+
+<div class="options">
+
+<button onclick="answer(this,false)">
+He are 15.
+</button>
+
+<button onclick="answer(this,true)">
+He is 15 years old.
+</button>
+
+<button onclick="answer(this,false)">
+He am 15.
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- QUESTION 10 -->
+
+<div class="question">
+
+<b>
+10. کدام جمله درست است؟
+</b>
+
+<div class="options">
+
+<button onclick="answer(this,false)">
+They is 20 years old.
+</button>
+
+<button onclick="answer(this,true)">
+They are 20 years old.
+</button>
+
+<button onclick="answer(this,false)">
+They am 20 years old.
+</button>
+
+</div>
+
+</div>
+
+
+<div class="result" id="result">
+
+امتیاز: 0 از 10
+
+</div>
+
+</div>
+
+
+</div>
+
+
+
+<script>
+
+
+/* SPEECH */
+
+function speak(text){
+
+  window.speechSynthesis.cancel();
+
+  const speech =
+  new SpeechSynthesisUtterance(text);
+
+  speech.lang="en-US";
+
+  speech.rate=0.8;
+
+  window.speechSynthesis.speak(speech);
+
+}
+
+
+
+/* START EXAM */
+
+function startExam(){
+
+  const exam =
+  document.getElementById("examBox");
+
+  exam.style.display="block";
+
+  exam.scrollIntoView({
+    behavior:"smooth"
+  });
+
+}
+
+
+
+/* EXAM */
+
+let score=0;
+
+let answeredQuestions=0;
+
+
+function answer(button,isCorrect){
+
+  const question =
+  button.closest(".question");
+
+  const buttons =
+  question.querySelectorAll("button");
+
+
+  /* جلوگیری از دوباره جواب دادن */
+
+  if(buttons[0].disabled){
+    return;
+  }
+
+
+  buttons.forEach(function(btn){
+
+    btn.disabled=true;
+
+  });
+
+
+  if(isCorrect){
+
+    button.classList.add("correct");
+
+    score++;
+
+  }
+
+  else{
+
+    button.classList.add("wrong");
+
+
+    buttons.forEach(function(btn){
+
+      const code =
+      btn.getAttribute("onclick");
+
+      if(
+        code &&
+        code.includes("true")
+      ){
+
+        btn.classList.add("correct");
+
+      }
+
+    });
+
+  }
+
+
+  answeredQuestions++;
+
+
+  document.getElementById("result").innerHTML =
+  "امتیاز: " + score + " از 10";
+
+
+  /* پایان امتحان */
+
+  if(answeredQuestions===10){
+
+    let message="";
+
+
+    if(score===10){
+
+      message="🎉 عالی! نمره کامل گرفتی!";
+
+    }
+
+    else if(score>=8){
+
+      message="🔥 خیلی خوب بود!";
+
+    }
+
+    else if(score>=5){
+
+      message="👍 خوبه! ولی بهتره درس رو یک بار دیگه مرور کنی.";
+
+    }
+
+    else{
+
+      message="📚 بهتره درس رو دوباره مرور کنی.";
+
+    }
+
+
+    setTimeout(function(){
+
+      document.getElementById("result").innerHTML=
+
+      "🎯 نمره نهایی: " +
+      score +
+      " از 10" +
+      "<br><br>" +
+      message;
+
+    },300);
+
+  }
+
+}
+
+</script>
+
+
+</body>
+
+</html>

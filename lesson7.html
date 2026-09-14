@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>درس ۷ - رنگ‌ها 🎨</title>
+
+<style>
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  direction:rtl;
+  background:linear-gradient(135deg,#eef2ff,#f8f9ff);
+  color:#222;
+}
+
+.container{
+  max-width:700px;
+  margin:auto;
+  padding:20px;
+}
+
+.back{
+  display:inline-block;
+  text-decoration:none;
+  color:#4f7cff;
+  font-weight:bold;
+  margin-bottom:15px;
+}
+
+.header{
+  text-align:center;
+  padding:25px 15px;
+  border-radius:28px;
+  background:rgba(255,255,255,0.65);
+  backdrop-filter:blur(20px);
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+  margin-bottom:20px;
+}
+
+.header h1{
+  margin:0 0 8px;
+}
+
+.card{
+  background:rgba(255,255,255,0.7);
+  backdrop-filter:blur(20px);
+  border-radius:24px;
+  padding:20px;
+  margin-bottom:18px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.07);
+}
+
+.card h2{
+  margin-top:0;
+}
+
+.word{
+  background:rgba(255,255,255,0.85);
+  border-radius:18px;
+  padding:15px;
+  margin:12px 0;
+}
+
+.english{
+  font-size:20px;
+  font-weight:bold;
+  direction:ltr;
+  text-align:left;
+}
+
+.pronunciation{
+  color:#555;
+  margin-top:6px;
+}
+
+.meaning{
+  margin-top:5px;
+  font-weight:bold;
+}
+
+.speak-btn{
+  border:none;
+  border-radius:12px;
+  padding:8px 13px;
+  background:#eef2ff;
+  font-size:14px;
+  cursor:pointer;
+  margin-top:8px;
+}
+
+.example{
+  background:#f7f8ff;
+  border-radius:16px;
+  padding:14px;
+  margin:10px 0;
+}
+
+.example .en{
+  direction:ltr;
+  text-align:left;
+  font-weight:bold;
+  font-size:17px;
+}
+
+.example .fa{
+  margin-top:5px;
+}
+
+.question{
+  margin-bottom:22px;
+  padding:15px;
+  background:rgba(255,255,255,0.8);
+  border-radius:18px;
+}
+
+.question p{
+  font-weight:bold;
+}
+
+.options button{
+  width:100%;
+  border:none;
+  border-radius:14px;
+  padding:12px;
+  margin:6px 0;
+  background:#f0f2f8;
+  font-size:15px;
+  cursor:pointer;
+}
+
+.options button:disabled{
+  cursor:default;
+}
+
+.correct{
+  background:#b9f6c3 !important;
+}
+
+.wrong{
+  background:#ffb8b8 !important;
+}
+
+.start-btn{
+  width:100%;
+  border:none;
+  border-radius:16px;
+  padding:14px;
+  background:#4f7cff;
+  color:white;
+  font-size:15px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.start-btn:active{
+  transform:scale(0.97);
+}
+
+#result{
+  text-align:center;
+  font-size:18px;
+  font-weight:bold;
+  margin-top:15px;
+}
+
+.note{
+  background:#fff8df;
+  border-radius:16px;
+  padding:15px;
+  line-height:1.9;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<a href="english.html" class="back">← برگشت به درس‌ها</a>
+
+
+<!-- HEADER -->
+
+<div class="header">
+
+<h1>درس ۷ 🎨</h1>
+
+<p><b>Colors / رنگ‌ها</b></p>
+
+</div>
+
+
+<!-- COLORS -->
+
+<div class="card">
+
+<h2>🎨 رنگ‌های مهم</h2>
+
+<p>این ۹ رنگ را یاد بگیر:</p>
+
+
+<div class="word">
+
+<div class="english">Red</div>
+
+<div class="pronunciation">رِد</div>
+
+<div class="meaning">قرمز ❤️</div>
+
+<button class="speak-btn" onclick="speak('Red')">🔊 تلفظ</button>
+
+</div>
+
+
+<div class="word">
+
+<div class="english">Yellow</div>
+
+<div class="pronunciation">یِلُو</div>
+
+<div class="meaning">زرد 💛</div>
+
+<button class="speak-btn" onclick="speak('Yellow')">🔊 تلفظ</button>
+
+</div>
+
+
+<div class="word">
+
+<div class="english">Green</div>
+
+<div class="pronunciation">گرین</div>
+
+<div class="meaning">سبز 💚</div>
+
+<button class="speak-btn" onclick="speak('Green')">🔊 تلفظ</button>
+
+</div>
+
+
+<div class="word">
+
+<div class="english">Blue</div>
+
+<div class="pronunciation">بلو</div>
+
+<div class="meaning">آبی 💙</div>
+
+<button class="speak-btn" onclick="speak('Blue')">🔊 تلفظ</button>
+
+</div>
+
+
+<div class="word">
+
+<div class="english">Orange</div>
+
+<div class="pronunciation">آرِنج</div>
+
+<div class="meaning">نارنجی 🧡</div>
+
+<button class="speak-btn" onclick="speak('Orange')">🔊 تلفظ</button>
+
+</div>
+
+
+<div class="word">
+
+<div class="english">Purple</div>
+
+<div class="pronunciation">پِرپِل</div>
+
+<div class="meaning">بنفش 💜</div>
+
+<button class="speak-btn" onclick="speak('Purple')">🔊 تلفظ</button>
+
+</div>
+
+
+<div class="word">
+
+<div class="english">Brown</div>
+
+<div class="pronunciation">براون</div>
+
+<div class="meaning">قهوه‌ای 🤎</div>
+
+<button class="speak-btn" onclick="speak('Brown')">🔊 تلفظ</button>
+
+</div>
+
+
+<div class="word">
+
+<div class="english">Black</div>
+
+<div class="pronunciation">بِلَک</div>
+
+<div class="meaning">مشکی 🖤</div>
+
+<button class="speak-btn" onclick="speak('Black')">🔊 تلفظ</button>
+
+</div>
+
+
+<div class="word">
+
+<div class="english">White</div>
+
+<div class="pronunciation">وایت</div>
+
+<div class="meaning">سفید 🤍</div>
+
+<button class="speak-btn" onclick="speak('White')">🔊 تلفظ</button>
+
+</div>
+
+</div>
+
+
+<!-- FAVORITE COLOR -->
+
+<div class="card">
+
+<h2>⭐ What is your favorite color?</h2>
+
+<p>
+حالا می‌خواهیم یاد بگیریم چطور بپرسیم:
+<b>«رنگ مورد علاقه‌ات چیست؟»</b>
+</p>
+
+
+<h3>🔹 جمله را کلمه به کلمه یاد بگیریم</h3>
+
+
+<div class="word">
+
+<div class="english">What</div>
+
+<div class="pronunciation">وات</div>
+
+<div class="meaning">چه / چی</div>
+
+</div>
+
+
+<div class="word">
+
+<div class="english">is</div>
+
+<div class="pronunciation">ایز</div>
+
+<div class="meaning">است</div>
+
+</div>
+
+
+<div class="word">
+
+<div class="english">your</div>
+
+<div class="pronunciation">یور</div>
+
+<div class="meaning">مال تو / ـت</div>
+
+</div>
+
+
+<div class="word">
+
+<div class="english">favorite</div>
+
+<div class="pronunciation">فِیوِرِت</div>
+
+<div class="meaning">مورد علاقه</div>
+
+</div>
+
+
+<div class="word">
+
+<div class="english">color</div>
+
+<div class="pronunciation">کالِر</div>
+
+<div class="meaning">رنگ</div>
+
+</div>
+
+
+<div class="example">
+
+<div class="en">
+What is your favorite color?
+</div>
+
+<div class="fa">
+وات ایز یور فِیوِرِت کالِر؟
+<br>
+رنگ مورد علاقه‌ات چیست؟
+</div>
+
+<button class="speak-btn"
+onclick="speak('What is your favorite color?')">
+🔊 تلفظ
+</button>
+
+</div>
+
+</div>
+
+
+<!-- ANSWERING -->
+
+<div class="card">
+
+<h2>💬 چطور جواب بدهیم؟</h2>
+
+
+<div class="example">
+
+<div class="en">
+My favorite color is blue.
+</div>
+
+<div class="fa">
+مای فِیوِرِت کالِر ایز بلو.
+<br>
+رنگ مورد علاقه من آبی است.
+</div>
+
+<button class="speak-btn"
+onclick="speak('My favorite color is blue.')">
+🔊 تلفظ
+</button>
+
+</div>
+
+
+<div class="example">
+
+<div class="en">
+My favorite color is red.
+</div>
+
+<div class="fa">
+مای فِیوِرِت کالِر ایز رِد.
+<br>
+رنگ مورد علاقه من قرمز است.
+</div>
+
+<button class="speak-btn"
+onclick="speak('My favorite color is red.')">
+🔊 تلفظ
+</button>
+
+</div>
+
+
+<div class="example">
+
+<div class="en">
+My favorite color is green.
+</div>
+
+<div class="fa">
+مای فِیوِرِت کالِر ایز گرین.
+<br>
+رنگ مورد علاقه من سبز است.
+</div>
+
+<button class="speak-btn"
+onclick="speak('My favorite color is green.')">
+🔊 تلفظ
+</button>
+
+</div>
+
+
+<div class="example">
+
+<div class="en">
+My favorite color is purple.
+</div>
+
+<div class="fa">
+مای فِیوِرِت کالِر ایز پِرپِل.
+<br>
+رنگ مورد علاقه من بنفش است.
+</div>
+
+<button class="speak-btn"
+onclick="speak('My favorite color is purple.')">
+🔊 تلفظ
+</button>
+
+</div>
+
+</div>
+
+
+<!-- MORE EXAMPLES -->
+
+<div class="card">
+
+<h2>🌟 چند مثال خوب</h2>
+
+
+<div class="example">
+
+<div class="en">
+What is your favorite color?</div>
+
+<div class="fa">
+وات ایز یور فِیوِرِت کالِر؟
+<br>
+رنگ مورد علاقه‌ات چیست؟
+</div>
+
+</div>
+
+
+<div class="example">
+
+<div class="en">
+My favorite color is black.</div>
+
+<div class="fa">
+مای فِیوِرِت کالِر ایز بِلَک.
+<br>
+رنگ مورد علاقه من مشکی است.
+</div>
+
+</div>
+
+
+<div class="example">
+
+<div class="en">
+My favorite color is white.</div>
+
+<div class="fa">
+مای فِیوِرِت کالِر ایز وایت.
+<br>
+رنگ مورد علاقه من سفید است.
+</div>
+
+</div>
+
+
+<div class="example">
+
+<div class="en">
+My favorite color is orange.</div>
+
+<div class="fa">
+مای فِیوِرِت کالِر ایز آرِنج.
+<br>
+رنگ مورد علاقه من نارنجی است.
+</div>
+
+</div>
+
+
+<div class="example">
+
+<div class="en">
+My favorite color is brown.</div>
+
+<div class="fa">
+مای فِیوِرِت کالِر ایز براون.
+<br>
+رنگ مورد علاقه من قهوه‌ای است.
+</div>
+
+</div>
+
+</div>
+
+
+<!-- GRAMMAR -->
+
+<div class="card">
+
+<h2>📚 نکته گرامری</h2>
+
+<div class="note">
+
+<b>What is your favorite color?</b>
+
+<br><br>
+
+ساختار جمله:
+
+<br><br>
+
+<b>What + is + your + favorite + color?</b>
+
+<br><br>
+
+یعنی:
+
+<br>
+
+<b>چه + است + مال تو + مورد علاقه + رنگ؟</b>
+
+<br><br>
+
+ترجمه طبیعی:
+
+<br>
+
+<b>رنگ مورد علاقه‌ات چیست؟</b>
+
+<br><br>
+
+برای جواب معمولاً می‌گوییم:
+
+<br><br>
+
+<b>My favorite color is + رنگ.</b>
+
+<br>
+
+مثلاً:
+
+<br>
+
+<b>My favorite color is blue.</b>
+
+<br>
+
+رنگ مورد علاقه من آبی است.
+
+</div>
+
+</div>
+
+
+<!-- CONVERSATION -->
+
+<div class="card">
+
+<h2>🗣️ مکالمه</h2>
+
+
+<div class="example">
+
+<div class="en">
+A: What is your favorite color?
+</div>
+
+<div class="fa">
+اِی: وات ایز یور فِیوِرِت کالِر؟
+<br>
+رنگ مورد علاقه‌ات چیست؟
+</div>
+
+<button class="speak-btn"
+onclick="speak('What is your favorite color?')">
+🔊 تلفظ
+</button>
+
+</div>
+
+
+<div class="example">
+
+<div class="en">
+B: My favorite color is blue.
+</div>
+
+<div class="fa">
+بی: مای فِیوِرِت کالِر ایز بلو.
+<br>
+رنگ مورد علاقه من آبی است.
+</div>
+
+<button class="speak-btn"
+onclick="speak('My favorite color is blue.')">
+🔊 تلفظ
+</button>
+
+</div>
+
+
+<div class="example">
+
+<div class="en">
+A: Why do you like blue?
+</div>
+
+<div class="fa">
+اِی: وای دو یو لایک بلو؟
+<br>
+چرا آبی را دوست داری؟
+</div>
+
+<button class="speak-btn"
+onclick="speak('Why do you like blue?')">
+🔊 تلفظ
+</button>
+
+</div>
+
+
+<div class="example">
+
+<div class="en">
+B: Because it is beautiful.
+</div>
+
+<div class="fa">
+بی: بیکاز اِت ایز بیوتیفُل.
+<br>
+چون زیباست.
+</div>
+
+<button class="speak-btn"
+onclick="speak('Because it is beautiful.')">
+🔊 تلفظ
+</button>
+
+</div>
+
+</div>
+
+
+<!-- NOTES -->
+
+<div class="card">
+
+<h2>💡 نکات درس ۷</h2>
+
+<div class="note">
+
+🔹 <b>favorite</b> یعنی «مورد علاقه».
+
+<br><br>
+
+🔹 در جمله
+<b>What is your favorite color?</b>
+از <b>is</b> استفاده می‌کنیم چون <b>color</b> مفرد است.
+
+<br><br>
+
+🔹 برای جواب می‌توانیم بگوییم:
+
+<br>
+
+<b>My favorite color is red.</b>
+
+<br><br>
+
+🔹 <b>your</b> یعنی «مال تو / ـت».
+
+<br>
+
+مثلاً:
+
+<br>
+
+<b>your favorite color</b>
+<br>
+رنگ مورد علاقه‌ات
+
+<br><br>
+
+🔹 <b>my</b> یعنی «مال من / ـم».
+
+<br>
+
+<b>my favorite color</b>
+<br>
+رنگ مورد علاقه من
+
+<br><br>
+
+🔹 می‌توانیم سؤال را کوتاه‌تر هم در مکالمه بشنویم:
+
+<br>
+
+<b>What's your favorite color?</b>
+
+<br>
+
+واتس یور فِیوِرِت کالِر؟
+
+<br>
+
+رنگ مورد علاقه‌ات چیه؟
+
+<br><br>
+
+<b>What's = What is</b>
+
+</div>
+
+</div>
+
+
+<!-- START EXAM -->
+
+<div class="card">
+
+<h2>🎯 امتحان درس ۷</h2>
+
+<p>
+آماده‌ای؟ 😎 برای شروع امتحان روی دکمه زیر بزن.
+</p>
+
+<button class="start-btn" onclick="startExam()">
+▶️ شروع امتحان
+</button>
+
+</div>
+
+
+<!-- EXAM -->
+
+<div class="card" id="examBox" style="display:none;">
+
+<h2>📝 امتحان</h2>
+
+
+<div class="question">
+
+<p>۱. Red یعنی چه؟</p>
+
+<div class="options">
+
+<button onclick="answer(this,true)">قرمز</button>
+
+<button onclick="answer(this,false)">آبی</button>
+
+<button onclick="answer(this,false)">سبز</button>
+
+</div>
+
+</div>
+
+
+<div class="question">
+
+<p>۲. کدام کلمه یعنی «زرد»؟</p>
+
+<div class="options">
+
+<button onclick="answer(this,false)">Green</button>
+
+<button onclick="answer(this,true)">Yellow</button>
+
+<button onclick="answer(this,false)">Blue</button>
+
+</div>
+
+</div>
+
+
+<div class="question">
+
+<p>۳. Blue یعنی چه؟</p>
+
+<div class="options">
+
+<button onclick="answer(this,false)">بنفش</button>
+
+<button onclick="answer(this,true)">آبی</button>
+
+<button onclick="answer(this,false)">نارنجی</button>
+
+</div>
+
+</div>
+
+
+<div class="question">
+
+<p>۴. Purple یعنی چه؟</p>
+
+<div class="options">
+
+<button onclick="answer(this,true)">بنفش</button>
+
+<button onclick="answer(this,false)">مشکی</button>
+
+<button onclick="answer(this,false)">قهوه‌ای</button>
+
+</div>
+
+</div>
+
+
+<div class="question">
+
+<p>۵. «رنگ مورد علاقه‌ات چیست؟» کدام است؟</p>
+
+<div class="options">
+
+<button onclick="answer(this,false)">
+What is your name?
+</button>
+
+<button onclick="answer(this,true)">
+What is your favorite color?
+</button>
+
+<button onclick="answer(this,false)">
+How old are you?
+</button>
+
+</div>
+
+</div>
+
+
+<div class="question">
+
+<p>۶. جمله درست را انتخاب کن:</p>
+
+<div class="options">
+
+<button onclick="answer(this,true)">
+My favorite color is green.
+</button>
+
+<button onclick="answer(this,false)">
+My favorite color are green.
+</button>
+
+<button onclick="answer(this,false)">
+My favorite color am green.
+</button>
+
+</div>
+
+</div>
+
+
+<div class="question">
+
+<p>۷. Black یعنی چه؟</p>
+
+<div class="options">
+
+<button onclick="answer(this,false)">سفید</button>
+
+<button onclick="answer(this,true)">مشکی</button>
+
+<button onclick="answer(this,false)">زرد</button>
+
+</div>
+
+</div>
+
+
+<div class="question">
+
+<p>۸. Brown یعنی چه؟</p>
+
+<div class="options">
+
+<button onclick="answer(this,false)">نارنجی</button>
+
+<button onclick="answer(this,false)">قرمز</button>
+
+<button onclick="answer(this,true)">قهوه‌ای</button>
+
+</div>
+
+</div>
+
+
+<div class="question">
+
+<p>۹. What's مخفف چیست؟</p>
+
+<div class="options">
+
+<button onclick="answer(this,false)">What are</button>
+
+<button onclick="answer(this,true)">What is</button>
+
+<button onclick="answer(this,false)">Who is</button>
+
+</div>
+
+</div>
+
+
+<div class="question">
+
+<p>۱۰. کدام جمله درست است؟</p>
+
+<div class="options">
+
+<button onclick="answer(this,false)">
+My favorite color are blue.
+</button>
+
+<button onclick="answer(this,true)">
+My favorite color is blue.
+</button>
+
+<button onclick="answer(this,false)">
+My favorite color am blue.
+</button>
+
+</div>
+
+</div>
+
+
+<div id="result">
+امتیاز: ۰ از ۱۰
+</div>
+
+</div>
+
+</div>
+
+
+<script>
+
+function speak(text){
+
+  window.speechSynthesis.cancel();
+
+  const speech =
+  new SpeechSynthesisUtterance(text);
+
+  speech.lang="en-US";
+
+  speech.rate=0.8;
+
+  window.speechSynthesis.speak(speech);
+
+}
+
+
+function startExam(){
+
+  const exam =
+  document.getElementById("examBox");
+
+  exam.style.display="block";
+
+  exam.scrollIntoView({
+    behavior:"smooth"
+  });
+
+}
+
+
+let score=0;
+
+let answeredQuestions=0;
+
+
+function answer(button,isCorrect){
+
+  const question =
+  button.closest(".question");
+
+  const buttons =
+  question.querySelectorAll("button");
+
+  if(buttons[0].disabled){
+    return;
+  }
+
+
+  buttons.forEach(function(btn){
+
+    btn.disabled=true;
+
+  });
+
+
+  if(isCorrect){
+
+    button.classList.add("correct");
+
+    score++;
+
+  }
+
+  else{
+
+    button.classList.add("wrong");
+
+    buttons.forEach(function(btn){
+
+      const code =
+      btn.getAttribute("onclick");
+
+      if(code && code.includes("true")){
+
+        btn.classList.add("correct");
+
+      }
+
+    });
+
+  }
+
+
+  answeredQuestions++;
+
+
+  document.getElementById("result").innerHTML =
+  "امتیاز: " + score + " از 10";
+
+
+  if(answeredQuestions===10){
+
+    let message="";
+
+
+    if(score===10){
+
+      message="🎉 عالی! نمره کامل گرفتی!";
+
+    }
+
+    else if(score>=8){
+
+      message="🔥 خیلی خوب بود!";
+
+    }
+
+    else if(score>=5){
+
+      message="👍 خوبه! ولی بهتره درس رو یک بار دیگه مرور کنی.";
+
+    }
+
+    else{
+
+      message="📚 بهتره درس رو دوباره مرور کنی.";
+
+    }
+
+
+    setTimeout(function(){
+
+      document.getElementById("result").innerHTML=
+
+      "🎯 نمره نهایی: " +
+      score +
+      " از 10" +
+
+      "<br><br>" +
+
+      message;
+
+    },300);
+
+  }
+
+}
+
+</script>
+
+</body>
+</html>
