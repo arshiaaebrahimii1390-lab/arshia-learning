@@ -1,0 +1,1316 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>درس ۸ - روزهای هفته 📅</title>
+
+<style>
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  direction:rtl;
+  background:linear-gradient(135deg,#eef2ff,#f8f9ff);
+  color:#222;
+}
+
+.container{
+  max-width:700px;
+  margin:auto;
+  padding:20px;
+}
+
+.back{
+  display:inline-block;
+  text-decoration:none;
+  color:#4f7cff;
+  font-weight:bold;
+  margin-bottom:15px;
+}
+
+.header{
+  text-align:center;
+  padding:25px 15px;
+  border-radius:28px;
+  background:rgba(255,255,255,0.65);
+  backdrop-filter:blur(20px);
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+  margin-bottom:20px;
+}
+
+.header h1{
+  margin:0 0 8px;
+}
+
+.card{
+  background:rgba(255,255,255,0.7);
+  backdrop-filter:blur(20px);
+  border-radius:24px;
+  padding:20px;
+  margin-bottom:18px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.07);
+}
+
+.card h2{
+  margin-top:0;
+}
+
+.word{
+  background:rgba(255,255,255,0.85);
+  border-radius:18px;
+  padding:15px;
+  margin:12px 0;
+}
+
+.english{
+  font-size:20px;
+  font-weight:bold;
+  direction:ltr;
+  text-align:left;
+}
+
+.pronunciation{
+  color:#555;
+  margin-top:6px;
+}
+
+.meaning{
+  margin-top:5px;
+  font-weight:bold;
+}
+
+.speak-btn{
+  border:none;
+  border-radius:12px;
+  padding:8px 13px;
+  background:#eef2ff;
+  font-size:14px;
+  cursor:pointer;
+  margin-top:8px;
+}
+
+.example{
+  background:#f7f8ff;
+  border-radius:16px;
+  padding:14px;
+  margin:10px 0;
+}
+
+.example .en{
+  direction:ltr;
+  text-align:left;
+  font-weight:bold;
+  font-size:17px;
+}
+
+.example .fa{
+  margin-top:6px;
+  line-height:1.8;
+}
+
+.note{
+  background:#fff8df;
+  border-radius:16px;
+  padding:15px;
+  line-height:2;
+}
+
+.question{
+  margin-bottom:22px;
+  padding:15px;
+  background:rgba(255,255,255,0.8);
+  border-radius:18px;
+}
+
+.question p{
+  font-weight:bold;
+  line-height:1.8;
+}
+
+.options button{
+  width:100%;
+  border:none;
+  border-radius:14px;
+  padding:12px;
+  margin:6px 0;
+  background:#f0f2f8;
+  font-size:15px;
+  cursor:pointer;
+}
+
+.options button:disabled{
+  cursor:default;
+}
+
+.correct{
+  background:#b9f6c3 !important;
+}
+
+.wrong{
+  background:#ffb8b8 !important;
+}
+
+.start-btn{
+  width:100%;
+  border:none;
+  border-radius:16px;
+  padding:14px;
+  background:#4f7cff;
+  color:white;
+  font-size:15px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.start-btn:active{
+  transform:scale(0.97);
+}
+
+#result{
+  text-align:center;
+  font-size:18px;
+  font-weight:bold;
+  margin-top:15px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<a href="english.html" class="back">← برگشت به درس‌ها</a>
+
+
+<!-- HEADER -->
+
+<div class="header">
+
+<h1>درس ۸ 📅</h1>
+
+<p><b>Days of the Week / روزهای هفته</b></p>
+
+</div>
+
+
+<!-- DAYS -->
+
+<div class="card">
+
+<h2>📅 روزهای هفته</h2>
+
+<p>
+در انگلیسی روزهای هفته با حرف بزرگ شروع می‌شوند.
+</p>
+
+
+<div class="word">
+
+<div class="english">Monday</div>
+
+<div class="pronunciation">ماندِی</div>
+
+<div class="meaning">دوشنبه</div>
+
+<button class="speak-btn" onclick="speak('Monday')">
+🔊 تلفظ
+</button>
+
+</div>
+
+
+<div class="word">
+
+<div class="english">Tuesday</div>
+
+<div class="pronunciation">تیوزدِی</div>
+
+<div class="meaning">سه‌شنبه</div>
+
+<button class="speak-btn" onclick="speak('Tuesday')">
+🔊 تلفظ
+</button>
+
+</div>
+
+
+<div class="word">
+
+<div class="english">Wednesday</div>
+
+<div class="pronunciation">وِنزْدِی</div>
+
+<div class="meaning">چهارشنبه</div>
+
+<button class="speak-btn" onclick="speak('Wednesday')">
+🔊 تلفظ
+</button>
+
+</div>
+
+
+<div class="word">
+
+<div class="english">Thursday</div>
+
+<div class="pronunciation">ثِرزْدِی</div>
+
+<div class="meaning">پنجشنبه</div>
+
+<button class="speak-btn" onclick="speak('Thursday')">
+🔊 تلفظ
+</button>
+
+</div>
+
+
+<div class="word">
+
+<div class="english">Friday</div>
+
+<div class="pronunciation">فرایدِی</div>
+
+<div class="meaning">جمعه</div>
+
+<button class="speak-btn" onclick="speak('Friday')">
+🔊 تلفظ
+</button>
+
+</div>
+
+
+<div class="word">
+
+<div class="english">Saturday</div>
+
+<div class="pronunciation">سَتِردِی</div>
+
+<div class="meaning">شنبه</div>
+
+<button class="speak-btn" onclick="speak('Saturday')">
+🔊 تلفظ
+</button>
+
+</div>
+
+
+<div class="word">
+
+<div class="english">Sunday</div>
+
+<div class="pronunciation">ساندِی</div>
+
+<div class="meaning">یکشنبه</div>
+
+<button class="speak-btn" onclick="speak('Sunday')">
+🔊 تلفظ
+</button>
+
+</div>
+
+</div>
+
+
+<!-- EXAMPLES -->
+
+<div class="card">
+
+<h2>🌟 مثال با روزهای هفته</h2>
+
+
+<div class="example">
+
+<div class="en">
+Today is Monday.
+</div>
+
+<div class="fa">
+تودِی ایز ماندِی.
+<br>
+امروز دوشنبه است.
+</div>
+
+<button class="speak-btn"
+onclick="speak('Today is Monday.')">
+🔊 تلفظ
+</button>
+
+</div>
+
+
+<div class="example">
+
+<div class="en">
+Today is Friday.
+</div>
+
+<div class="fa">
+تودِی ایز فرایدِی.
+<br>
+امروز جمعه است.
+</div>
+
+<button class="speak-btn"
+onclick="speak('Today is Friday.')">
+🔊 تلفظ
+</button>
+
+</div>
+
+
+<div class="example">
+
+<div class="en">
+I play football on Saturday.
+</div>
+
+<div class="fa">
+آی پلی فوتبال آن سَتِردِی.
+<br>
+من شنبه فوتبال بازی می‌کنم.
+</div>
+
+<button class="speak-btn"
+onclick="speak('I play football on Saturday.')">
+🔊 تلفظ
+</button>
+
+</div>
+
+
+<div class="example">
+
+<div class="en">
+I study English on Sunday.
+</div>
+
+<div class="fa">
+آی اِستادی اِنگلیش آن ساندِی.
+<br>
+من یکشنبه انگلیسی می‌خوانم.
+</div>
+
+<button class="speak-btn"
+onclick="speak('I study English on Sunday.')">
+🔊 تلفظ
+</button>
+
+</div>
+
+</div>
+
+
+<!-- GRAMMAR -->
+
+<div class="card">
+
+<h2>📚 گرامر: What day is it?</h2>
+
+<p>
+حالا یاد می‌گیریم چطور بپرسیم:
+</p>
+
+<div class="example">
+
+<div class="en">
+What day is it?
+</div>
+
+<div class="fa">
+وات دِی ایز اِت؟
+<br>
+امروز چه روزی است؟
+</div>
+
+<button class="speak-btn"
+onclick="speak('What day is it?')">
+🔊 تلفظ
+</button>
+
+</div>
+
+
+<h3>🔹 کلمه به کلمه</h3>
+
+
+<div class="word">
+
+<div class="english">What</div>
+
+<div class="pronunciation">وات</div>
+
+<div class="meaning">چه / چی</div>
+
+</div>
+
+
+<div class="word">
+
+<div class="english">day</div>
+
+<div class="pronunciation">دِی</div>
+
+<div class="meaning">روز</div>
+
+</div>
+
+
+<div class="word">
+
+<div class="english">is</div>
+
+<div class="pronunciation">ایز</div>
+
+<div class="meaning">است</div>
+
+</div>
+
+
+<div class="word">
+
+<div class="english">it</div>
+
+<div class="pronunciation">اِت</div>
+
+<div class="meaning">آن / این</div>
+
+</div>
+
+
+<div class="note">
+
+<b>What day is it?</b>
+
+<br>
+
+وات دِی ایز اِت؟
+
+<br>
+
+یعنی:
+
+<br>
+
+<b>امروز چه روزی است؟ / امروز چه روزیه؟</b>
+
+<br><br>
+
+برای جواب می‌گوییم:
+
+<br><br>
+
+<b>It is Monday.</b>
+
+<br>
+
+اِت ایز ماندِی.
+
+<br>
+
+امروز دوشنبه است.
+
+<br><br>
+
+شکل کوتاه آن:
+
+<br>
+
+<b>It's Monday.</b>
+
+<br>
+
+اِتس ماندِی.
+
+<br>
+
+امروز دوشنبه است.
+
+</div>
+
+</div>
+
+
+<!-- ON + DAYS -->
+
+<div class="card">
+
+<h2>📌 گرامر مهم: on + روزهای هفته</h2>
+
+<p>
+وقتی می‌خواهیم بگوییم کاری در یک روز مشخص انجام می‌شود،
+معمولاً قبل از روز هفته از <b>on</b> استفاده می‌کنیم.
+</p>
+
+
+<div class="example">
+
+<div class="en">
+on Monday
+</div>
+
+<div class="fa">
+آن ماندِی
+<br>
+در روز دوشنبه
+</div>
+
+</div>
+
+
+<div class="example">
+
+<div class="en">
+on Friday
+</div>
+
+<div class="fa">
+آن فرایدِی
+<br>
+در روز جمعه
+</div>
+
+</div>
+
+
+<div class="example">
+
+<div class="en">
+on Sunday
+</div>
+
+<div class="fa">
+آن ساندِی
+<br>
+در روز یکشنبه
+</div>
+
+</div>
+
+
+<div class="example">
+
+<div class="en">
+I study English on Monday.
+</div>
+
+<div class="fa">
+آی اِستادی اِنگلیش آن ماندِی.
+<br>
+من دوشنبه انگلیسی می‌خوانم.
+</div>
+
+<button class="speak-btn"
+onclick="speak('I study English on Monday.')">
+🔊 تلفظ
+</button>
+
+</div>
+
+
+<div class="example">
+
+<div class="en">
+We play football on Wednesday.
+</div>
+
+<div class="fa">
+وی پلی فوتبال آن وِنزْدِی.
+<br>
+ما چهارشنبه فوتبال بازی می‌کنیم.
+</div>
+
+<button class="speak-btn"
+onclick="speak('We play football on Wednesday.')">
+🔊 تلفظ
+</button>
+
+</div>
+
+</div>
+
+
+<!-- ASK ABOUT CLASS -->
+
+<div class="card">
+
+<h2>⭐ پرسیدن درباره روز یک فعالیت</h2>
+
+
+<div class="example">
+
+<div class="en">
+What day is your English class?
+</div>
+
+<div class="fa">
+وات دِی ایز یور اِنگلیش کِلَس؟
+<br>
+کلاس انگلیسی‌ات چه روزی است؟
+</div>
+
+<button class="speak-btn"
+onclick="speak('What day is your English class?')">
+🔊 تلفظ
+</button>
+
+</div>
+
+
+<div class="example">
+
+<div class="en">
+My English class is on Monday.
+</div>
+
+<div class="fa">
+مای اِنگلیش کِلَس ایز آن ماندِی.
+<br>
+کلاس انگلیسی من دوشنبه است.
+</div>
+
+<button class="speak-btn"
+onclick="speak('My English class is on Monday.')">
+🔊 تلفظ
+</button>
+
+</div>
+
+
+<div class="example">
+
+<div class="en">
+What day is your football class?
+</div>
+
+<div class="fa">
+وات دِی ایز یور فوتبال کِلَس؟
+<br>
+کلاس فوتبال تو چه روزی است؟
+</div>
+
+<button class="speak-btn"
+onclick="speak('What day is your football class?')">
+🔊 تلفظ
+</button>
+
+</div>
+
+
+<div class="example">
+
+<div class="en">
+My football class is on Saturday.
+</div>
+
+<div class="fa">
+مای فوتبال کِلَس ایز آن سَتِردِی.
+<br>
+کلاس فوتبال من شنبه است.
+</div>
+
+<button class="speak-btn"
+onclick="speak('My football class is on Saturday.')">
+🔊 تلفظ
+</button>
+
+</div>
+
+</div>
+
+
+<!-- CONVERSATION -->
+
+<div class="card">
+
+<h2>🗣️ مکالمه</h2>
+
+
+<div class="example">
+
+<div class="en">
+A: What day is it today?
+</div>
+
+<div class="fa">
+اِی: وات دِی ایز اِت تودِی؟
+<br>
+امروز چه روزیه؟
+</div>
+
+<button class="speak-btn"
+onclick="speak('What day is it today?')">
+🔊 تلفظ
+</button>
+
+</div>
+
+
+<div class="example">
+
+<div class="en">
+B: It's Monday.
+</div>
+
+<div class="fa">
+بی: اِتس ماندِی.
+<br>
+امروز دوشنبه است.
+</div>
+
+<button class="speak-btn"
+onclick="speak('It is Monday.')">
+🔊 تلفظ
+</button>
+
+</div>
+
+
+<div class="example">
+
+<div class="en">
+A: What day is your English class?
+</div>
+
+<div class="fa">
+اِی: وات دِی ایز یور اِنگلیش کِلَس؟
+<br>
+کلاس انگلیسی‌ات چه روزیه؟
+</div>
+
+<button class="speak-btn"
+onclick="speak('What day is your English class?')">
+🔊 تلفظ
+</button>
+
+</div>
+
+
+<div class="example">
+
+<div class="en">
+B: My English class is on Wednesday.
+</div>
+
+<div class="fa">
+بی: مای اِنگلیش کِلَس ایز آن وِنزْدِی.
+<br>
+کلاس انگلیسی من چهارشنبه است.
+</div>
+
+<button class="speak-btn"
+onclick="speak('My English class is on Wednesday.')">
+🔊 تلفظ
+</button>
+
+</div>
+
+
+<div class="example">
+
+<div class="en">
+A: Do you play football on Wednesday?
+</div>
+
+<div class="fa">
+اِی: دو یو پلی فوتبال آن وِنزْدِی؟
+<br>
+آیا چهارشنبه فوتبال بازی می‌کنی؟
+</div>
+
+<button class="speak-btn"
+onclick="speak('Do you play football on Wednesday?')">
+🔊 تلفظ
+</button>
+
+</div>
+
+
+<div class="example">
+
+<div class="en">
+B: Yes, I do.
+</div>
+
+<div class="fa">
+بی: یِس، آی دو.
+<br>
+بله.
+</div>
+
+<button class="speak-btn"
+onclick="speak('Yes, I do.')">
+🔊 تلفظ
+</button>
+
+</div>
+
+</div>
+
+
+<!-- NOTES -->
+
+<div class="card">
+
+<h2>💡 نکات مهم درس ۸</h2>
+
+<div class="note">
+
+🔹 نام روزهای هفته در انگلیسی همیشه با حرف بزرگ شروع می‌شود:
+
+<br><br>
+
+<b>Monday, Tuesday, Wednesday...</b>
+
+<br><br>
+
+🔹 برای پرسیدن روز امروز می‌گوییم:
+
+<br>
+
+<b>What day is it?</b>
+
+<br>
+
+وات دِی ایز اِت؟
+
+<br>
+
+امروز چه روزیه؟
+
+<br><br>
+
+🔹 برای گفتن اینکه کاری در یک روز انجام می‌شود، از <b>on</b> استفاده می‌کنیم:
+
+<br><br>
+
+<b>on Monday</b> = دوشنبه
+
+<br>
+
+<b>on Friday</b> = جمعه
+
+<br><br>
+
+🔹 <b>It is</b> را می‌توانیم کوتاه کنیم:
+
+<br>
+
+<b>It is Monday.</b>
+
+<br>
+
+⬇️
+
+<br>
+
+<b>It's Monday.</b>
+
+<br><br>
+
+🔹 یادت باشد:
+
+<br>
+
+<b>What day is it?</b>
+
+یعنی «چه روزی است؟»
+
+<br><br>
+
+اما:
+
+<br>
+
+<b>What day is your class?</b>
+
+یعنی «کلاس تو چه روزی است؟»
+
+</div>
+
+</div>
+
+
+<!-- START EXAM -->
+
+<div class="card">
+
+<h2>🎯 امتحان درس ۸</h2>
+
+<p>
+آماده‌ای؟ 😎 برای شروع امتحان روی دکمه زیر بزن.
+</p>
+
+<button class="start-btn" onclick="startExam()">
+▶️ شروع امتحان
+</button>
+
+</div>
+
+
+<!-- EXAM -->
+
+<div class="card" id="examBox" style="display:none;">
+
+<h2>📝 امتحان درس ۸</h2>
+
+
+<div class="question">
+
+<p>۱. Monday یعنی چه؟</p>
+
+<div class="options">
+
+<button onclick="answer(this,true)">دوشنبه</button>
+
+<button onclick="answer(this,false)">سه‌شنبه</button>
+
+<button onclick="answer(this,false)">جمعه</button>
+
+</div>
+
+</div>
+
+
+<div class="question">
+
+<p>۲. کدام کلمه یعنی «چهارشنبه»؟</p>
+
+<div class="options">
+
+<button onclick="answer(this,false)">Tuesday</button>
+
+<button onclick="answer(this,true)">Wednesday</button>
+
+<button onclick="answer(this,false)">Thursday</button>
+
+</div>
+
+</div>
+
+
+<div class="question">
+
+<p>۳. Friday یعنی چه؟</p>
+
+<div class="options">
+
+<button onclick="answer(this,false)">شنبه</button>
+
+<button onclick="answer(this,true)">جمعه</button>
+
+<button onclick="answer(this,false)">یکشنبه</button>
+
+</div>
+
+</div>
+
+
+<div class="question">
+
+<p>۴. «امروز چه روزیه؟» کدام جمله است؟</p>
+
+<div class="options">
+
+<button onclick="answer(this,false)">
+How old are you?
+</button>
+
+<button onclick="answer(this,true)">
+What day is it?
+</button>
+
+<button onclick="answer(this,false)">
+What is your name?
+</button>
+
+</div>
+
+</div>
+
+
+<div class="question">
+
+<p>۵. جواب درست برای What day is it? کدام است؟</p>
+
+<div class="options">
+
+<button onclick="answer(this,false)">
+I am fourteen.
+</button>
+
+<button onclick="answer(this,true)">
+It is Monday.
+</button>
+
+<button onclick="answer(this,false)">
+My name is Arshia.
+</button>
+
+</div>
+
+</div>
+
+
+<div class="question">
+
+<p>۶. کدام جمله درست است؟</p>
+
+<div class="options">
+
+<button onclick="answer(this,true)">
+I study English on Monday.
+</button>
+
+<button onclick="answer(this,false)">
+I study English in Monday.
+</button>
+
+<button onclick="answer(this,false)">
+I study English at Monday.
+</button>
+
+</div>
+
+</div>
+
+
+<div class="question">
+
+<p>۷. Thursday یعنی چه؟</p>
+
+<div class="options">
+
+<button onclick="answer(this,false)">سه‌شنبه</button>
+
+<button onclick="answer(this,true)">پنجشنبه</button>
+
+<button onclick="answer(this,false)">شنبه</button>
+
+</div>
+
+</div>
+
+
+<div class="question">
+
+<p>۸. کدام جمله یعنی «کلاس انگلیسی من جمعه است»؟</p>
+
+<div class="options">
+
+<button onclick="answer(this,false)">
+My English class is in Friday.
+</button>
+
+<button onclick="answer(this,true)">
+My English class is on Friday.
+</button>
+
+<button onclick="answer(this,false)">
+My English class are Friday.
+</button>
+
+</div>
+
+</div>
+
+
+<div class="question">
+
+<p>۹. شکل کوتاه It is Monday کدام است؟</p>
+
+<div class="options">
+
+<button onclick="answer(this,false)">
+Its Monday.
+</button>
+
+<button onclick="answer(this,true)">
+It's Monday.
+</button>
+
+<button onclick="answer(this,false)">
+It're Monday.
+</button>
+
+</div>
+
+</div>
+
+
+<div class="question">
+
+<p>۱۰. Saturday یعنی چه؟</p>
+
+<div class="options">
+
+<button onclick="answer(this,false)">یکشنبه</button>
+
+<button onclick="answer(this,false)">جمعه</button>
+
+<button onclick="answer(this,true)">شنبه</button>
+
+</div>
+
+</div>
+
+
+<div id="result">
+امتیاز: ۰ از ۱۰
+</div>
+
+</div>
+
+</div>
+
+
+<script>
+
+function speak(text){
+
+  window.speechSynthesis.cancel();
+
+  const speech =
+  new SpeechSynthesisUtterance(text);
+
+  speech.lang="en-US";
+
+  speech.rate=0.8;
+
+  window.speechSynthesis.speak(speech);
+
+}
+
+
+function startExam(){
+
+  const exam =
+  document.getElementById("examBox");
+
+  exam.style.display="block";
+
+  exam.scrollIntoView({
+    behavior:"smooth"
+  });
+
+}
+
+
+let score=0;
+
+let answeredQuestions=0;
+
+
+function answer(button,isCorrect){
+
+  const question =
+  button.closest(".question");
+
+  const buttons =
+  question.querySelectorAll("button");
+
+  if(buttons[0].disabled){
+    return;
+  }
+
+
+  buttons.forEach(function(btn){
+
+    btn.disabled=true;
+
+  });
+
+
+  if(isCorrect){
+
+    button.classList.add("correct");
+
+    score++;
+
+  }
+
+  else{
+
+    button.classList.add("wrong");
+
+    buttons.forEach(function(btn){
+
+      const code =
+      btn.getAttribute("onclick");
+
+      if(code && code.includes("true")){
+
+        btn.classList.add("correct");
+
+      }
+
+    });
+
+  }
+
+
+  answeredQuestions++;
+
+
+  document.getElementById("result").innerHTML =
+  "امتیاز: " + score + " از 10";
+
+
+  if(answeredQuestions===10){
+
+    let message="";
+
+
+    if(score===10){
+
+      message="🎉 عالی! نمره کامل گرفتی!";
+
+    }
+
+    else if(score>=8){
+
+      message="🔥 خیلی خوب بود!";
+
+    }
+
+    else if(score>=5){
+
+      message="👍 خوبه! ولی بهتره درس رو یک بار دیگه مرور کنی.";
+
+    }
+
+    else{
+
+      message="📚 بهتره درس رو دوباره مرور کنی.";
+
+    }
+
+
+    setTimeout(function(){
+
+      document.getElementById("result").innerHTML=
+
+      "🎯 نمره نهایی: " +
+      score +
+      " از 10" +
+
+      "<br><br>" +
+
+      message;
+
+    },300);
+
+  }
+
+}
+
+</script>
+
+</body>
+</html>
