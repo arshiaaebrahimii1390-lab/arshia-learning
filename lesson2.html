@@ -1,289 +1,298 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
-
+<html lang="fa">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>درس ۲ - What's Your Name?</title>
+<title>درس ۲ - معرفی خودمان 👋</title>
 
 <style>
 
 *{
-box-sizing:border-box;
+  box-sizing:border-box;
 }
 
 body{
-margin:0;
-padding:18px;
-font-family:Tahoma,Arial,sans-serif;
-background:linear-gradient(135deg,#edf3ff,#f9fbff);
-color:#222;
+  margin:0;
+  font-family:Arial,sans-serif;
+  direction:rtl;
+  background:linear-gradient(135deg,#eef2ff,#f8f9ff);
+  color:#222;
 }
 
 .container{
-max-width:850px;
-margin:auto;
+  max-width:700px;
+  margin:auto;
+  padding:20px;
 }
 
 .back{
-display:inline-block;
-margin-bottom:15px;
-text-decoration:none;
-color:#4f7cff;
-font-weight:bold;
+  display:inline-block;
+  text-decoration:none;
+  color:#4f7cff;
+  font-weight:bold;
+  margin-bottom:15px;
 }
 
 .header{
-background:rgba(255,255,255,.75);
-backdrop-filter:blur(15px);
-padding:25px 15px;
-border-radius:25px;
-text-align:center;
-box-shadow:0 8px 30px rgba(0,0,0,.08);
-margin-bottom:18px;
+  text-align:center;
+  padding:25px 15px;
+  border-radius:28px;
+  background:rgba(255,255,255,0.65);
+  backdrop-filter:blur(20px);
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+  margin-bottom:20px;
 }
 
 .header h1{
-margin:0 0 10px;
-font-size:28px;
-}
-
-.header p{
-margin:7px;
-color:#666;
+  margin:0 0 8px;
 }
 
 .card{
-background:rgba(255,255,255,.78);
-backdrop-filter:blur(15px);
-border-radius:22px;
-padding:20px;
-margin-bottom:18px;
-box-shadow:0 8px 25px rgba(0,0,0,.07);
+  background:rgba(255,255,255,0.7);
+  backdrop-filter:blur(20px);
+  border-radius:24px;
+  padding:20px;
+  margin-bottom:18px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.07);
 }
 
 .card h2{
-color:#315dcc;
-margin-top:0;
+  margin-top:0;
 }
 
 .word{
-background:#f5f7ff;
-border-radius:16px;
-padding:14px;
-margin:10px 0;
+  background:rgba(255,255,255,0.85);
+  border-radius:18px;
+  padding:15px;
+  margin:12px 0;
 }
 
 .english{
-direction:ltr;
-text-align:left;
-font-size:19px;
-font-weight:bold;
+  font-size:20px;
+  font-weight:bold;
+  direction:ltr;
+  text-align:left;
 }
 
-.pron{
-color:#7654c7;
-margin-top:6px;
+.pronunciation{
+  color:#555;
+  margin-top:6px;
 }
 
 .meaning{
-color:#555;
-margin-top:6px;
-line-height:1.8;
+  margin-top:5px;
+  font-weight:bold;
 }
 
-.speak{
-border:none;
-background:#4f7cff;
-color:white;
-border-radius:12px;
-padding:8px 13px;
-margin-top:9px;
-cursor:pointer;
-font-weight:bold;
-}
-
-.speak:active{
-transform:scale(.96);
+.speak-btn{
+  border:none;
+  border-radius:12px;
+  padding:8px 13px;
+  background:#eef2ff;
+  font-size:14px;
+  cursor:pointer;
+  margin-top:8px;
 }
 
 .example{
-background:#f5f7ff;
-border-right:4px solid #4f7cff;
-border-radius:15px;
-padding:15px;
-margin:12px 0;
+  background:#f7f8ff;
+  border-radius:16px;
+  padding:14px;
+  margin:10px 0;
+}
+
+.example .en{
+  direction:ltr;
+  text-align:left;
+  font-weight:bold;
+  font-size:17px;
+}
+
+.example .fa{
+  margin-top:6px;
+  line-height:1.8;
 }
 
 .note{
-background:#fff7dc;
-border-radius:16px;
-padding:16px;
-line-height:2;
-margin-top:12px;
-}
-
-table{
-width:100%;
-border-collapse:collapse;
-margin-top:12px;
-}
-
-th,td{
-border:1px solid #ddd;
-padding:11px 7px;
-text-align:center;
-}
-
-th{
-background:#edf2ff;
-}
-
-td{
-background:rgba(255,255,255,.7);
-}
-
-.exam-start{
-width:100%;
-padding:15px;
-border:none;
-border-radius:17px;
-background:#4f7cff;
-color:white;
-font-size:17px;
-font-weight:bold;
-cursor:pointer;
-}
-
-#exam{
-display:none;
+  background:#fff8df;
+  border-radius:16px;
+  padding:15px;
+  line-height:2;
 }
 
 .question{
-background:#f7f8ff;
-border-radius:18px;
-padding:16px;
-margin:15px 0;
+  margin-bottom:22px;
+  padding:15px;
+  background:rgba(255,255,255,0.8);
+  border-radius:18px;
 }
 
-.question-title{
-font-weight:bold;
-font-size:17px;
-margin-bottom:12px;
+.question p{
+  font-weight:bold;
+  line-height:1.8;
 }
 
-.option{
-width:100%;
-border:2px solid #ddd;
-background:white;
-border-radius:13px;
-padding:12px;
-margin:5px 0;
-text-align:right;
-font-size:15px;
-cursor:pointer;
+.options button{
+  width:100%;
+  border:none;
+  border-radius:14px;
+  padding:12px;
+  margin:6px 0;
+  background:#f0f2f8;
+  font-size:15px;
+  cursor:pointer;
 }
 
-.option.correct{
-background:#b9f6c3;
-border-color:#25a244;
+.options button:disabled{
+  cursor:default;
 }
 
-.option.wrong{
-background:#ffc1c1;
-border-color:#e63946;
+.correct{
+  background:#b9f6c3 !important;
 }
 
-.option:disabled{
-cursor:default;
+.wrong{
+  background:#ffb8b8 !important;
+}
+
+.start-btn{
+  width:100%;
+  border:none;
+  border-radius:16px;
+  padding:14px;
+  background:#4f7cff;
+  color:white;
+  font-size:15px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.start-btn:active{
+  transform:scale(0.97);
 }
 
 #result{
-display:none;
-text-align:center;
-background:#eef7ff;
-border-radius:18px;
-padding:20px;
-font-size:19px;
-font-weight:bold;
-margin-top:20px;
-}
-
-@media(max-width:600px){
-
-body{
-padding:10px;
-}
-
-.card{
-padding:16px;
-}
-
-.header h1{
-font-size:23px;
-}
-
-.english{
-font-size:17px;
-}
-
-table{
-font-size:13px;
-}
-
+  text-align:center;
+  font-size:18px;
+  font-weight:bold;
+  margin-top:15px;
 }
 
 </style>
 </head>
 
-
 <body>
 
 <div class="container">
 
+<a href="english.html" class="back">← برگشت به درس‌ها</a>
 
-<a href="english.html" class="back">
-⬅️ بازگشت به درس‌های انگلیسی
-</a>
 
+<!-- HEADER -->
 
 <div class="header">
 
 <h1>درس ۲ 👋</h1>
 
-<p><b>What is your name?</b></p>
-
-<p>پرسیدن اسم و صفات ملکی</p>
+<p><b>What's Your Name? / معرفی خودمان</b></p>
 
 </div>
 
 
-
-<!-- WHAT IS YOUR NAME -->
+<!-- MAIN QUESTION -->
 
 <div class="card">
 
-<h2>👋 What is your name?</h2>
+<h2>👋 پرسیدن اسم</h2>
 
-<p>
-امروز می‌خواهیم یاد بگیریم چطور اسم خودمان و دیگران را بپرسیم.
-</p>
+<div class="example">
+
+<div class="en">
+What is your name?
+</div>
+
+<div class="fa">
+وات ایز یور نیم؟
+<br>
+اسم شما چیست؟ / اسمت چیست؟
+</div>
+
+<button class="speak-btn"
+onclick="speak('What is your name?')">
+🔊 تلفظ
+</button>
+
+</div>
+
+
+<div class="example">
+
+<div class="en">
+What's your name?
+</div>
+
+<div class="fa">
+واتس یور نیم؟
+<br>
+اسمت چیه؟ / اسم شما چیه؟
+</div>
+
+<button class="speak-btn"
+onclick="speak('What’s your name?')">
+🔊 تلفظ
+</button>
+
+</div>
+
+
+<div class="note">
+
+🔹 این دو جمله از نظر معنی تقریباً یکی هستند.
+
+<br><br>
+
+<b>What is your name?</b>
+<br>
+وات ایز یور نیم؟
+
+<br><br>
+
+<b>What's your name?</b>
+<br>
+واتس یور نیم؟
+
+<br><br>
+
+<b>What's = What is</b>
+
+<br><br>
+
+در مکالمه روزمره، شکل کوتاه
+<b>What's your name?</b>
+خیلی رایج است.
+
+</div>
+
+</div>
+
+
+<!-- WORD BY WORD -->
+
+<div class="card">
+
+<h2>🔤 جمله را کلمه به کلمه یاد بگیریم</h2>
 
 
 <div class="word">
 
 <div class="english">What</div>
 
-<div class="pron">
-تلفظ: وات
-</div>
+<div class="pronunciation">وات</div>
 
-<div class="meaning">
-معنی: چه / چیست
-</div>
+<div class="meaning">چه / چی</div>
 
-<button class="speak" onclick="speak('What')">
+<button class="speak-btn" onclick="speak('What')">
 🔊 تلفظ
 </button>
 
@@ -294,15 +303,11 @@ font-size:13px;
 
 <div class="english">is</div>
 
-<div class="pron">
-تلفظ: ایز
-</div>
+<div class="pronunciation">ایز</div>
 
-<div class="meaning">
-معنی: است / هست
-</div>
+<div class="meaning">است</div>
 
-<button class="speak" onclick="speak('is')">
+<button class="speak-btn" onclick="speak('is')">
 🔊 تلفظ
 </button>
 
@@ -313,15 +318,11 @@ font-size:13px;
 
 <div class="english">your</div>
 
-<div class="pron">
-تلفظ: یور
-</div>
+<div class="pronunciation">یور</div>
 
-<div class="meaning">
-معنی: ـِ تو / ـِ شما
-</div>
+<div class="meaning">مال تو / ـت</div>
 
-<button class="speak" onclick="speak('your')">
+<button class="speak-btn" onclick="speak('your')">
 🔊 تلفظ
 </button>
 
@@ -332,190 +333,40 @@ font-size:13px;
 
 <div class="english">name</div>
 
-<div class="pron">
-تلفظ: نِیم
-</div>
+<div class="pronunciation">نِیم</div>
 
-<div class="meaning">
-معنی: اسم / نام
-</div>
+<div class="meaning">اسم / نام</div>
 
-<button class="speak" onclick="speak('name')">
+<button class="speak-btn" onclick="speak('name')">
 🔊 تلفظ
 </button>
 
 </div>
 
-
-<div class="example">
-
-<div class="english">
-What is your name?
-</div>
-
-<div class="pron">
-تلفظ: وات ایز یور نِیم؟
-</div>
-
-<div class="meaning">
-معنی: اسم تو چیست؟ / اسمت چیه؟
-</div>
-
-<button class="speak" onclick="speak('What is your name?')">
-🔊 تلفظ جمله
-</button>
-
-</div>
-
 </div>
 
 
-
-<!-- GRAMMAR -->
+<!-- ANSWERING -->
 
 <div class="card">
 
-<h2>📚 گرامر جمله</h2>
-
-<p>
-ساختار جمله این است:
-</p>
-
-<div class="example">
-
-<div class="english">
-What + is + your + name?
-</div>
-
-<div class="pron">
-وات + ایز + یور + نِیم؟
-</div>
-
-<div class="meaning">
-چه + است + ـِ تو + اسم؟
-</div>
-
-</div>
-
-
-<div class="note">
-
-💡 در فارسی می‌گوییم:
-<br>
-«اسمت چیه؟»
-
-<br><br>
-
-اما در انگلیسی از ساختار
-<b>What is your name?</b>
-استفاده می‌کنیم.
-
-</div>
-
-</div>
-
-
-
-<!-- CONTRACTION -->
-
-<div class="card">
-
-<h2>✂️ مخفف جمله</h2>
-
-<p>
-در انگلیسی <b>What is</b> معمولاً در صحبت کردن و نوشتار غیررسمی به شکل <b>What's</b> کوتاه می‌شود.
-</p>
+<h2>💬 جواب دادن</h2>
 
 
 <div class="example">
 
-<div class="english">
-What is your name?
-</div>
-
-<div class="pron">
-وات ایز یور نِیم؟
-</div>
-
-<div class="meaning">
-اسمت چیه؟
-</div>
-
-<button class="speak" onclick="speak('What is your name?')">
-🔊 تلفظ
-</button>
-
-</div>
-
-
-<div class="example">
-
-<div class="english">
-What's your name?
-</div>
-
-<div class="pron">
-واتس یور نِیم؟
-</div>
-
-<div class="meaning">
-اسمت چیه؟
-</div>
-
-<button class="speak" onclick="speak('What is your name?')">
-🔊 تلفظ
-</button>
-
-</div>
-
-
-<div class="note">
-
-🔹 <b>What is = What's</b>
-
-<br>
-
-هر دو یک معنی دارند.
-
-<br><br>
-
-<b>What is your name?</b>
-و
-<b>What's your name?</b>
-
-<br>
-
-هر دو یعنی:
-«اسمت چیه؟»
-
-</div>
-
-</div>
-
-
-
-<!-- ANSWER -->
-
-<div class="card">
-
-<h2>💬 جواب What is your name?</h2>
-
-
-<div class="example">
-
-<div class="english">
+<div class="en">
 My name is Arshia.
 </div>
 
-<div class="pron">
-مای نِیم ایز عرشیا.
-</div>
-
-<div class="meaning">
+<div class="fa">
+مای نیم ایز عرشیا.
+<br>
 اسم من عرشیاست.
 </div>
 
-<button class="speak" onclick="speak('My name is Arshia.')">
+<button class="speak-btn"
+onclick="speak('My name is Arshia.')">
 🔊 تلفظ
 </button>
 
@@ -524,19 +375,18 @@ My name is Arshia.
 
 <div class="example">
 
-<div class="english">
+<div class="en">
 I'm Arshia.
 </div>
 
-<div class="pron">
+<div class="fa">
 آیم عرشیا.
-</div>
-
-<div class="meaning">
+<br>
 من عرشیا هستم.
 </div>
 
-<button class="speak" onclick="speak('I am Arshia.')">
+<button class="speak-btn"
+onclick="speak('I’m Arshia.')">
 🔊 تلفظ
 </button>
 
@@ -545,16 +395,13 @@ I'm Arshia.
 
 <div class="note">
 
-💡 جواب کوتاه و کاربردی:
+🔹 برای معرفی خودمان می‌توانیم بگوییم:
 
 <br><br>
 
 <b>My name is + اسم</b>
 
 <br>
-اسم من ... است.
-
-<br><br>
 
 یا:
 
@@ -562,39 +409,70 @@ I'm Arshia.
 
 <b>I'm + اسم</b>
 
-<br>
-من ... هستم.
+<br><br>
+
+<b>I'm = I am</b>
 
 </div>
 
 </div>
 
 
-
-<!-- FAMILY QUESTIONS -->
+<!-- POSSESSIVE 'S -->
 
 <div class="card">
 
-<h2>👨‍👩‍👧‍👦 پرسیدن اسم اعضای خانواده</h2>
+<h2>🔑 مالکیت 's</h2>
+
+<p>
+حالا یک نکته مهم درباره مالکیت یاد می‌گیریم.
+</p>
+
+<div class="note">
+
+وقتی می‌خواهیم بگوییم چیزی متعلق به یک نفر است،
+بعد از اسم آن شخص <b>'s</b> می‌آوریم.
+
+<br><br>
+
+<b>Ali's book</b>
+
+<br>
+
+کتاب علی
+
+<br><br>
+
+یعنی:
+
+<br>
+
+<b>Ali's = متعلق به علی / مال علی</b>
+
+<br><br>
+
+پس <b>'s</b> اینجا معنی مالکیت می‌دهد.
+
+</div>
 
 
-<h3>👩 مادر</h3>
+<h3>🌟 مثال‌ها</h3>
+
 
 <div class="example">
 
-<div class="english">
-What is your mother's name?
+<div class="en">
+This is Ali's book.
 </div>
 
-<div class="pron">
-وات ایز یور مادِرز نِیم؟
+<div class="fa">
+دیس ایز اَلایز بوک.
+<br>
+این کتاب علی است.
 </div>
 
-<div class="meaning">
-اسم مادرت چیه؟
-</div>
-
-<button class="speak" onclick="speak('What is your mother’s name?')">
+<button class="speak-btn"
+onclick="speak('This is Ali’s book.')">
 🔊 تلفظ
 </button>
 
@@ -603,43 +481,18 @@ What is your mother's name?
 
 <div class="example">
 
-<div class="english">
-Her name is Sara.
+<div class="en">
+This is Sara's bag.
 </div>
 
-<div class="pron">
-هِر نِیم ایز سارا.
+<div class="fa">
+دیس ایز ساراز بَگ.
+<br>
+این کیف سارا است.
 </div>
 
-<div class="meaning">
-اسم او سارا است.
-</div>
-
-<button class="speak" onclick="speak('Her name is Sara.')">
-🔊 تلفظ
-</button>
-
-</div>
-
-
-
-<h3>👨 پدر</h3>
-
-<div class="example">
-
-<div class="english">
-What is your father's name?
-</div>
-
-<div class="pron">
-وات ایز یور فادِرز نِیم؟
-</div>
-
-<div class="meaning">
-اسم پدرت چیه؟
-</div>
-
-<button class="speak" onclick="speak('What is your father’s name?')">
+<button class="speak-btn"
+onclick="speak('This is Sara’s bag.')">
 🔊 تلفظ
 </button>
 
@@ -648,43 +501,18 @@ What is your father's name?
 
 <div class="example">
 
-<div class="english">
-His name is Reza.
+<div class="en">
+That is my brother's phone.
 </div>
 
-<div class="pron">
-هِز نِیم ایز رضا.
+<div class="fa">
+ذَت ایز مای براذِرز فون.
+<br>
+آن گوشی برادر من است.
 </div>
 
-<div class="meaning">
-اسم او رضا است.
-</div>
-
-<button class="speak" onclick="speak('His name is Reza.')">
-🔊 تلفظ
-</button>
-
-</div>
-
-
-
-<h3>👧 خواهر</h3>
-
-<div class="example">
-
-<div class="english">
-What is your sister's name?
-</div>
-
-<div class="pron">
-وات ایز یور سیستِرز نِیم؟
-</div>
-
-<div class="meaning">
-اسم خواهرت چیه؟
-</div>
-
-<button class="speak" onclick="speak('What is your sister’s name?')">
+<button class="speak-btn"
+onclick="speak('That is my brother’s phone.')">
 🔊 تلفظ
 </button>
 
@@ -693,265 +521,156 @@ What is your sister's name?
 
 <div class="example">
 
-<div class="english">
-Her name is Mary.
+<div class="en">
+This is my mother's car.
 </div>
 
-<div class="pron">
-هِر نِیم ایز مِری.
+<div class="fa">
+دیس ایز مای مادِرز کار.
+<br>
+این ماشین مادر من است.
 </div>
 
-<div class="meaning">
-اسم او مِری است.
-</div>
-
-<button class="speak" onclick="speak('Her name is Mary.')">
+<button class="speak-btn"
+onclick="speak('This is my mother’s car.')">
 🔊 تلفظ
 </button>
 
 </div>
 
 
+<div class="note">
 
-<h3>👦 برادر</h3>
+💡 نکته:
 
-<div class="example">
+<br><br>
 
-<div class="english">
-What is your brother's name?
-</div>
+<b>Ali's book</b> = کتاب علی
 
-<div class="pron">
-وات ایز یور برادِرز نِیم؟
-</div>
+<br>
 
-<div class="meaning">
-اسم برادرت چیه؟
-</div>
+<b>Sara's bag</b> = کیف سارا
 
-<button class="speak" onclick="speak('What is your brother’s name?')">
-🔊 تلفظ
-</button>
+<br>
 
-</div>
+<b>my brother's phone</b> = گوشی برادرم
 
+<br><br>
 
-<div class="example">
-
-<div class="english">
-His name is Ali.
-</div>
-
-<div class="pron">
-هِز نِیم ایز علی.
-</div>
-
-<div class="meaning">
-اسم او علی است.
-</div>
-
-<button class="speak" onclick="speak('His name is Ali.')">
-🔊 تلفظ
-</button>
-
-</div>
-
-
-
-<h3>🧑 دوست</h3>
-
-<div class="example">
-
-<div class="english">
-What is your friend's name?
-</div>
-
-<div class="pron">
-وات ایز یور فِرِندز نِیم؟
-</div>
-
-<div class="meaning">
-اسم دوستت چیه؟
-</div>
-
-<button class="speak" onclick="speak('What is your friend’s name?')">
-🔊 تلفظ
-</button>
-
-</div>
-
-
-<div class="example">
-
-<div class="english">
-His name is Amir.
-</div>
-
-<div class="pron">
-هِز نِیم ایز امیر.
-</div>
-
-<div class="meaning">
-اسم او امیر است.
-</div>
-
-<button class="speak" onclick="speak('His name is Amir.')">
-🔊 تلفظ
-</button>
+این <b>'s</b> با <b>'s</b> در شکل کوتاه
+<b>is</b>
+متفاوت است و باید از معنی جمله تشخیص بدهیم.
 
 </div>
 
 </div>
-
 
 
 <!-- POSSESSIVE ADJECTIVES -->
 
 <div class="card">
 
-<h2>🔑 صفات ملکی</h2>
+<h2>🧩 صفات ملکی</h2>
 
 <p>
-صفات ملکی نشان می‌دهند یک چیز متعلق به چه کسی است.
+حالا که مالکیت را یاد گرفتیم، صفات ملکی را یاد می‌گیریم.
 </p>
 
 
-<table>
+<div class="word">
 
-<tr>
-<th>ضمیر</th>
-<th>صفت ملکی</th>
-<th>تلفظ</th>
-<th>معنی</th>
-</tr>
+<div class="english">My</div>
 
-<tr>
-<td>I</td>
-<td>My</td>
-<td>مای</td>
-<td>مال من / ـِ من</td>
-</tr>
+<div class="pronunciation">مای</div>
 
-<tr>
-<td>You</td>
-<td>Your</td>
-<td>یور</td>
-<td>مال تو / شما</td>
-</tr>
-
-<tr>
-<td>He</td>
-<td>His</td>
-<td>هِز</td>
-<td>مال او (مذکر)</td>
-</tr>
-
-<tr>
-<td>She</td>
-<td>Her</td>
-<td>هِر</td>
-<td>مال او (مؤنث)</td>
-</tr>
-
-<tr>
-<td>It</td>
-<td>Its</td>
-<td>اِتس</td>
-<td>مال آن</td>
-</tr>
-
-<tr>
-<td>We</td>
-<td>Our</td>
-<td>آوِر</td>
-<td>مال ما / ـِ ما</td>
-</tr>
-
-<tr>
-<td>They</td>
-<td>Their</td>
-<td>ذِر</td>
-<td>مال آن‌ها / ـِ آن‌ها</td>
-</tr>
-
-</table>
+<div class="meaning">مال من / ـم</div>
 
 </div>
 
-
-
-<!-- MY -->
-
-<div class="card">
-
-<h2>1️⃣ My</h2>
 
 <div class="word">
 
-<div class="english">
-My
-</div>
+<div class="english">Your</div>
 
-<div class="pron">
-تلفظ: مای
-</div>
+<div class="pronunciation">یور</div>
 
-<div class="meaning">
-معنی: مال من / ـِ من
-</div>
-
-<button class="speak" onclick="speak('My')">
-🔊 تلفظ
-</button>
+<div class="meaning">مال تو / ـت / مال شما</div>
 
 </div>
+
+
+<div class="word">
+
+<div class="english">His</div>
+
+<div class="pronunciation">هیز</div>
+
+<div class="meaning">مال او (مذکر)</div>
+
+</div>
+
+
+<div class="word">
+
+<div class="english">Her</div>
+
+<div class="pronunciation">هِر</div>
+
+<div class="meaning">مال او (مونث)</div>
+
+</div>
+
+
+<div class="word">
+
+<div class="english">Its</div>
+
+<div class="pronunciation">اِتس</div>
+
+<div class="meaning">مال آن</div>
+
+</div>
+
+
+<div class="word">
+
+<div class="english">Our</div>
+
+<div class="pronunciation">آوِر</div>
+
+<div class="meaning">مال ما / ـمان</div>
+
+</div>
+
+
+<div class="word">
+
+<div class="english">Their</div>
+
+<div class="pronunciation">ذِر</div>
+
+<div class="meaning">مال آن‌ها / ـشان</div>
+
+</div>
+
+
+<h3>🌟 مثال‌ها</h3>
 
 
 <div class="example">
 
-<div class="english">
+<div class="en">
 My name is Arshia.
 </div>
 
-<div class="pron">
-مای نِیم ایز عرشیا.
-</div>
-
-<div class="meaning">
+<div class="fa">
+مای نیم ایز عرشیا.
+<br>
 اسم من عرشیاست.
 </div>
 
-<button class="speak" onclick="speak('My name is Arshia.')">
-🔊 تلفظ
-</button>
-
-</div>
-
-</div>
-
-
-
-<!-- YOUR -->
-
-<div class="card">
-
-<h2>2️⃣ Your</h2>
-
-<div class="word">
-
-<div class="english">
-Your
-</div>
-
-<div class="pron">
-تلفظ: یور
-</div>
-
-<div class="meaning">
-معنی: مال تو / شما / ـِ تو / شما
-</div>
-
-<button class="speak" onclick="speak('Your')">
+<button class="speak-btn"
+onclick="speak('My name is Arshia.')">
 🔊 تلفظ
 </button>
 
@@ -960,49 +679,18 @@ Your
 
 <div class="example">
 
-<div class="english">
-What is your name?
+<div class="en">
+Your name is Sara.
 </div>
 
-<div class="pron">
-وات ایز یور نِیم؟
+<div class="fa">
+یور نیم ایز سارا.
+<br>
+اسم تو سارا است.
 </div>
 
-<div class="meaning">
-اسمت چیه؟
-</div>
-
-<button class="speak" onclick="speak('What is your name?')">
-🔊 تلفظ
-</button>
-
-</div>
-
-</div>
-
-
-
-<!-- HIS -->
-
-<div class="card">
-
-<h2>3️⃣ His</h2>
-
-<div class="word">
-
-<div class="english">
-His
-</div>
-
-<div class="pron">
-تلفظ: هِز
-</div>
-
-<div class="meaning">
-معنی: مال او / ـِ او برای مرد یا پسر
-</div>
-
-<button class="speak" onclick="speak('His')">
+<button class="speak-btn"
+onclick="speak('Your name is Sara.')">
 🔊 تلفظ
 </button>
 
@@ -1011,336 +699,18 @@ His
 
 <div class="example">
 
-<div class="english">
+<div class="en">
 His name is Ali.
 </div>
 
-<div class="pron">
-هِز نِیم ایز علی.
-</div>
-
-<div class="meaning">
-اسم او علی است.
-</div>
-
-<button class="speak" onclick="speak('His name is Ali.')">
-🔊 تلفظ
-</button>
-
-</div>
-
-</div>
-
-
-
-<!-- HER -->
-
-<div class="card">
-
-<h2>4️⃣ Her</h2>
-
-<div class="word">
-
-<div class="english">
-Her
-</div>
-
-<div class="pron">
-تلفظ: هِر
-</div>
-
-<div class="meaning">
-معنی: مال او / ـِ او برای زن یا دختر
-</div>
-
-<button class="speak" onclick="speak('Her')">
-🔊 تلفظ
-</button>
-
-</div>
-
-
-<div class="example">
-
-<div class="english">
-Her name is Sara.
-</div>
-
-<div class="pron">
-هِر نِیم ایز سارا.
-</div>
-
-<div class="meaning">
-اسم او سارا است.
-</div>
-
-<button class="speak" onclick="speak('Her name is Sara.')">
-🔊 تلفظ
-</button>
-
-</div>
-
-</div>
-
-
-
-<!-- ITS -->
-
-<div class="card">
-
-<h2>5️⃣ Its</h2>
-
-<div class="word">
-
-<div class="english">
-Its
-</div>
-
-<div class="pron">
-تلفظ: اِتس
-</div>
-
-<div class="meaning">
-معنی: مال آن / ـِ آن
-</div>
-
-<button class="speak" onclick="speak('Its')">
-🔊 تلفظ
-</button>
-
-</div>
-
-
-<div class="example">
-
-<div class="english">
-The dog is eating its food.
-</div>
-
-<div class="pron">
-دِ داگ ایز ایتینگ اِتس فود.
-</div>
-
-<div class="meaning">
-سگ دارد غذای خودش را می‌خورد.
-</div>
-
-<button class="speak" onclick="speak('The dog is eating its food.')">
-🔊 تلفظ
-</button>
-
-</div>
-
-</div>
-
-
-
-<!-- OUR -->
-
-<div class="card">
-
-<h2>6️⃣ Our</h2>
-
-<div class="word">
-
-<div class="english">
-Our
-</div>
-
-<div class="pron">
-تلفظ: آوِر
-</div>
-
-<div class="meaning">
-معنی: مال ما / ـِ ما
-</div>
-
-<button class="speak" onclick="speak('Our')">
-🔊 تلفظ
-</button>
-
-</div>
-
-
-<div class="example">
-
-<div class="english">
-Our house is big.
-</div>
-
-<div class="pron">
-آوِر هاوس ایز بیگ.
-</div>
-
-<div class="meaning">
-خانه ما بزرگ است.
-</div>
-
-<button class="speak" onclick="speak('Our house is big.')">
-🔊 تلفظ
-</button>
-
-</div>
-
-</div>
-
-
-
-<!-- THEIR -->
-
-<div class="card">
-
-<h2>7️⃣ Their</h2>
-
-<div class="word">
-
-<div class="english">
-Their
-</div>
-
-<div class="pron">
-تلفظ: ذِر
-</div>
-
-<div class="meaning">
-معنی: مال آن‌ها / ـِ آن‌ها
-</div>
-
-<button class="speak" onclick="speak('Their')">
-🔊 تلفظ
-</button>
-
-</div>
-
-
-<div class="example">
-
-<div class="english">
-Their house is beautiful.
-</div>
-
-<div class="pron">
-ذِر هاوس ایز بیوتیفُل.
-</div>
-
-<div class="meaning">
-خانه آن‌ها زیباست.
-</div>
-
-<button class="speak" onclick="speak('Their house is beautiful.')">
-🔊 تلفظ
-</button>
-
-</div>
-
-</div>
-
-
-
-<!-- IMPORTANT NOTES -->
-
-<div class="card">
-
-<h2>💡 نکته‌های مهم و کاربردی</h2>
-
-<div class="note">
-
-🔹 بعد از صفت ملکی معمولاً یک اسم می‌آید:
-
-<br><br>
-
-<b>my name</b> = اسم من
-
-<br>
-
-<b>your father</b> = پدر تو
-
-<br>
-
-<b>his brother</b> = برادر او
-
-<br>
-
-<b>her sister</b> = خواهر او
-
-<br>
-
-<b>our house</b> = خانه ما
-
-<br>
-
-<b>their friend</b> = دوست آن‌ها
-
-<br><br>
-
-🔹 به تفاوت این دو دقت کن:
-
-<br><br>
-
-<b>His</b> = برای پسر یا مرد
-
-<br>
-
-<b>Her</b> = برای دختر یا زن
-
-<br><br>
-
-مثلاً:
-
-<br>
-
-<b>His name is Ali.</b>
-
+<div class="fa">
+هیز نیم ایز اَلای.
 <br>
 اسم او علی است.
-
-<br><br>
-
-<b>Her name is Sara.</b>
-
-<br>
-اسم او سارا است.
-
-<br><br>
-
-🔹 <b>Its</b> با <b>It's</b> فرق دارد.
-
-<br><br>
-
-<b>Its</b> = مال آن
-
-<br>
-
-<b>It's</b> = مخفف <b>It is</b>
-
 </div>
 
-</div>
-
-
-
-<!-- USEFUL EXAMPLES -->
-
-<div class="card">
-
-<h2>⭐ مثال‌های کاربردی</h2>
-
-
-<div class="example">
-
-<div class="english">
-What is your friend's name?
-</div>
-
-<div class="pron">
-وات ایز یور فِرِندز نِیم؟
-</div>
-
-<div class="meaning">
-اسم دوستت چیه؟
-</div>
-
-<button class="speak" onclick="speak('What is your friend’s name?')">
+<button class="speak-btn"
+onclick="speak('His name is Ali.')">
 🔊 تلفظ
 </button>
 
@@ -1349,61 +719,58 @@ What is your friend's name?
 
 <div class="example">
 
-<div class="english">
-My friend's name is Ali.
-</div>
-
-<div class="pron">
-مای فِرِندز نِیم ایز علی.
-</div>
-
-<div class="meaning">
-اسم دوستم علی است.
-</div>
-
-<button class="speak" onclick="speak('My friend’s name is Ali.')">
-🔊 تلفظ
-</button>
-
-</div>
-
-
-<div class="example">
-
-<div class="english">
-What is your sister's name?
-</div>
-
-<div class="pron">
-وات ایز یور سیستِرز نِیم؟
-</div>
-
-<div class="meaning">
-اسم خواهرت چیه؟
-</div>
-
-<button class="speak" onclick="speak('What is your sister’s name?')">
-🔊 تلفظ
-</button>
-
-</div>
-
-
-<div class="example">
-
-<div class="english">
+<div class="en">
 Her name is Mary.
 </div>
 
-<div class="pron">
-هِر نِیم ایز مِری.
-</div>
-
-<div class="meaning">
+<div class="fa">
+هِر نیم ایز مِری.
+<br>
 اسم او مِری است.
 </div>
 
-<button class="speak" onclick="speak('Her name is Mary.')">
+<button class="speak-btn"
+onclick="speak('Her name is Mary.')">
+🔊 تلفظ
+</button>
+
+</div>
+
+
+<div class="example">
+
+<div class="en">
+Our teacher is nice.
+</div>
+
+<div class="fa">
+آوِر تیچِر ایز نایس.
+<br>
+معلم ما خوب است.
+</div>
+
+<button class="speak-btn"
+onclick="speak('Our teacher is nice.')">
+🔊 تلفظ
+</button>
+
+</div>
+
+
+<div class="example">
+
+<div class="en">
+Their house is big.
+</div>
+
+<div class="fa">
+ذِر هاوس ایز بیگ.
+<br>
+خانه آن‌ها بزرگ است.
+</div>
+
+<button class="speak-btn"
+onclick="speak('Their house is big.')">
 🔊 تلفظ
 </button>
 
@@ -1411,6 +778,94 @@ Her name is Mary.
 
 </div>
 
+
+<!-- FAMILY NAME -->
+
+<div class="card">
+
+<h2>👨‍👩‍👧‍👦 اسم اعضای خانواده</h2>
+
+
+<div class="example">
+
+<div class="en">
+What is your mother's name?
+</div>
+
+<div class="fa">
+وات ایز یور مادِرز نیم؟
+<br>
+اسم مادرت چیست؟
+</div>
+
+<button class="speak-btn"
+onclick="speak('What is your mother’s name?')">
+🔊 تلفظ
+</button>
+
+</div>
+
+
+<div class="example">
+
+<div class="en">
+What is your father's name?
+</div>
+
+<div class="fa">
+وات ایز یور فادِرز نیم؟
+<br>
+اسم پدرت چیست؟
+</div>
+
+<button class="speak-btn"
+onclick="speak('What is your father’s name?')">
+🔊 تلفظ
+</button>
+
+</div>
+
+
+<div class="example">
+
+<div class="en">
+What is your sister's name?
+</div>
+
+<div class="fa">
+وات ایز یور سیستِرز نیم؟
+<br>
+اسم خواهرت چیست؟
+</div>
+
+<button class="speak-btn"
+onclick="speak('What is your sister’s name?')">
+🔊 تلفظ
+</button>
+
+</div>
+
+
+<div class="example">
+
+<div class="en">
+What is your brother's name?
+</div>
+
+<div class="fa">
+وات ایز یور برادِرز نیم؟
+<br>
+اسم برادرت چیست؟
+</div>
+
+<button class="speak-btn"
+onclick="speak('What is your brother’s name?')">
+🔊 تلفظ
+</button>
+
+</div>
+
+</div>
 
 
 <!-- CONVERSATION -->
@@ -1422,19 +877,18 @@ Her name is Mary.
 
 <div class="example">
 
-<div class="english">
+<div class="en">
 A: What's your name?
 </div>
 
-<div class="pron">
-اِی: واتس یور نِیم؟
+<div class="fa">
+اِی: واتس یور نیم؟
+<br>
+اسمت چیه؟
 </div>
 
-<div class="meaning">
-الف: اسمت چیه؟
-</div>
-
-<button class="speak" onclick="speak('What is your name?')">
+<button class="speak-btn"
+onclick="speak('What’s your name?')">
 🔊 تلفظ
 </button>
 
@@ -1443,19 +897,18 @@ A: What's your name?
 
 <div class="example">
 
-<div class="english">
+<div class="en">
 B: My name is Arshia.
 </div>
 
-<div class="pron">
-بی: مای نِیم ایز عرشیا.
+<div class="fa">
+بی: مای نیم ایز عرشیا.
+<br>
+اسم من عرشیاست.
 </div>
 
-<div class="meaning">
-ب: اسم من عرشیاست.
-</div>
-
-<button class="speak" onclick="speak('My name is Arshia.')">
+<button class="speak-btn"
+onclick="speak('My name is Arshia.')">
 🔊 تلفظ
 </button>
 
@@ -1464,19 +917,18 @@ B: My name is Arshia.
 
 <div class="example">
 
-<div class="english">
-A: What's your father's name?
+<div class="en">
+A: What is your sister's name?
 </div>
 
-<div class="pron">
-اِی: واتس یور فادِرز نِیم؟
+<div class="fa">
+اِی: وات ایز یور سیستِرز نیم؟
+<br>
+اسم خواهرت چیه؟
 </div>
 
-<div class="meaning">
-الف: اسم پدرت چیه؟
-</div>
-
-<button class="speak" onclick="speak('What is your father’s name?')">
+<button class="speak-btn"
+onclick="speak('What is your sister’s name?')">
 🔊 تلفظ
 </button>
 
@@ -1485,61 +937,18 @@ A: What's your father's name?
 
 <div class="example">
 
-<div class="english">
-B: His name is Reza.
-</div>
-
-<div class="pron">
-بی: هِز نِیم ایز رضا.
-</div>
-
-<div class="meaning">
-ب: اسم او رضا است.
-</div>
-
-<button class="speak" onclick="speak('His name is Reza.')">
-🔊 تلفظ
-</button>
-
-</div>
-
-
-<div class="example">
-
-<div class="english">
-A: What's your mother's name?
-</div>
-
-<div class="pron">
-اِی: واتس یور مادِرز نِیم؟
-</div>
-
-<div class="meaning">
-الف: اسم مادرت چیه؟
-</div>
-
-<button class="speak" onclick="speak('What is your mother’s name?')">
-🔊 تلفظ
-</button>
-
-</div>
-
-
-<div class="example">
-
-<div class="english">
+<div class="en">
 B: Her name is Sara.
 </div>
 
-<div class="pron">
-بی: هِر نِیم ایز سارا.
+<div class="fa">
+بی: هِر نیم ایز سارا.
+<br>
+اسم او سارا است.
 </div>
 
-<div class="meaning">
-ب: اسم او سارا است.
-</div>
-
-<button class="speak" onclick="speak('Her name is Sara.')">
+<button class="speak-btn"
+onclick="speak('Her name is Sara.')">
 🔊 تلفظ
 </button>
 
@@ -1548,19 +957,18 @@ B: Her name is Sara.
 
 <div class="example">
 
-<div class="english">
-A: Nice to meet you!
+<div class="en">
+A: What is your brother's name?
 </div>
 
-<div class="pron">
-اِی: نایس تو میت یو!
+<div class="fa">
+اِی: وات ایز یور برادِرز نیم؟
+<br>
+اسم برادرت چیه؟
 </div>
 
-<div class="meaning">
-الف: از آشنایی با تو خوشحالم!
-</div>
-
-<button class="speak" onclick="speak('Nice to meet you!')">
+<button class="speak-btn"
+onclick="speak('What is your brother’s name?')">
 🔊 تلفظ
 </button>
 
@@ -1569,19 +977,18 @@ A: Nice to meet you!
 
 <div class="example">
 
-<div class="english">
-B: Nice to meet you, too!
+<div class="en">
+B: His name is Ali.
 </div>
 
-<div class="pron">
-بی: نایس تو میت یو، تو!
+<div class="fa">
+بی: هیز نیم ایز اَلای.
+<br>
+اسم او علی است.
 </div>
 
-<div class="meaning">
-ب: من هم از آشنایی با تو خوشحالم!
-</div>
-
-<button class="speak" onclick="speak('Nice to meet you, too!')">
+<button class="speak-btn"
+onclick="speak('His name is Ali.')">
 🔊 تلفظ
 </button>
 
@@ -1589,324 +996,477 @@ B: Nice to meet you, too!
 
 </div>
 
+
+<!-- NOTES -->
+
+<div class="card">
+
+<h2>💡 نکات مهم درس ۲</h2>
+
+<div class="note">
+
+🔹 <b>What is your name?</b>
+و
+<b>What's your name?</b>
+هر دو برای پرسیدن اسم هستند.
+
+<br><br>
+
+🔹 <b>What's = What is</b>
+
+<br><br>
+
+🔹 برای جواب می‌توانیم بگوییم:
+
+<br>
+
+<b>My name is Arshia.</b>
+
+<br>
+
+یا:
+
+<br>
+
+<b>I'm Arshia.</b>
+
+<br><br>
+
+🔹 برای نشان دادن مالکیت بعد از اسم از <b>'s</b> استفاده می‌کنیم:
+
+<br>
+
+<b>Ali's book</b> = کتاب علی
+
+<br><br>
+
+🔹 صفات ملکی قبل از اسم می‌آیند:
+
+<br>
+
+<b>my name</b> = اسم من
+
+<br>
+
+<b>your name</b> = اسم تو
+
+<br>
+
+<b>his name</b> = اسم او
+
+<br>
+
+<b>her name</b> = اسم او
+
+<br><br>
+
+🔹 <b>His</b> برای مذکر و <b>Her</b> برای مونث استفاده می‌شود.
+
+</div>
+
+</div>
+
+
+<!-- START EXAM -->
+
+<div class="card">
+
+<h2>🎯 امتحان درس ۲</h2>
+
+<p>
+آماده‌ای؟ 😎 برای شروع امتحان روی دکمه زیر بزن.
+</p>
+
+<button class="start-btn" onclick="startExam()">
+▶️ شروع امتحان
+</button>
+
+</div>
 
 
 <!-- EXAM -->
 
-<div class="card">
+<div class="card" id="examBox" style="display:none;">
 
-<h2>📝 آزمون درس ۲</h2>
+<h2>📝 امتحان درس ۲</h2>
 
-<p>
-حالا وقتشه ببینیم درس رو چقدر یاد گرفتی 😎
-</p>
 
-<button class="exam-start" onclick="startExam()">
-▶️ شروع آزمون
+<div class="question">
+
+<p>۱. «اسمت چیه؟» کدام جمله است؟</p>
+
+<div class="options">
+
+<button onclick="answer(this,true)">
+What's your name?
+</button>
+
+<button onclick="answer(this,false)">
+How old are you?
+</button>
+
+<button onclick="answer(this,false)">
+What is your favorite color?
 </button>
 
 </div>
 
+</div>
 
-<div class="card" id="exam">
 
-<h2>🧠 آزمون</h2>
+<div class="question">
 
-<div id="questions"></div>
+<p>۲. What's مخفف چیست؟</p>
 
-<div id="result"></div>
+<div class="options">
+
+<button onclick="answer(this,true)">
+What is
+</button>
+
+<button onclick="answer(this,false)">
+What are
+</button>
+
+<button onclick="answer(this,false)">
+Who is
+</button>
+
+</div>
 
 </div>
 
 
+<div class="question">
+
+<p>۳. کدام جواب برای What's your name? درست است؟</p>
+
+<div class="options">
+
+<button onclick="answer(this,false)">
+I am fourteen.
+</button>
+
+<button onclick="answer(this,true)">
+My name is Arshia.
+</button>
+
+<button onclick="answer(this,false)">
+I am from Monday.
+</button>
+
 </div>
 
+</div>
+
+
+<div class="question">
+
+<p>۴. 's در Ali's book چه معنی می‌دهد؟</p>
+
+<div class="options">
+
+<button onclick="answer(this,true)">
+مالکیت
+</button>
+
+<button onclick="answer(this,false)">
+جمع
+</button>
+
+<button onclick="answer(this,false)">
+گذشته
+</button>
+
+</div>
+
+</div>
+
+
+<div class="question">
+
+<p>۵. «کتاب علی» کدام است؟</p>
+
+<div class="options">
+
+<button onclick="answer(this,false)">
+Ali book
+</button>
+
+<button onclick="answer(this,true)">
+Ali's book
+</button>
+
+<button onclick="answer(this,false)">
+Ali is book
+</button>
+
+</div>
+
+</div>
+
+
+<div class="question">
+
+<p>۶. کدام صفت ملکی یعنی «مال من»؟</p>
+
+<div class="options">
+
+<button onclick="answer(this,true)">
+My
+</button>
+
+<button onclick="answer(this,false)">
+Your
+</button>
+
+<button onclick="answer(this,false)">
+Their
+</button>
+
+</div>
+
+</div>
+
+
+<div class="question">
+
+<p>۷. برای یک پسر یا مرد از کدام استفاده می‌کنیم؟</p>
+
+<div class="options">
+
+<button onclick="answer(this,false)">
+Her
+</button>
+
+<button onclick="answer(this,true)">
+His
+</button>
+
+<button onclick="answer(this,false)">
+Our
+</button>
+
+</div>
+
+</div>
+
+
+<div class="question">
+
+<p>۸. «اسم او (دختر) سارا است» کدام است؟</p>
+
+<div class="options">
+
+<button onclick="answer(this,false)">
+His name is Sara.
+</button>
+
+<button onclick="answer(this,true)">
+Her name is Sara.
+</button>
+
+<button onclick="answer(this,false)">
+Their name is Sara.
+</button>
+
+</div>
+
+</div>
+
+
+<div class="question">
+
+<p>۹. کدام جمله درست است؟</p>
+
+<div class="options">
+
+<button onclick="answer(this,true)">
+What is your mother's name?
+</button>
+
+<button onclick="answer(this,false)">
+What is your mother name?
+</button>
+
+<button onclick="answer(this,false)">
+What are your mother's name?
+</button>
+
+</div>
+
+</div>
+
+
+<div class="question">
+
+<p>۱۰. کدام جمله از نظر مالکیت درست است؟</p>
+
+<div class="options">
+
+<button onclick="answer(this,false)">
+This is Sara bag.
+</button>
+
+<button onclick="answer(this,true)">
+This is Sara's bag.
+</button>
+
+<button onclick="answer(this,false)">
+This is Sara is bag.
+</button>
+
+</div>
+
+</div>
+
+
+<div id="result">
+امتیاز: ۰ از ۱۰
+</div>
+
+</div>
+
+</div>
 
 
 <script>
 
-
 function speak(text){
 
-window.speechSynthesis.cancel();
+  window.speechSynthesis.cancel();
 
-const speech =
-new SpeechSynthesisUtterance(text);
+  const speech =
+  new SpeechSynthesisUtterance(text);
 
-speech.lang="en-US";
+  speech.lang="en-US";
 
-speech.rate=0.8;
+  speech.rate=0.8;
 
-window.speechSynthesis.speak(speech);
+  window.speechSynthesis.speak(speech);
 
 }
-
-
-
-const questions=[
-
-{
-q:"What is your ___?",
-options:[
-"name",
-"father",
-"friend"
-],
-answer:0
-},
-
-{
-q:"معنی What is your name? چیست؟",
-options:[
-"اسم او چیست؟",
-"اسمت چیه؟",
-"اسم مادرت چیه؟"
-],
-answer:1
-},
-
-{
-q:"مخفف What is کدام است؟",
-options:[
-"What's",
-"What're",
-"Whatis"
-],
-answer:0
-},
-
-{
-q:"کدام جمله درست است؟",
-options:[
-"What your name is?",
-"What is your name?",
-"What is you name?"
-],
-answer:1
-},
-
-{
-q:"برای «اسم او علی است» اگر علی پسر باشد کدام درست است؟",
-options:[
-"Her name is Ali.",
-"His name is Ali.",
-"My name is Ali."
-],
-answer:1
-},
-
-{
-q:"برای «اسم او سارا است» اگر سارا دختر باشد کدام درست است؟",
-options:[
-"His name is Sara.",
-"Her name is Sara.",
-"Their name is Sara."
-],
-answer:1
-},
-
-{
-q:"کدام گزینه به معنی «اسم دوستم علی است» می‌باشد؟",
-options:[
-"My friend's name is Ali.",
-"My friend name are Ali.",
-"My friends name am Ali."
-],
-answer:0
-},
-
-{
-q:"کدام صفت ملکی برای I استفاده می‌شود؟",
-options:[
-"My",
-"Your",
-"Their"
-],
-answer:0
-},
-
-{
-q:"کدام جمله درست است؟",
-options:[
-"She name is Sara.",
-"Her name is Sara.",
-"His name is Sara."
-],
-answer:1
-},
-
-{
-q:"کدام گزینه معنی درست «اسم پدرت چیه؟» است؟",
-options:[
-"What is your father's name?",
-"What is your father's names?",
-"What your father name?"
-],
-answer:0
-}
-
-];
-
-
-
-let score=0;
-
-let answered=0;
-
 
 
 function startExam(){
 
-const exam=
-document.getElementById("exam");
+  const exam =
+  document.getElementById("examBox");
 
-exam.style.display="block";
+  exam.style.display="block";
 
-exam.scrollIntoView({
-behavior:"smooth"
-});
-
-const container=
-document.getElementById("questions");
-
-container.innerHTML="";
-
-document.getElementById("result").style.display="none";
-
-score=0;
-
-answered=0;
-
-
-
-questions.forEach((question,index)=>{
-
-const box=
-document.createElement("div");
-
-box.className="question";
-
-
-const title=
-document.createElement("div");
-
-title.className="question-title";
-
-title.innerText=
-(index+1)+". "+question.q;
-
-box.appendChild(title);
-
-
-
-question.options.forEach((option,optIndex)=>{
-
-const btn=
-document.createElement("button");
-
-btn.className="option";
-
-btn.innerText=option;
-
-
-btn.onclick=function(){
-
-const buttons=
-box.querySelectorAll(".option");
-
-
-buttons.forEach(b=>{
-b.disabled=true;
-});
-
-
-if(optIndex===question.answer){
-
-btn.classList.add("correct");
-
-score++;
-
-}else{
-
-btn.classList.add("wrong");
-
-buttons[question.answer]
-.classList.add("correct");
+  exam.scrollIntoView({
+    behavior:"smooth"
+  });
 
 }
 
 
-answered++;
+let score=0;
 
-checkResult();
-
-};
+let answeredQuestions=0;
 
 
-box.appendChild(btn);
+function answer(button,isCorrect){
 
-});
+  const question =
+  button.closest(".question");
 
+  const buttons =
+  question.querySelectorAll("button");
 
-container.appendChild(box);
-
-});
-
-}
-
-
-
-function checkResult(){
-
-if(answered===questions.length){
-
-const result=
-document.getElementById("result");
-
-result.style.display="block";
-
-result.innerHTML=
-"🎉 نمره شما: "+
-score+
-" از 10";
+  if(buttons[0].disabled){
+    return;
+  }
 
 
-if(score===10){
+  buttons.forEach(function(btn){
 
-result.innerHTML+=
-"<br>🏆 فوق‌العاده بود! همه جواب‌ها درست بود!";
+    btn.disabled=true;
 
-}
+  });
 
-else if(score>=8){
 
-result.innerHTML+=
-"<br>🔥 عالی بود!";
+  if(isCorrect){
 
-}
+    button.classList.add("correct");
 
-else if(score>=6){
+    score++;
 
-result.innerHTML+=
-"<br>👏 خیلی خوب بود!";
+  }
 
-}
+  else{
 
-else if(score>=4){
+    button.classList.add("wrong");
 
-result.innerHTML+=
-"<br>👍 خوبه! یک بار دیگه درس رو مرور کن.";
+    buttons.forEach(function(btn){
 
-}
+      const code =
+      btn.getAttribute("onclick");
 
-else{
+      if(code && code.includes("true")){
 
-result.innerHTML+=
-"<br>📚 بهتره درس رو دوباره مرور کنی و دوباره امتحان بدی.";
+        btn.classList.add("correct");
 
-}
+      }
 
-}
+    });
+
+  }
+
+
+  answeredQuestions++;
+
+
+  document.getElementById("result").innerHTML =
+  "امتیاز: " + score + " از 10";
+
+
+  if(answeredQuestions===10){
+
+    let message="";
+
+
+    if(score===10){
+
+      message="🎉 عالی! نمره کامل گرفتی!";
+
+    }
+
+    else if(score>=8){
+
+      message="🔥 خیلی خوب بود!";
+
+    }
+
+    else if(score>=5){
+
+      message="👍 خوبه! ولی بهتره درس رو یک بار دیگه مرور کنی.";
+
+    }
+
+    else{
+
+      message="📚 بهتره درس رو دوباره مرور کنی.";
+
+    }
+
+
+    setTimeout(function(){
+
+      document.getElementById("result").innerHTML=
+
+      "🎯 نمره نهایی: " +
+      score +
+      " از 10" +
+
+      "<br><br>" +
+
+      message;
+
+    },300);
+
+  }
 
 }
 
