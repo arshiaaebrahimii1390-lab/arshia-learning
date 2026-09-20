@@ -1,1008 +1,1766 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
-
+<html lang="fa">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>الفبای انگلیسی | Arshia Learning</title>
-
-  <style>
-
-    * {
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
-
-    body {
-      margin: 0;
-      min-height: 100vh;
-
-      background:
-        radial-gradient(circle at 15% 10%, #dbeafe, transparent 35%),
-        radial-gradient(circle at 90% 80%, #e9d5ff, transparent 35%),
-        #f5f7fb;
-
-      color: #172033;
-    }
-
-    .container {
-      width: 92%;
-      max-width: 650px;
-      margin: auto;
-      padding-bottom: 40px;
-    }
-
-    header {
-      margin: 20px 0;
-      padding: 23px;
-
-      border-radius: 28px;
-
-      background: rgba(255,255,255,0.58);
-      backdrop-filter: blur(25px);
-      -webkit-backdrop-filter: blur(25px);
-
-      border: 1px solid rgba(255,255,255,0.8);
-
-      box-shadow: 0 10px 35px rgba(0,0,0,0.08);
-    }
-
-    .back {
-      color: #667085;
-      font-size: 14px;
-      cursor: pointer;
-      margin-bottom: 15px;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 27px;
-    }
-
-    header p {
-      color: #7b8494;
-      line-height: 1.8;
-      font-size: 14px;
-    }
-
-    .card {
-      margin-top: 18px;
-      padding: 20px;
-
-      border-radius: 24px;
-
-      background: rgba(255,255,255,0.58);
-
-      backdrop-filter: blur(25px);
-      -webkit-backdrop-filter: blur(25px);
-
-      border: 1px solid rgba(255,255,255,0.8);
-
-      box-shadow: 0 8px 28px rgba(0,0,0,0.07);
-    }
-
-    .card h2 {
-      margin-top: 0;
-      font-size: 20px;
-    }
-
-    .card p {
-      color: #4b5565;
-      line-height: 2;
-    }
-
-    .info {
-      padding: 16px;
-      margin-top: 12px;
-
-      border-radius: 18px;
-
-      background: rgba(79,124,255,0.09);
-
-      line-height: 2;
-    }
-
-    /* ALPHABET */
-
-    .alphabet {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 10px;
-      margin-top: 15px;
-    }
-
-    .letter {
-      padding: 13px 5px;
-
-      border-radius: 18px;
-
-      text-align: center;
-
-      background: rgba(255,255,255,0.72);
-
-      box-shadow: 0 5px 15px rgba(0,0,0,0.04);
-    }
-
-    .big-letter {
-      font-size: 25px;
-      font-weight: bold;
-    }
-
-    .small-letter {
-      color: #667085;
-      margin-top: 3px;
-    }
-
-    .letter-sound {
-      margin-top: 7px;
-      font-size: 13px;
-      color: #4f7cff;
-      font-weight: bold;
-    }
-
-    .letter button {
-      margin-top: 8px;
-
-      width: 34px;
-      height: 34px;
-
-      border: none;
-      border-radius: 11px;
-
-      background: #4f7cff;
-      color: white;
-
-      cursor: pointer;
-    }
-
-    .letter button:active {
-      transform: scale(0.9);
-    }
-
-    /* VOWELS */
-
-    .vowels {
-      display: flex;
-      gap: 9px;
-
-      overflow-x: auto;
-
-      padding: 5px 0 10px;
-
-      scrollbar-width: none;
-    }
-
-    .vowels::-webkit-scrollbar {
-      display: none;
-    }
-
-    .vowel {
-      min-width: 65px;
-
-      padding: 13px 7px;
-
-      border-radius: 17px;
-
-      text-align: center;
-
-      background: rgba(255,255,255,0.75);
-    }
-
-    .vowel-letter {
-      font-size: 23px;
-      font-weight: bold;
-    }
-
-    .vowel-sound {
-      margin-top: 5px;
-      color: #4f7cff;
-      font-size: 13px;
-      font-weight: bold;
-    }
-
-    .vowel button {
-      margin-top: 8px;
-
-      border: none;
-
-      width: 32px;
-      height: 32px;
-
-      border-radius: 10px;
-
-      background: #4f7cff;
-      color: white;
-
-      cursor: pointer;
-    }
-
-    /* EXERCISES */
-
-    .question {
-      margin-top: 18px;
-      padding: 16px;
-
-      border-radius: 19px;
-
-      background: rgba(255,255,255,0.68);
-    }
-
-    .question-title {
-      font-weight: bold;
-      line-height: 1.9;
-    }
-
-    .answer {
-      display: block;
-
-      width: 100%;
-
-      margin-top: 8px;
-      padding: 12px;
-
-      border: none;
-      border-radius: 14px;
-
-      background: rgba(255,255,255,0.9);
-
-      text-align: right;
-
-      font-size: 14px;
-
-      cursor: pointer;
-
-      transition: 0.2s;
-    }
-
-    .answer:active {
-      transform: scale(0.98);
-    }
-
-    .correct {
-      background: #d1fae5 !important;
-    }
-
-    .wrong {
-      background: #fee2e2 !important;
-    }
-
-    .result {
-      margin-top: 10px;
-      font-weight: bold;
-      font-size: 13px;
-    }
-
-    .finish {
-      margin-top: 20px;
-      padding: 20px;
-
-      text-align: center;
-
-      border-radius: 23px;
-
-      background: rgba(255,255,255,0.62);
-
-      line-height: 2;
-    }
-
-    footer {
-      text-align: center;
-
-      padding: 30px 0 10px;
-
-      color: #8a93a3;
-
-      font-size: 12px;
-    }
-
-  </style>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>الفبای انگلیسی | Arshia Learning</title>
+
+<style>
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  direction:rtl;
+  background:linear-gradient(135deg,#eef2ff,#f8f9ff);
+  color:#222;
+}
+
+.container{
+  max-width:800px;
+  margin:auto;
+  padding:20px;
+}
+
+.back{
+  display:inline-block;
+  text-decoration:none;
+  color:#4f7cff;
+  font-weight:bold;
+  margin-bottom:15px;
+}
+
+.header{
+  text-align:center;
+  padding:25px 15px;
+  border-radius:28px;
+  background:rgba(255,255,255,0.65);
+  backdrop-filter:blur(20px);
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+  margin-bottom:20px;
+}
+
+.header h1{
+  margin:0 0 8px;
+}
+
+.card{
+  background:rgba(255,255,255,0.72);
+  backdrop-filter:blur(20px);
+  border-radius:24px;
+  padding:20px;
+  margin-bottom:18px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.07);
+}
+
+.card h2{
+  margin-top:0;
+}
+
+.info{
+  line-height:2;
+}
+
+.note{
+  background:#fff8df;
+  border-radius:16px;
+  padding:15px;
+  line-height:2;
+  margin-top:15px;
+}
+
+.letter-card{
+  background:rgba(255,255,255,0.82);
+  border-radius:20px;
+  padding:16px;
+  margin:12px 0;
+  border:1px solid rgba(0,0,0,0.05);
+}
+
+.letter-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+}
+
+.big-letter{
+  font-size:32px;
+  font-weight:bold;
+  direction:ltr;
+}
+
+.letter-name{
+  flex:1;
+  text-align:center;
+}
+
+.letter-name strong{
+  font-size:17px;
+}
+
+.sound{
+  margin-top:12px;
+  background:#f1f4ff;
+  border-radius:14px;
+  padding:10px;
+  line-height:1.8;
+}
+
+.example{
+  margin-top:12px;
+  background:#f8f8fb;
+  border-radius:14px;
+  padding:12px;
+}
+
+.example-word{
+  font-size:21px;
+  font-weight:bold;
+  direction:ltr;
+  text-align:left;
+}
+
+.example-pronunciation{
+  margin-top:6px;
+  font-weight:bold;
+}
+
+.example-meaning{
+  margin-top:5px;
+}
+
+.speak-btn{
+  border:none;
+  border-radius:12px;
+  padding:9px 12px;
+  background:#eef2ff;
+  cursor:pointer;
+  font-size:14px;
+  margin-top:8px;
+}
+
+.speak-btn:active{
+  transform:scale(0.96);
+}
+
+.vowels{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+}
+
+.vowel{
+  background:rgba(255,255,255,0.82);
+  border-radius:18px;
+  padding:16px;
+  text-align:center;
+}
+
+.vowel-letter{
+  font-size:30px;
+  font-weight:bold;
+  direction:ltr;
+}
+
+.vowel-pronunciation{
+  margin-top:8px;
+  font-weight:bold;
+}
+
+.vowel-info{
+  margin-top:8px;
+  line-height:1.8;
+}
+
+.start-btn{
+  width:100%;
+  border:none;
+  border-radius:16px;
+  padding:14px;
+  background:#4f7cff;
+  color:white;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.start-btn:active{
+  transform:scale(0.97);
+}
+
+.question{
+  margin-bottom:22px;
+  padding:16px;
+  background:rgba(255,255,255,0.82);
+  border-radius:18px;
+}
+
+.question p{
+  font-weight:bold;
+  line-height:1.9;
+}
+
+.options button{
+  width:100%;
+  border:none;
+  border-radius:14px;
+  padding:12px;
+  margin:6px 0;
+  background:#f0f2f8;
+  font-size:15px;
+  cursor:pointer;
+}
+
+.options button:disabled{
+  cursor:default;
+}
+
+.correct{
+  background:#b9f6c3 !important;
+}
+
+.wrong{
+  background:#ffb8b8 !important;
+}
+
+#result{
+  text-align:center;
+  font-size:18px;
+  font-weight:bold;
+  margin-top:20px;
+  line-height:1.8;
+}
+
+@media(max-width:550px){
+
+  .vowels{
+    grid-template-columns:1fr;
+  }
+
+  .big-letter{
+    font-size:28px;
+  }
+
+}
+
+</style>
 </head>
-
 
 <body>
 
-  <main class="container">
+<div class="container">
 
+<a href="english.html" class="back">
+← برگشت به درس‌ها
+</a>
 
-    <!-- HEADER -->
 
-    <header>
+<div class="header">
 
-      <div
-        class="back"
-        onclick="location.href='english.html'">
+<h1>الفبای انگلیسی 🔤</h1>
 
-        ← بازگشت به درس‌ها
+<p>
+<b>English Alphabet</b>
+</p>
 
-      </div>
+</div>
 
-      <h1>
-        🔤 الفبای انگلیسی
-      </h1>
 
-      <p>
-        English Alphabet
-      </p>
+<!-- INTRO -->
 
-    </header>
+<div class="card">
 
+<h2>📚 الفبای انگلیسی چیست؟</h2>
 
-    <!-- INTRO -->
+<div class="info">
 
-    <div class="card">
+الفبای انگلیسی از <b>۲۶ حرف</b> تشکیل شده است.
 
-      <h2>
-        🇬🇧 الفبای انگلیسی چیست؟
-      </h2>
+<br><br>
 
-      <p>
-        زبان انگلیسی دارای
-        <b>۲۶ حرف</b>
-        است.
-      </p>
+هر حرف دو چیز مهم دارد:
 
-      <p>
-        الفبای انگلیسی از حرف
-        <b>A</b>
-        شروع می‌شود و به
-        <b>Z</b>
-        ختم می‌شود.
-      </p>
+<br>
 
-      <div class="info">
+🔹 <b>اسم حرف</b>؛ مثلاً اسم B می‌شود «بی».
 
-        🔠 <b>Capital Letters</b>
-        = حروف بزرگ
+<br>
 
-        <br>
+🔹 <b>صدا</b>؛ مثلاً B در کلمه <b>Ball</b> صدای «ب» می‌دهد.
 
-        🔡 <b>Small Letters</b>
-        = حروف کوچک
+<br><br>
 
-      </div>
+در این درس برای هر حرف یک کلمه ساده هم یاد می‌گیریم تا هم حرف را بشناسی و هم صدای آن را داخل کلمه ببینی.
 
-    </div>
+</div>
 
+<div class="note">
 
-    <!-- ALPHABET -->
+💡 توجه:
 
-    <div class="card">
+<br>
 
-      <h2>
-        🔤 حروف A تا Z
-      </h2>
+تلفظ فارسی فقط برای کمک به یادگیری است و دقیقاً تمام صداهای زبان انگلیسی را نشان نمی‌دهد.
 
-      <p>
-        صدای تقریبی هر حرف در کلمه‌ها را به فارسی ببین.
-        برای شنیدن تلفظ هم روی 🔊 بزن.
-      </p>
+<br><br>
 
+صدای بعضی حروف، مخصوصاً حروف صدادار، می‌تواند در کلمه‌های مختلف تغییر کند.
 
-      <div class="alphabet">
+</div>
 
+</div>
 
-        <div class="letter">
-          <div class="big-letter">A</div>
-          <div class="small-letter">a</div>
-          <div class="letter-sound">اَ</div>
-          <button onclick="speak('A')">🔊</button>
-        </div>
 
+<!-- ALPHABET -->
 
-        <div class="letter">
-          <div class="big-letter">B</div>
-          <div class="small-letter">b</div>
-          <div class="letter-sound">ب</div>
-          <button onclick="speak('B')">🔊</button>
-        </div>
+<div class="card">
 
+<h2>🔤 ۲۶ حرف الفبای انگلیسی</h2>
 
-        <div class="letter">
-          <div class="big-letter">C</div>
-          <div class="small-letter">c</div>
-          <div class="letter-sound">ک / س</div>
-          <button onclick="speak('C')">🔊</button>
-        </div>
 
+<!-- A -->
 
-        <div class="letter">
-          <div class="big-letter">D</div>
-          <div class="small-letter">d</div>
-          <div class="letter-sound">د</div>
-          <button onclick="speak('D')">🔊</button>
-        </div>
+<div class="letter-card">
 
+<div class="letter-top">
+<div class="big-letter">A a</div>
+<div class="letter-name"><strong>اسم حرف:</strong> اِی</div>
+<button class="speak-btn" onclick="speak('A')">🔊</button>
+</div>
 
-        <div class="letter">
-          <div class="big-letter">E</div>
-          <div class="small-letter">e</div>
-          <div class="letter-sound">اِ</div>
-          <button onclick="speak('E')">🔊</button>
-        </div>
+<div class="sound">
+<b>صدای نمونه:</b> اَ
+<br>
+در بعضی کلمه‌ها صدای A متفاوت است.
+</div>
 
+<div class="example">
+<div class="example-word">Apple</div>
+<div class="example-pronunciation">اَپِل</div>
+<div class="example-meaning">🍎 سیب</div>
+<button class="speak-btn" onclick="speakSlow('Apple')">🔊 تلفظ آرام</button>
+</div>
 
-        <div class="letter">
-          <div class="big-letter">F</div>
-          <div class="small-letter">f</div>
-          <div class="letter-sound">ف</div>
-          <button onclick="speak('F')">🔊</button>
-        </div>
+</div>
 
 
-        <div class="letter">
-          <div class="big-letter">G</div>
-          <div class="small-letter">g</div>
-          <div class="letter-sound">گ / ج</div>
-          <button onclick="speak('G')">🔊</button>
-        </div>
+<!-- B -->
 
+<div class="letter-card">
 
-        <div class="letter">
-          <div class="big-letter">H</div>
-          <div class="small-letter">h</div>
-          <div class="letter-sound">ه</div>
-          <button onclick="speak('H')">🔊</button>
-        </div>
+<div class="letter-top">
+<div class="big-letter">B b</div>
+<div class="letter-name"><strong>اسم حرف:</strong> بی</div>
+<button class="speak-btn" onclick="speak('B')">🔊</button>
+</div>
 
+<div class="sound">
+<b>صدای نمونه:</b> ب
+</div>
 
-        <div class="letter">
-          <div class="big-letter">I</div>
-          <div class="small-letter">i</div>
-          <div class="letter-sound">ای</div>
-          <button onclick="speak('I')">🔊</button>
-        </div>
+<div class="example">
+<div class="example-word">Ball</div>
+<div class="example-pronunciation">بال</div>
+<div class="example-meaning">⚽ توپ</div>
+<button class="speak-btn" onclick="speakSlow('Ball')">🔊 تلفظ آرام</button>
+</div>
 
+</div>
 
-        <div class="letter">
-          <div class="big-letter">J</div>
-          <div class="small-letter">j</div>
-          <div class="letter-sound">ج</div>
-          <button onclick="speak('J')">🔊</button>
-        </div>
 
+<!-- C -->
 
-        <div class="letter">
-          <div class="big-letter">K</div>
-          <div class="small-letter">k</div>
-          <div class="letter-sound">ک</div>
-          <button onclick="speak('K')">🔊</button>
-        </div>
+<div class="letter-card">
 
+<div class="letter-top">
+<div class="big-letter">C c</div>
+<div class="letter-name"><strong>اسم حرف:</strong> سی</div>
+<button class="speak-btn" onclick="speak('C')">🔊</button>
+</div>
 
-        <div class="letter">
-          <div class="big-letter">L</div>
-          <div class="small-letter">l</div>
-          <div class="letter-sound">ل</div>
-          <button onclick="speak('L')">🔊</button>
-        </div>
+<div class="sound">
+<b>صدای نمونه:</b> ک
+<br>
+گاهی C می‌تواند صدای «س» بدهد.
+</div>
 
+<div class="example">
+<div class="example-word">Cat</div>
+<div class="example-pronunciation">کَت</div>
+<div class="example-meaning">🐱 گربه</div>
+<button class="speak-btn" onclick="speakSlow('Cat')">🔊 تلفظ آرام</button>
+</div>
 
-        <div class="letter">
-          <div class="big-letter">M</div>
-          <div class="small-letter">m</div>
-          <div class="letter-sound">م</div>
-          <button onclick="speak('M')">🔊</button>
-        </div>
+</div>
 
 
-        <div class="letter">
-          <div class="big-letter">N</div>
-          <div class="small-letter">n</div>
-          <div class="letter-sound">ن</div>
-          <button onclick="speak('N')">🔊</button>
-        </div>
+<!-- D -->
 
+<div class="letter-card">
 
-        <div class="letter">
-          <div class="big-letter">O</div>
-          <div class="small-letter">o</div>
-          <div class="letter-sound">آ / اُ</div>
-          <button onclick="speak('O')">🔊</button>
-        </div>
+<div class="letter-top">
+<div class="big-letter">D d</div>
+<div class="letter-name"><strong>اسم حرف:</strong> دی</div>
+<button class="speak-btn" onclick="speak('D')">🔊</button>
+</div>
 
+<div class="sound">
+<b>صدای نمونه:</b> د
+</div>
 
-        <div class="letter">
-          <div class="big-letter">P</div>
-          <div class="small-letter">p</div>
-          <div class="letter-sound">پ</div>
-          <button onclick="speak('P')">🔊</button>
-        </div>
+<div class="example">
+<div class="example-word">Dog</div>
+<div class="example-pronunciation">داگ</div>
+<div class="example-meaning">🐶 سگ</div>
+<button class="speak-btn" onclick="speakSlow('Dog')">🔊 تلفظ آرام</button>
+</div>
 
+</div>
 
-        <div class="letter">
-          <div class="big-letter">Q</div>
-          <div class="small-letter">q</div>
-          <div class="letter-sound">ک</div>
-          <button onclick="speak('Q')">🔊</button>
-        </div>
 
+<!-- E -->
 
-        <div class="letter">
-          <div class="big-letter">R</div>
-          <div class="small-letter">r</div>
-          <div class="letter-sound">ر</div>
-          <button onclick="speak('R')">🔊</button>
-        </div>
+<div class="letter-card">
 
+<div class="letter-top">
+<div class="big-letter">E e</div>
+<div class="letter-name"><strong>اسم حرف:</strong> ای</div>
+<button class="speak-btn" onclick="speak('E')">🔊</button>
+</div>
 
-        <div class="letter">
-          <div class="big-letter">S</div>
-          <div class="small-letter">s</div>
-          <div class="letter-sound">س</div>
-          <button onclick="speak('S')">🔊</button>
-        </div>
+<div class="sound">
+<b>صدای نمونه:</b> اِ / ای
+</div>
 
+<div class="example">
+<div class="example-word">Egg</div>
+<div class="example-pronunciation">اِگ</div>
+<div class="example-meaning">🥚 تخم‌مرغ</div>
+<button class="speak-btn" onclick="speakSlow('Egg')">🔊 تلفظ آرام</button>
+</div>
 
-        <div class="letter">
-          <div class="big-letter">T</div>
-          <div class="small-letter">t</div>
-          <div class="letter-sound">ت</div>
-          <button onclick="speak('T')">🔊</button>
-        </div>
+</div>
 
 
-        <div class="letter">
-          <div class="big-letter">U</div>
-          <div class="small-letter">u</div>
-          <div class="letter-sound">اَ / یو</div>
-          <button onclick="speak('U')">🔊</button>
-        </div>
+<!-- F -->
 
+<div class="letter-card">
 
-        <div class="letter">
-          <div class="big-letter">V</div>
-          <div class="small-letter">v</div>
-          <div class="letter-sound">و</div>
-          <button onclick="speak('V')">🔊</button>
-        </div>
+<div class="letter-top">
+<div class="big-letter">F f</div>
+<div class="letter-name"><strong>اسم حرف:</strong> اِف</div>
+<button class="speak-btn" onclick="speak('F')">🔊</button>
+</div>
 
+<div class="sound">
+<b>صدای نمونه:</b> ف
+</div>
 
-        <div class="letter">
-          <div class="big-letter">W</div>
-          <div class="small-letter">w</div>
-          <div class="letter-sound">و</div>
-          <button onclick="speak('W')">🔊</button>
-        </div>
+<div class="example">
+<div class="example-word">Fish</div>
+<div class="example-pronunciation">فیش</div>
+<div class="example-meaning">🐟 ماهی</div>
+<button class="speak-btn" onclick="speakSlow('Fish')">🔊 تلفظ آرام</button>
+</div>
 
+</div>
 
-        <div class="letter">
-          <div class="big-letter">X</div>
-          <div class="small-letter">x</div>
-          <div class="letter-sound">کْس</div>
-          <button onclick="speak('X')">🔊</button>
-        </div>
 
+<!-- G -->
 
-        <div class="letter">
-          <div class="big-letter">Y</div>
-          <div class="small-letter">y</div>
-          <div class="letter-sound">ی</div>
-          <button onclick="speak('Y')">🔊</button>
-        </div>
+<div class="letter-card">
 
+<div class="letter-top">
+<div class="big-letter">G g</div>
+<div class="letter-name"><strong>اسم حرف:</strong> جی</div>
+<button class="speak-btn" onclick="speak('G')">🔊</button>
+</div>
 
-        <div class="letter">
-          <div class="big-letter">Z</div>
-          <div class="small-letter">z</div>
-          <div class="letter-sound">ز</div>
-          <button onclick="speak('Z')">🔊</button>
-        </div>
+<div class="sound">
+<b>صدای نمونه:</b> گ
+<br>
+گاهی G می‌تواند صدای دیگری داشته باشد.
+</div>
 
+<div class="example">
+<div class="example-word">Go</div>
+<div class="example-pronunciation">گو</div>
+<div class="example-meaning">رفتن</div>
+<button class="speak-btn" onclick="speakSlow('Go')">🔊 تلفظ آرام</button>
+</div>
 
-      </div>
+</div>
 
-    </div>
 
+<!-- H -->
 
-    <!-- VOWELS -->
+<div class="letter-card">
 
-    <div class="card">
+<div class="letter-top">
+<div class="big-letter">H h</div>
+<div class="letter-name"><strong>اسم حرف:</strong> اِیچ</div>
+<button class="speak-btn" onclick="speak('H')">🔊</button>
+</div>
 
-      <h2>
-        🔊 حروف صدادار — Vowels
-      </h2>
+<div class="sound">
+<b>صدای نمونه:</b> ه
+</div>
 
-      <p>
-        در انگلیسی ۵ حرف صدادار اصلی داریم:
-      </p>
+<div class="example">
+<div class="example-word">House</div>
+<div class="example-pronunciation">هاوس</div>
+<div class="example-meaning">🏠 خانه</div>
+<button class="speak-btn" onclick="speakSlow('House')">🔊 تلفظ آرام</button>
+</div>
 
+</div>
 
-      <div class="vowels">
 
+<!-- I -->
 
-        <div class="vowel">
+<div class="letter-card">
 
-          <div class="vowel-letter">A</div>
+<div class="letter-top">
+<div class="big-letter">I i</div>
+<div class="letter-name"><strong>اسم حرف:</strong> آی</div>
+<button class="speak-btn" onclick="speak('I')">🔊</button>
+</div>
 
-          <div class="vowel-sound">اَ</div>
+<div class="sound">
+<b>صدای نمونه:</b> ای / آی
+</div>
 
-          <button onclick="speak('A')">
-            🔊
-          </button>
+<div class="example">
+<div class="example-word">Ice</div>
+<div class="example-pronunciation">آیس</div>
+<div class="example-meaning">🧊 یخ</div>
+<button class="speak-btn" onclick="speakSlow('Ice')">🔊 تلفظ آرام</button>
+</div>
 
-        </div>
+</div>
 
 
-        <div class="vowel">
+<!-- J -->
 
-          <div class="vowel-letter">E</div>
+<div class="letter-card">
 
-          <div class="vowel-sound">اِ</div>
+<div class="letter-top">
+<div class="big-letter">J j</div>
+<div class="letter-name"><strong>اسم حرف:</strong> جِی</div>
+<button class="speak-btn" onclick="speak('J')">🔊</button>
+</div>
 
-          <button onclick="speak('E')">
-            🔊
-          </button>
+<div class="sound">
+<b>صدای نمونه:</b> ج
+</div>
 
-        </div>
+<div class="example">
+<div class="example-word">Juice</div>
+<div class="example-pronunciation">جوس</div>
+<div class="example-meaning">🧃 آبمیوه</div>
+<button class="speak-btn" onclick="speakSlow('Juice')">🔊 تلفظ آرام</button>
+</div>
 
+</div>
 
-        <div class="vowel">
 
-          <div class="vowel-letter">I</div>
+<!-- K -->
 
-          <div class="vowel-sound">ای</div>
+<div class="letter-card">
 
-          <button onclick="speak('I')">
-            🔊
-          </button>
+<div class="letter-top">
+<div class="big-letter">K k</div>
+<div class="letter-name"><strong>اسم حرف:</strong> کِی</div>
+<button class="speak-btn" onclick="speak('K')">🔊</button>
+</div>
 
-        </div>
+<div class="sound">
+<b>صدای نمونه:</b> ک
+</div>
 
+<div class="example">
+<div class="example-word">King</div>
+<div class="example-pronunciation">کینگ</div>
+<div class="example-meaning">👑 پادشاه</div>
+<button class="speak-btn" onclick="speakSlow('King')">🔊 تلفظ آرام</button>
+</div>
 
-        <div class="vowel">
+</div>
 
-          <div class="vowel-letter">O</div>
 
-          <div class="vowel-sound">آ / اُ</div>
+<!-- L -->
 
-          <button onclick="speak('O')">
-            🔊
-          </button>
+<div class="letter-card">
 
-        </div>
+<div class="letter-top">
+<div class="big-letter">L l</div>
+<div class="letter-name"><strong>اسم حرف:</strong> اِل</div>
+<button class="speak-btn" onclick="speak('L')">🔊</button>
+</div>
 
+<div class="sound">
+<b>صدای نمونه:</b> ل
+</div>
 
-        <div class="vowel">
+<div class="example">
+<div class="example-word">Lion</div>
+<div class="example-pronunciation">لایِن</div>
+<div class="example-meaning">🦁 شیر</div>
+<button class="speak-btn" onclick="speakSlow('Lion')">🔊 تلفظ آرام</button>
+</div>
 
-          <div class="vowel-letter">U</div>
+</div>
 
-          <div class="vowel-sound">اَ / یو</div>
 
-          <button onclick="speak('U')">
-            🔊
-          </button>
+<!-- M -->
 
-        </div>
+<div class="letter-card">
 
+<div class="letter-top">
+<div class="big-letter">M m</div>
+<div class="letter-name"><strong>اسم حرف:</strong> اِم</div>
+<button class="speak-btn" onclick="speak('M')">🔊</button>
+</div>
 
-      </div>
+<div class="sound">
+<b>صدای نمونه:</b> م
+</div>
 
+<div class="example">
+<div class="example-word">Moon</div>
+<div class="example-pronunciation">مون</div>
+<div class="example-meaning">🌙 ماه</div>
+<button class="speak-btn" onclick="speakSlow('Moon')">🔊 تلفظ آرام</button>
+</div>
 
-      <div class="info">
+</div>
 
-        ⭐
-        <b>A, E, I, O, U</b>
-        = حروف صدادار اصلی
 
-      </div>
+<!-- N -->
 
-    </div>
+<div class="letter-card">
 
+<div class="letter-top">
+<div class="big-letter">N n</div>
+<div class="letter-name"><strong>اسم حرف:</strong> اِن</div>
+<button class="speak-btn" onclick="speak('N')">🔊</button>
+</div>
 
-    <!-- EXERCISES -->
+<div class="sound">
+<b>صدای نمونه:</b> ن
+</div>
 
-    <div class="card">
+<div class="example">
+<div class="example-word">Nose</div>
+<div class="example-pronunciation">نوز</div>
+<div class="example-meaning">👃 بینی</div>
+<button class="speak-btn" onclick="speakSlow('Nose')">🔊 تلفظ آرام</button>
+</div>
 
-      <h2>
-        📝 تمرین الفبا
-      </h2>
+</div>
 
-      <p>
-        جواب درست را انتخاب کن.
-      </p>
 
+<!-- O -->
 
-      <!-- Q1 -->
+<div class="letter-card">
 
-      <div class="question">
+<div class="letter-top">
+<div class="big-letter">O o</div>
+<div class="letter-name"><strong>اسم حرف:</strong> اُو</div>
+<button class="speak-btn" onclick="speak('O')">🔊</button>
+</div>
 
-        <div class="question-title">
-          ۱. صدای حرف <b>B</b> چیست؟
-        </div>
+<div class="sound">
+<b>صدای نمونه:</b> آ / اُ / اُو
+</div>
 
-        <button class="answer"
-          onclick="check(this,true,'r1')">
-          ب
-        </button>
+<div class="example">
+<div class="example-word">Orange</div>
+<div class="example-pronunciation">آرِنج</div>
+<div class="example-meaning">🍊 پرتقال</div>
+<button class="speak-btn" onclick="speakSlow('Orange')">🔊 تلفظ آرام</button>
+</div>
 
-        <button class="answer"
-          onclick="check(this,false,'r1')">
-          د
-        </button>
+</div>
 
-        <button class="answer"
-          onclick="check(this,false,'r1')">
-          م
-        </button>
 
-        <div class="result" id="r1"></div>
+<!-- P -->
 
-      </div>
+<div class="letter-card">
 
+<div class="letter-top">
+<div class="big-letter">P p</div>
+<div class="letter-name"><strong>اسم حرف:</strong> پی</div>
+<button class="speak-btn" onclick="speak('P')">🔊</button>
+</div>
 
-      <!-- Q2 -->
+<div class="sound">
+<b>صدای نمونه:</b> پ
+</div>
 
-      <div class="question">
+<div class="example">
+<div class="example-word">Pen</div>
+<div class="example-pronunciation">پِن</div>
+<div class="example-meaning">🖊️ خودکار</div>
+<button class="speak-btn" onclick="speakSlow('Pen')">🔊 تلفظ آرام</button>
+</div>
 
-        <div class="question-title">
-          ۲. کدام حرف صدای «م» دارد؟
-        </div>
+</div>
 
-        <button class="answer"
-          onclick="check(this,false,'r2')">
-          N
-        </button>
 
-        <button class="answer"
-          onclick="check(this,true,'r2')">
-          M
-        </button>
+<!-- Q -->
 
-        <button class="answer"
-          onclick="check(this,false,'r2')">
-          P
-        </button>
+<div class="letter-card">
 
-        <div class="result" id="r2"></div>
+<div class="letter-top">
+<div class="big-letter">Q q</div>
+<div class="letter-name"><strong>اسم حرف:</strong> کیو</div>
+<button class="speak-btn" onclick="speak('Q')">🔊</button>
+</div>
 
-      </div>
+<div class="sound">
+<b>صدای نمونه:</b> کْو
+<br>
+Q معمولاً همراه U می‌آید.
+</div>
 
+<div class="example">
+<div class="example-word">Queen</div>
+<div class="example-pronunciation">کوین</div>
+<div class="example-meaning">👑 ملکه</div>
+<button class="speak-btn" onclick="speakSlow('Queen')">🔊 تلفظ آرام</button>
+</div>
 
-      <!-- Q3 -->
+</div>
 
-      <div class="question">
 
-        <div class="question-title">
-          ۳. کدام گزینه حرف صدادار است؟
-        </div>
+<!-- R -->
 
-        <button class="answer"
-          onclick="check(this,false,'r3')">
-          B
-        </button>
+<div class="letter-card">
 
-        <button class="answer"
-          onclick="check(this,true,'r3')">
-          E
-        </button>
+<div class="letter-top">
+<div class="big-letter">R r</div>
+<div class="letter-name"><strong>اسم حرف:</strong> آر</div>
+<button class="speak-btn" onclick="speak('R')">🔊</button>
+</div>
 
-        <button class="answer"
-          onclick="check(this,false,'r3')">
-          T
-        </button>
+<div class="sound">
+<b>صدای نمونه:</b> ر
+</div>
 
-        <div class="result" id="r3"></div>
+<div class="example">
+<div class="example-word">Red</div>
+<div class="example-pronunciation">رِد</div>
+<div class="example-meaning">🔴 قرمز</div>
+<button class="speak-btn" onclick="speakSlow('Red')">🔊 تلفظ آرام</button>
+</div>
 
-      </div>
+</div>
 
 
-      <!-- Q4 -->
+<!-- S -->
 
-      <div class="question">
+<div class="letter-card">
 
-        <div class="question-title">
-          ۴. صدای حرف <b>T</b> چیست؟
-        </div>
+<div class="letter-top">
+<div class="big-letter">S s</div>
+<div class="letter-name"><strong>اسم حرف:</strong> اِس</div>
+<button class="speak-btn" onclick="speak('S')">🔊</button>
+</div>
 
-        <button class="answer"
-          onclick="check(this,false,'r4')">
-          ک
-        </button>
+<div class="sound">
+<b>صدای نمونه:</b> س
+<br>
+گاهی S می‌تواند صدای «ز» بدهد.
+</div>
 
-        <button class="answer"
-          onclick="check(this,true,'r4')">
-          ت
-        </button>
+<div class="example">
+<div class="example-word">Sun</div>
+<div class="example-pronunciation">سان</div>
+<div class="example-meaning">☀️ خورشید</div>
+<button class="speak-btn" onclick="speakSlow('Sun')">🔊 تلفظ آرام</button>
+</div>
 
-        <button class="answer"
-          onclick="check(this,false,'r4')">
-          ف
-        </button>
+</div>
 
-        <div class="result" id="r4"></div>
 
-      </div>
+<!-- T -->
 
+<div class="letter-card">
 
-      <!-- Q5 -->
+<div class="letter-top">
+<div class="big-letter">T t</div>
+<div class="letter-name"><strong>اسم حرف:</strong> تی</div>
+<button class="speak-btn" onclick="speak('T')">🔊</button>
+</div>
 
-      <div class="question">
+<div class="sound">
+<b>صدای نمونه:</b> ت
+</div>
 
-        <div class="question-title">
-          ۵. کدام گزینه حروف صدادار اصلی را نشان می‌دهد؟
-        </div>
+<div class="example">
+<div class="example-word">Table</div>
+<div class="example-pronunciation">تِیبِل</div>
+<div class="example-meaning">🪑 میز</div>
+<button class="speak-btn" onclick="speakSlow('Table')">🔊 تلفظ آرام</button>
+</div>
 
-        <button class="answer"
-          onclick="check(this,true,'r5')">
-          A, E, I, O, U
-        </button>
+</div>
 
-        <button class="answer"
-          onclick="check(this,false,'r5')">
-          B, C, D, F, G
-        </button>
 
-        <button class="answer"
-          onclick="check(this,false,'r5')">
-          J, K, L, M, N
-        </button>
+<!-- U -->
 
-        <div class="result" id="r5"></div>
+<div class="letter-card">
 
-      </div>
+<div class="letter-top">
+<div class="big-letter">U u</div>
+<div class="letter-name"><strong>اسم حرف:</strong> یو</div>
+<button class="speak-btn" onclick="speak('U')">🔊</button>
+</div>
 
+<div class="sound">
+<b>صدای نمونه:</b> اَ / یو / او
+</div>
 
-      <!-- Q6 -->
+<div class="example">
+<div class="example-word">Umbrella</div>
+<div class="example-pronunciation">اَمبْرِلا</div>
+<div class="example-meaning">☂️ چتر</div>
+<button class="speak-btn" onclick="speakSlow('Umbrella')">🔊 تلفظ آرام</button>
+</div>
 
-      <div class="question">
+</div>
 
-        <div class="question-title">
-          ۶. حرف اول کلمه‌ی <b>Book</b> کدام است؟
-        </div>
 
-        <button class="answer"
-          onclick="check(this,true,'r6')">
-          B
-        </button>
+<!-- V -->
 
-        <button class="answer"
-          onclick="check(this,false,'r6')">
-          P
-        </button>
+<div class="letter-card">
 
-        <button class="answer"
-          onclick="check(this,false,'r6')">
-          D
-        </button>
+<div class="letter-top">
+<div class="big-letter">V v</div>
+<div class="letter-name"><strong>اسم حرف:</strong> وی</div>
+<button class="speak-btn" onclick="speak('V')">🔊</button>
+</div>
 
-        <div class="result" id="r6"></div>
+<div class="sound">
+<b>صدای نمونه:</b> صدای V
+</div>
 
-      </div>
+<div class="example">
+<div class="example-word">Van</div>
+<div class="example-pronunciation">وَن</div>
+<div class="example-meaning">🚐 ون</div>
+<button class="speak-btn" onclick="speakSlow('Van')">🔊 تلفظ آرام</button>
+</div>
 
+</div>
 
-      <!-- Q7 -->
 
-      <div class="question">
+<!-- W -->
 
-        <div class="question-title">
-          ۷. صدای حرف <b>P</b> چیست؟
-        </div>
+<div class="letter-card">
 
-        <button class="answer"
-          onclick="check(this,false,'r7')">
-          ب
-        </button>
+<div class="letter-top">
+<div class="big-letter">W w</div>
+<div class="letter-name"><strong>اسم حرف:</strong> دابِل‌یو</div>
+<button class="speak-btn" onclick="speak('W')">🔊</button>
+</div>
 
-        <button class="answer"
-          onclick="check(this,true,'r7')">
-          پ
-        </button>
+<div class="sound">
+<b>صدای نمونه:</b> و
+</div>
 
-        <button class="answer"
-          onclick="check(this,false,'r7')">
-          ت
-        </button>
+<div class="example">
+<div class="example-word">Water</div>
+<div class="example-pronunciation">واتِر</div>
+<div class="example-meaning">💧 آب</div>
+<button class="speak-btn" onclick="speakSlow('Water')">🔊 تلفظ آرام</button>
+</div>
 
-        <div class="result" id="r7"></div>
+</div>
 
-      </div>
 
+<!-- X -->
 
-      <!-- Q8 -->
+<div class="letter-card">
 
-      <div class="question">
+<div class="letter-top">
+<div class="big-letter">X x</div>
+<div class="letter-name"><strong>اسم حرف:</strong> اِکس</div>
+<button class="speak-btn" onclick="speak('X')">🔊</button>
+</div>
 
-        <div class="question-title">
-          ۸. کدام حرف صدای «ف» دارد؟
-        </div>
+<div class="sound">
+<b>صدای نمونه:</b> کْس
+</div>
 
-        <button class="answer"
-          onclick="check(this,false,'r8')">
-          V
-        </button>
+<div class="example">
+<div class="example-word">Box</div>
+<div class="example-pronunciation">باکس</div>
+<div class="example-meaning">📦 جعبه</div>
+<button class="speak-btn" onclick="speakSlow('Box')">🔊 تلفظ آرام</button>
+</div>
 
-        <button class="answer"
-          onclick="check(this,true,'r8')">
-          F
-        </button>
+</div>
 
-        <button class="answer"
-          onclick="check(this,false,'r8')">
-          H
-        </button>
 
-        <div class="result" id="r8"></div>
+<!-- Y -->
 
-      </div>
+<div class="letter-card">
 
+<div class="letter-top">
+<div class="big-letter">Y y</div>
+<div class="letter-name"><strong>اسم حرف:</strong> وای</div>
+<button class="speak-btn" onclick="speak('Y')">🔊</button>
+</div>
 
-    </div>
+<div class="sound">
+<b>صدای نمونه:</b> ی
+<br>
+Y در بعضی کلمه‌ها می‌تواند صدای مصوت داشته باشد.
+</div>
 
+<div class="example">
+<div class="example-word">Yellow</div>
+<div class="example-pronunciation">یِلُو</div>
+<div class="example-meaning">🟡 زرد</div>
+<button class="speak-btn" onclick="speakSlow('Yellow')">🔊 تلفظ آرام</button>
+</div>
 
-    <!-- FINISH -->
+</div>
 
-    <div class="finish">
 
-      🎉 آفرین!
+<!-- Z -->
 
-      <br>
+<div class="letter-card">
 
-      حالا با الفبای انگلیسی و حروف صدادار آشنا شدی. 🔤🇬🇧
+<div class="letter-top">
+<div class="big-letter">Z z</div>
+<div class="letter-name"><strong>اسم حرف:</strong> زی / زِد</div>
+<button class="speak-btn" onclick="speak('Z')">🔊</button>
+</div>
 
-      <br><br>
+<div class="sound">
+<b>صدای نمونه:</b> ز
+</div>
 
-      <b>A, B, C ... Z</b>
+<div class="example">
+<div class="example-word">Zoo</div>
+<div class="example-pronunciation">زو</div>
+<div class="example-meaning">🦁 باغ‌وحش</div>
+<button class="speak-btn" onclick="speakSlow('Zoo')">🔊 تلفظ آرام</button>
+</div>
 
-      <br>
+</div>
 
-      26 letters 📚
 
-    </div>
+<div class="note">
 
+🇺🇸 در انگلیسی آمریکایی معمولاً Z را <b>زی (zee)</b> می‌گویند.
 
-    <footer>
-      © 2026 Arshia Learning 📚
-    </footer>
+<br>
 
+🇬🇧 در انگلیسی بریتانیایی معمولاً Z را <b>زِد (zed)</b> می‌گویند.
 
-  </main>
+</div>
 
+</div>
 
-  <script>
 
-    function speak(text) {
+<!-- VOWELS -->
 
-      const speech =
-        new SpeechSynthesisUtterance(text);
+<div class="card">
 
-      speech.lang = "en-US";
-      speech.rate = 0.8;
-      speech.pitch = 1;
+<h2>🗣️ حروف صدادار (Vowels)</h2>
 
-      window.speechSynthesis.cancel();
+<div class="info">
 
-      window.speechSynthesis.speak(speech);
+پنج حرف اصلی که به عنوان حروف صدادار شناخته می‌شوند:
 
-    }
+<br><br>
 
+<b>A - E - I - O - U</b>
 
-    function check(button, correct, resultId) {
+<br><br>
 
-      const result =
-        document.getElementById(resultId);
+صدای این حروف می‌تواند در کلمه‌های مختلف تغییر کند.
 
-      if (correct) {
+</div>
 
-        button.classList.add("correct");
 
-        result.innerText =
-          "✅ آفرین! جواب درست است.";
+<div class="vowels">
 
-      } else {
+<div class="vowel">
 
-        button.classList.add("wrong");
+<div class="vowel-letter">A a</div>
 
-        result.innerText =
-          "❌ جواب اشتباه است. دوباره تلاش کن.";
+<div class="vowel-pronunciation">اِی</div>
 
+<div class="vowel-info">
+مثال: <b>Apple</b> → اَپِل
+<br>
+🍎 سیب
+</div>
+
+<button class="speak-btn" onclick="speakSlow('Apple')">
+🔊 تلفظ
+</button>
+
+</div>
+
+
+<div class="vowel">
+
+<div class="vowel-letter">E e</div>
+
+<div class="vowel-pronunciation">ای</div>
+
+<div class="vowel-info">
+مثال: <b>Egg</b> → اِگ
+<br>
+🥚 تخم‌مرغ
+</div>
+
+<button class="speak-btn" onclick="speakSlow('Egg')">
+🔊 تلفظ
+</button>
+
+</div>
+
+
+<div class="vowel">
+
+<div class="vowel-letter">I i</div>
+
+<div class="vowel-pronunciation">آی</div>
+
+<div class="vowel-info">
+مثال: <b>Ice</b> → آیس
+<br>
+🧊 یخ
+</div>
+
+<button class="speak-btn" onclick="speakSlow('Ice')">
+🔊 تلفظ
+</button>
+
+</div>
+
+
+<div class="vowel">
+
+<div class="vowel-letter">O o</div>
+
+<div class="vowel-pronunciation">اُو</div>
+
+<div class="vowel-info">
+مثال: <b>Orange</b> → آرِنج
+<br>
+🍊 پرتقال
+</div>
+
+<button class="speak-btn" onclick="speakSlow('Orange')">
+🔊 تلفظ
+</button>
+
+</div>
+
+
+<div class="vowel">
+
+<div class="vowel-letter">U u</div>
+
+<div class="vowel-pronunciation">یو</div>
+
+<div class="vowel-info">
+مثال: <b>Umbrella</b> → اَمبْرِلا
+<br>
+☂️ چتر
+</div>
+
+<button class="speak-btn" onclick="speakSlow('Umbrella')">
+🔊 تلفظ
+</button>
+
+</div>
+
+</div>
+
+
+<div class="note">
+
+💡 اسم حرف با صدای آن داخل کلمه یکی نیست.
+
+<br><br>
+
+مثلاً اسم حرف <b>A</b> «اِی» است، اما در <b>Apple</b> صدای «اَ» می‌دهد.
+
+</div>
+
+</div>
+
+
+<!-- EXAM BUTTON -->
+
+<div class="card">
+
+<h2>🎯 امتحان الفبا</h2>
+
+<p>
+۱۵ سؤال از مطالب این درس
+</p>
+
+<button class="start-btn" onclick="startExam()">
+▶️ شروع امتحان
+</button>
+
+</div>
+
+
+<!-- EXAM -->
+
+<div class="card" id="examBox" style="display:none;">
+
+<h2>📝 امتحان الفبا</h2>
+
+
+<!-- 1 -->
+
+<div class="question">
+
+<p>
+۱. کدام گزینه حرف B و صدای نمونه آن را درست نشان می‌دهد؟
+</p>
+
+<div class="options">
+
+<button onclick="answer(this,true)">
+B → صدای «ب»
+</button>
+
+<button onclick="answer(this,false)">
+B → صدای «د»
+</button>
+
+<button onclick="answer(this,false)">
+B → صدای «ک»
+</button>
+
+<button onclick="answer(this,false)">
+B → صدای «ف»
+</button>
+
+</div>
+
+</div>
+
+
+<!-- 2 -->
+
+<div class="question">
+
+<p>
+۲. کدام کلمه با حرف C شروع می‌شود و C در آن صدای «ک» می‌دهد؟
+</p>
+
+<div class="options">
+
+<button onclick="answer(this,true)">
+Cat
+</button>
+
+<button onclick="answer(this,false)">
+Sun
+</button>
+
+<button onclick="answer(this,false)">
+Ball
+</button>
+
+<button onclick="answer(this,false)">
+Fish
+</button>
+
+</div>
+
+</div>
+
+
+<!-- 3 -->
+
+<div class="question">
+
+<p>
+۳. اسم کدام حرف «دابِل‌یو» است؟
+</p>
+
+<div class="options">
+
+<button onclick="answer(this,false)">
+V
+</button>
+
+<button onclick="answer(this,true)">
+W
+</button>
+
+<button onclick="answer(this,false)">
+Y
+</button>
+
+<button onclick="answer(this,false)">
+U
+</button>
+
+</div>
+
+</div>
+
+
+<!-- 4 -->
+
+<div class="question">
+
+<p>
+۴. کدام گزینه حرف صدادار نیست؟
+</p>
+
+<div class="options">
+
+<button onclick="answer(this,false)">
+A
+</button>
+
+<button onclick="answer(this,false)">
+E
+</button>
+
+<button onclick="answer(this,true)">
+B
+</button>
+
+<button onclick="answer(this,false)">
+O
+</button>
+
+</div>
+
+</div>
+
+
+<!-- 5 -->
+
+<div class="question">
+
+<p>
+۵. کدام گزینه ترتیب درست این حروف را نشان می‌دهد؟
+<br>
+M → ? → O → ?
+</p>
+
+<div class="options">
+
+<button onclick="answer(this,true)">
+N - P
+</button>
+
+<button onclick="answer(this,false)">
+L - P
+</button>
+
+<button onclick="answer(this,false)">
+N - Q
+</button>
+
+<button onclick="answer(this,false)">
+O - P
+</button>
+
+</div>
+
+</div>
+
+
+<!-- 6 -->
+
+<div class="question">
+
+<p>
+۶. در کلمه <b>Ball</b>، حرف B چه صدایی می‌دهد؟
+</p>
+
+<div class="options">
+
+<button onclick="answer(this,true)">
+ب
+</button>
+
+<button onclick="answer(this,false)">
+پ
+</button>
+
+<button onclick="answer(this,false)">
+د
+</button>
+
+<button onclick="answer(this,false)">
+ف
+</button>
+
+</div>
+
+</div>
+
+
+<!-- 7 -->
+
+<div class="question">
+
+<p>
+۷. کدام گزینه حرف و کلمه مثال آن را درست به هم وصل کرده است؟
+</p>
+
+<div class="options">
+
+<button onclick="answer(this,false)">
+F → Ball
+</button>
+
+<button onclick="answer(this,true)">
+F → Fish
+</button>
+
+<button onclick="answer(this,false)">
+F → Dog
+</button>
+
+<button onclick="answer(this,false)">
+F → Moon
+</button>
+
+</div>
+
+</div>
+
+
+<!-- 8 -->
+
+<div class="question">
+
+<p>
+۸. کدام گزینه شامل تمام حروف صدادار اصلی است؟
+</p>
+
+<div class="options">
+
+<button onclick="answer(this,true)">
+A - E - I - O - U
+</button>
+
+<button onclick="answer(this,false)">
+A - B - E - I - O
+</button>
+
+<button onclick="answer(this,false)">
+E - I - O - U - Y
+</button>
+
+<button onclick="answer(this,false)">
+A - E - H - I - U
+</button>
+
+</div>
+
+</div>
+
+
+<!-- 9 -->
+
+<div class="question">
+
+<p>
+۹. کدام حرف در کلمه <b>Queen</b> در ابتدای کلمه قرار دارد؟
+</p>
+
+<div class="options">
+
+<button onclick="answer(this,true)">
+Q
+</button>
+
+<button onclick="answer(this,false)">
+U
+</button>
+
+<button onclick="answer(this,false)">
+K
+</button>
+
+<button onclick="answer(this,false)">
+C
+</button>
+
+</div>
+
+</div>
+
+
+<!-- 10 -->
+
+<div class="question">
+
+<p>
+۱۰. اگر از حرف F سه جایگاه جلو برویم، به کدام حرف می‌رسیم؟
+</p>
+
+<div class="options">
+
+<button onclick="answer(this,false)">
+H
+</button>
+
+<button onclick="answer(this,true)">
+I
+</button>
+
+<button onclick="answer(this,false)">
+J
+</button>
+
+<button onclick="answer(this,false)">
+G
+</button>
+
+</div>
+
+</div>
+
+
+<!-- 11 -->
+
+<div class="question">
+
+<p>
+۱۱. کدام گزینه حروف را از جایگاه زودتر به دیرتر درست مرتب کرده است؟
+</p>
+
+<div class="options">
+
+<button onclick="answer(this,false)">
+R - P - Q - S
+</button>
+
+<button onclick="answer(this,true)">
+P - Q - R - S
+</button>
+
+<button onclick="answer(this,false)">
+Q - P - S - R
+</button>
+
+<button onclick="answer(this,false)">
+P - R - Q - S
+</button>
+
+</div>
+
+</div>
+
+
+<!-- 12 -->
+
+<div class="question">
+
+<p>
+۱۲. کدام حرف دقیقاً بین U و W قرار دارد؟
+</p>
+
+<div class="options">
+
+<button onclick="answer(this,true)">
+V
+</button>
+
+<button onclick="answer(this,false)">
+T
+</button>
+
+<button onclick="answer(this,false)">
+X
+</button>
+
+<button onclick="answer(this,false)">
+Y
+</button>
+
+</div>
+
+</div>
+
+
+<!-- 13 -->
+
+<div class="question">
+
+<p>
+۱۳. کدام گزینه حرف، صدای نمونه و کلمه را درست نشان می‌دهد؟
+</p>
+
+<div class="options">
+
+<button onclick="answer(this,false)">
+D → ک → Dog
+</button>
+
+<button onclick="answer(this,true)">
+D → د → Dog
+</button>
+
+<button onclick="answer(this,false)">
+D → ف → Dog
+</button>
+
+<button onclick="answer(this,false)">
+D → ب → Dog
+</button>
+
+</div>
+
+</div>
+
+
+<!-- 14 -->
+
+<div class="question">
+
+<p>
+۱۴. اگر حرف Z را چهار جایگاه به عقب ببریم، به کدام حرف می‌رسیم؟
+</p>
+
+<div class="options">
+
+<button onclick="answer(this,false)">
+V
+</button>
+
+<button onclick="answer(this,true)">
+W
+</button>
+
+<button onclick="answer(this,false)">
+X
+</button>
+
+<button onclick="answer(this,false)">
+U
+</button>
+
+</div>
+
+</div>
+
+
+<!-- 15 -->
+
+<div class="question">
+
+<p>
+۱۵. کدام گزینه همگی حروف صدادار اصلی را به ترتیب جایگاهشان در الفبا نشان می‌دهد؟
+</p>
+
+<div class="options">
+
+<button onclick="answer(this,true)">
+A - E - I - O - U
+</button>
+
+<button onclick="answer(this,false)">
+A - I - E - O - U
+</button>
+
+<button onclick="answer(this,false)">
+E - A - I - U - O
+</button>
+
+<button onclick="answer(this,false)">
+A - E - O - I - U
+</button>
+
+</div>
+
+</div>
+
+
+<div id="result">
+امتیاز: ۰ از ۱۵
+</div>
+
+</div>
+
+</div>
+
+
+<script>
+
+function speak(text){
+
+  window.speechSynthesis.cancel();
+
+  const speech =
+  new SpeechSynthesisUtterance(text);
+
+  speech.lang="en-US";
+  speech.rate=0.8;
+
+  window.speechSynthesis.speak(speech);
+
+}
+
+
+function speakSlow(text){
+
+  window.speechSynthesis.cancel();
+
+  const speech =
+  new SpeechSynthesisUtterance(text);
+
+  speech.lang="en-US";
+  speech.rate=0.6;
+  speech.pitch=1;
+
+  window.speechSynthesis.speak(speech);
+
+}
+
+
+function startExam(){
+
+  const exam =
+  document.getElementById("examBox");
+
+  exam.style.display="block";
+
+  exam.scrollIntoView({
+    behavior:"smooth"
+  });
+
+}
+
+
+let score=0;
+let answeredQuestions=0;
+
+
+function answer(button,isCorrect){
+
+  const question =
+  button.closest(".question");
+
+  const buttons =
+  question.querySelectorAll("button");
+
+  if(buttons[0].disabled){
+    return;
+  }
+
+
+  buttons.forEach(function(btn){
+    btn.disabled=true;
+  });
+
+
+  if(isCorrect){
+
+    button.classList.add("correct");
+    score++;
+
+  }
+
+  else{
+
+    button.classList.add("wrong");
+
+    buttons.forEach(function(btn){
+
+      const code =
+      btn.getAttribute("onclick");
+
+      if(code && code.includes("true")){
+        btn.classList.add("correct");
       }
 
+    });
+
+  }
+
+
+  answeredQuestions++;
+
+
+  document.getElementById("result").innerHTML =
+  "امتیاز: " + score + " از 15";
+
+
+  if(answeredQuestions===15){
+
+    let message="";
+
+
+    if(score===15){
+
+      message="🎉 نمره کامل گرفتی!";
+
     }
 
-  </script>
+    else if(score>=13){
+
+      message="🔥 خیلی خوب بود!";
+
+    }
+
+    else if(score>=10){
+
+      message="👏 خیلی خوب!";
+
+    }
+
+    else if(score>=7){
+
+      message="👍 خوبه! بهتره درس رو یک بار دیگه مرور کنی.";
+
+    }
+
+    else{
+
+      message="📚 بهتره الفبا و حروف صدادار رو دوباره مرور کنی.";
+
+    }
+
+
+    setTimeout(function(){
+
+      document.getElementById("result").innerHTML=
+
+      "🎯 نمره نهایی: " +
+      score +
+      " از 15" +
+
+      "<br><br>" +
+
+      message;
+
+    },300);
+
+  }
+
+}
+
+</script>
 
 </body>
-
 </html>
