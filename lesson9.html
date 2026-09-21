@@ -1,0 +1,1626 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>درس ۹ - ماه‌ها و فصل‌ها</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      direction: rtl;
+      background: linear-gradient(135deg, #eef3ff, #f8f9ff);
+      color: #222;
+    }
+
+    .container {
+      width: 92%;
+      max-width: 650px;
+      margin: auto;
+      padding: 20px 0 40px;
+    }
+
+    .back {
+      display: inline-block;
+      margin-bottom: 18px;
+      color: #222;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 27px;
+    }
+
+    .header p {
+      color: #666;
+      margin-top: 8px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.58);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.75);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+      border-radius: 24px;
+      padding: 20px;
+      margin-bottom: 18px;
+    }
+
+    .card h2 {
+      margin-top: 0;
+      font-size: 20px;
+    }
+
+    .intro {
+      line-height: 1.9;
+      color: #555;
+    }
+
+    /* ماه‌ها */
+
+    .months-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .month {
+      background: rgba(255,255,255,0.7);
+      border-radius: 17px;
+      padding: 13px;
+      text-align: center;
+      border: 1px solid rgba(255,255,255,0.8);
+    }
+
+    .month-number {
+      font-size: 12px;
+      color: #4f7cff;
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+
+    .month strong {
+      display: block;
+      font-size: 16px;
+      direction: ltr;
+    }
+
+    .month .pronunciation {
+      color: #555;
+      margin-top: 5px;
+    }
+
+    .month .meaning {
+      color: #777;
+      margin-top: 4px;
+      font-size: 13px;
+    }
+
+    /* فصل‌ها */
+
+    .season-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    .season-card {
+      background: rgba(255,255,255,0.7);
+      border-radius: 20px;
+      padding: 10px;
+      text-align: center;
+      border: 1px solid rgba(255,255,255,0.8);
+    }
+
+    .season-img {
+      width: 100%;
+      height: 120px;
+      border-radius: 15px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .season-card h3 {
+      margin: 10px 0 4px;
+      direction: ltr;
+    }
+
+    .season-card p {
+      margin: 4px 0;
+      color: #555;
+    }
+
+    .season-card span {
+      display: block;
+      margin-top: 5px;
+      color: #666;
+    }
+
+    /* گرامر */
+
+    .grammar-box {
+      background: rgba(79,124,255,0.08);
+      border-radius: 18px;
+      padding: 15px;
+      margin: 12px 0;
+      line-height: 1.9;
+    }
+
+    .english {
+      direction: ltr;
+      text-align: left;
+      font-weight: bold;
+      font-size: 17px;
+    }
+
+    .pron {
+      color: #555;
+      margin-top: 5px;
+    }
+
+    .meaning {
+      color: #666;
+      margin-top: 4px;
+    }
+
+    /* جدول */
+
+    .word-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+    }
+
+    .word-table th,
+    .word-table td {
+      border: 1px solid rgba(0,0,0,0.1);
+      padding: 10px;
+      text-align: center;
+    }
+
+    .word-table th {
+      background: rgba(79,124,255,0.1);
+    }
+
+    /* دکمه صدا */
+
+    .speak-btn {
+      border: none;
+      border-radius: 12px;
+      padding: 8px 12px;
+      background: #4f7cff;
+      color: white;
+      font-size: 12px;
+      cursor: pointer;
+      margin-top: 8px;
+    }
+
+    .speak-btn:active {
+      transform: scale(0.95);
+    }
+
+    /* نکته */
+
+    .note {
+      padding: 13px;
+      margin: 10px 0;
+      border-radius: 15px;
+      background: rgba(255,193,7,0.1);
+      line-height: 1.9;
+    }
+
+    /* مکالمه */
+
+    .conversation {
+      background: rgba(255,255,255,0.7);
+      border-radius: 18px;
+      padding: 15px;
+      margin-top: 10px;
+    }
+
+    .conversation p {
+      margin: 13px 0;
+      line-height: 1.8;
+    }
+
+    /* امتحان */
+
+    #examBox {
+      display: none;
+    }
+
+    .start-exam {
+      width: 100%;
+      border: none;
+      border-radius: 17px;
+      padding: 14px;
+      background: #4f7cff;
+      color: white;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .question {
+      margin: 15px 0;
+      padding: 16px;
+      background: rgba(255,255,255,0.7);
+      border-radius: 18px;
+    }
+
+    .question p {
+      font-weight: bold;
+      line-height: 1.8;
+    }
+
+    .answer-btn {
+      width: 100%;
+      border: none;
+      border-radius: 13px;
+      padding: 11px;
+      margin-top: 8px;
+      background: #eef1f7;
+      cursor: pointer;
+      font-size: 14px;
+      text-align: right;
+      direction: rtl;
+    }
+
+    .answer-btn.correct {
+      background: #b9efc5;
+      color: #145c24;
+      font-weight: bold;
+    }
+
+    .answer-btn.wrong {
+      background: #ffc1c1;
+      color: #8a1d1d;
+    }
+
+    .answer-btn:disabled {
+      cursor: default;
+    }
+
+    #result {
+      margin-top: 20px;
+      text-align: center;
+      font-weight: bold;
+      line-height: 1.8;
+    }
+
+    .footer {
+      text-align: center;
+      color: #999;
+      font-size: 12px;
+      margin-top: 25px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <a href="english.html" class="back">
+    ← بازگشت به درس‌های زبان انگلیسی
+  </a>
+
+  <div class="header">
+    <h1>درس ۹ 📅🌸</h1>
+    <p>ماه‌ها و فصل‌ها</p>
+  </div>
+
+
+  <!-- مقدمه -->
+
+  <div class="card">
+
+    <h2>📚 مقدمه</h2>
+
+    <p class="intro">
+      در این درس با ماه‌های میلادی، فصل‌های سال و نحوه صحبت کردن
+      درباره زمان آشنا می‌شویم.
+      همچنین یاد می‌گیریم چه زمانی از
+      <b>in</b>
+      و
+      <b>on</b>
+      استفاده کنیم.
+    </p>
+
+  </div>
+
+
+  <!-- ماه‌ها -->
+
+  <div class="card">
+
+    <h2>📅 ماه‌های میلادی</h2>
+
+    <div class="months-grid">
+
+      <div class="month">
+        <div class="month-number">ماه ۱</div>
+        <strong>January</strong>
+        <div class="pronunciation">جَن‌یُوئِری</div>
+        <div class="meaning">ژانویه</div>
+        <button class="speak-btn"
+          onclick="speak('January')">
+          🔊 تلفظ
+        </button>
+      </div>
+
+
+      <div class="month">
+        <div class="month-number">ماه ۲</div>
+        <strong>February</strong>
+        <div class="pronunciation">فِبروئِری</div>
+        <div class="meaning">فوریه</div>
+        <button class="speak-btn"
+          onclick="speak('February')">
+          🔊 تلفظ
+        </button>
+      </div>
+
+
+      <div class="month">
+        <div class="month-number">ماه ۳</div>
+        <strong>March</strong>
+        <div class="pronunciation">مارچ</div>
+        <div class="meaning">مارس</div>
+        <button class="speak-btn"
+          onclick="speak('March')">
+          🔊 تلفظ
+        </button>
+      </div>
+
+
+      <div class="month">
+        <div class="month-number">ماه ۴</div>
+        <strong>April</strong>
+        <div class="pronunciation">اِیپریل</div>
+        <div class="meaning">آوریل</div>
+        <button class="speak-btn"
+          onclick="speak('April')">
+          🔊 تلفظ
+        </button>
+      </div>
+
+
+      <div class="month">
+        <div class="month-number">ماه ۵</div>
+        <strong>May</strong>
+        <div class="pronunciation">مِی</div>
+        <div class="meaning">مه</div>
+        <button class="speak-btn"
+          onclick="speak('May')">
+          🔊 تلفظ
+        </button>
+      </div>
+
+
+      <div class="month">
+        <div class="month-number">ماه ۶</div>
+        <strong>June</strong>
+        <div class="pronunciation">جون</div>
+        <div class="meaning">ژوئن</div>
+        <button class="speak-btn"
+          onclick="speak('June')">
+          🔊 تلفظ
+        </button>
+      </div>
+
+
+      <div class="month">
+        <div class="month-number">ماه ۷</div>
+        <strong>July</strong>
+        <div class="pronunciation">جولای</div>
+        <div class="meaning">ژوئیه</div>
+        <button class="speak-btn"
+          onclick="speak('July')">
+          🔊 تلفظ
+        </button>
+      </div>
+
+
+      <div class="month">
+        <div class="month-number">ماه ۸</div>
+        <strong>August</strong>
+        <div class="pronunciation">آگِست</div>
+        <div class="meaning">اوت</div>
+        <button class="speak-btn"
+          onclick="speak('August')">
+          🔊 تلفظ
+        </button>
+      </div>
+
+
+      <div class="month">
+        <div class="month-number">ماه ۹</div>
+        <strong>September</strong>
+        <div class="pronunciation">سِپتِمبِر</div>
+        <div class="meaning">سپتامبر</div>
+        <button class="speak-btn"
+          onclick="speak('September')">
+          🔊 تلفظ
+        </button>
+      </div>
+
+
+      <div class="month">
+        <div class="month-number">ماه ۱۰</div>
+        <strong>October</strong>
+        <div class="pronunciation">آکتوبِر</div>
+        <div class="meaning">اکتبر</div>
+        <button class="speak-btn"
+          onclick="speak('October')">
+          🔊 تلفظ
+        </button>
+      </div>
+
+
+      <div class="month">
+        <div class="month-number">ماه ۱۱</div>
+        <strong>November</strong>
+        <div class="pronunciation">نُوِمبِر</div>
+        <div class="meaning">نوامبر</div>
+        <button class="speak-btn"
+          onclick="speak('November')">
+          🔊 تلفظ
+        </button>
+      </div>
+
+
+      <div class="month">
+        <div class="month-number">ماه ۱۲</div>
+        <strong>December</strong>
+        <div class="pronunciation">دیسِمبِر</div>
+        <div class="meaning">دسامبر</div>
+        <button class="speak-btn"
+          onclick="speak('December')">
+          🔊 تلفظ
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- فصل‌ها -->
+
+  <div class="card">
+
+    <h2>🌍 فصل‌های سال</h2>
+
+    <div class="season-grid">
+
+      <div class="season-card">
+
+        <img
+          class="season-img"
+          src="spring.jpg"
+          alt="Spring">
+
+        <h3>Spring</h3>
+
+        <p>اِسپِرینگ</p>
+
+        <span>بهار 🌸</span>
+
+        <button class="speak-btn"
+          onclick="speak('Spring')">
+          🔊 تلفظ
+        </button>
+
+      </div>
+
+
+      <div class="season-card">
+
+        <img
+          class="season-img"
+          src="summer.jpg"
+          alt="Summer">
+
+        <h3>Summer</h3>
+
+        <p>سامِر</p>
+
+        <span>تابستان ☀️</span>
+
+        <button class="speak-btn"
+          onclick="speak('Summer')">
+          🔊 تلفظ
+        </button>
+
+      </div>
+
+
+      <div class="season-card">
+
+        <img
+          class="season-img"
+          src="autumn.jpg"
+          alt="Autumn">
+
+        <h3>Autumn</h3>
+
+        <p>آتِم</p>
+
+        <span>پاییز 🍂</span>
+
+        <button class="speak-btn"
+          onclick="speak('Autumn')">
+          🔊 تلفظ
+        </button>
+
+      </div>
+
+
+      <div class="season-card">
+
+        <img
+          class="season-img"
+          src="winter.jpg"
+          alt="Winter">
+
+        <h3>Winter</h3>
+
+        <p>وینتِر</p>
+
+        <span>زمستان ❄️</span>
+
+        <button class="speak-btn"
+          onclick="speak('Winter')">
+          🔊 تلفظ
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <div class="note">
+
+      🍂 <b>نکته:</b>
+
+      <br><br>
+
+      در انگلیسی آمریکایی،
+      <b>Fall</b>
+      هم به معنی پاییز است.
+
+      <br><br>
+
+      <b>Fall</b>
+      → فال
+      → پاییز
+
+      <br>
+
+      <button class="speak-btn"
+        onclick="speak('Fall')">
+        🔊 تلفظ Fall
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- گرامر -->
+
+  <div class="card">
+
+    <h2>⭐ گرامر اصلی: in + ماه و فصل</h2>
+
+    <p class="intro">
+
+      وقتی می‌خواهیم بگوییم یک اتفاق در یک
+      <b>ماه</b>
+      یا
+      <b>فصل</b>
+      اتفاق می‌افتد، معمولاً از
+      <b>in</b>
+      استفاده می‌کنیم.
+
+    </p>
+
+
+    <div class="grammar-box">
+
+      <div class="english">
+        My birthday is in May.
+      </div>
+
+      <div class="pron">
+        مای بِرث‌دِی ایز اِن مِی.
+      </div>
+
+      <div class="meaning">
+        تولد من در ماه مه است.
+      </div>
+
+      <button class="speak-btn"
+        onclick="speak('My birthday is in May.')">
+        🔊 گوش دادن
+      </button>
+
+    </div>
+
+
+    <div class="grammar-box">
+
+      <div class="english">
+        School starts in September.
+      </div>
+
+      <div class="pron">
+        اِسکول اِستارتس اِن سِپتِمبِر.
+      </div>
+
+      <div class="meaning">
+        مدرسه در سپتامبر شروع می‌شود.
+      </div>
+
+      <button class="speak-btn"
+        onclick="speak('School starts in September.')">
+        🔊 گوش دادن
+      </button>
+
+    </div>
+
+
+    <div class="grammar-box">
+
+      <div class="english">
+        I play football in summer.
+      </div>
+
+      <div class="pron">
+        آی پلی فوتبال اِن سامِر.
+      </div>
+
+      <div class="meaning">
+        من در تابستان فوتبال بازی می‌کنم.
+      </div>
+
+      <button class="speak-btn"
+        onclick="speak('I play football in summer.')">
+        🔊 گوش دادن
+      </button>
+
+    </div>
+
+
+    <div class="grammar-box">
+
+      <div class="english">
+        It is cold in winter.
+      </div>
+
+      <div class="pron">
+        اِت ایز کُلد اِن وینتِر.
+      </div>
+
+      <div class="meaning">
+        هوا در زمستان سرد است.
+      </div>
+
+      <button class="speak-btn"
+        onclick="speak('It is cold in winter.')">
+        🔊 گوش دادن
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- WHEN -->
+
+  <div class="card">
+
+    <h2>❓ سؤال با When</h2>
+
+    <p class="intro">
+
+      <b>When</b>
+      یعنی
+      <b>چه زمانی؟ / کی؟</b>
+
+      <br><br>
+
+      از آن برای پرسیدن زمان انجام یک کار یا اتفاق استفاده می‌کنیم.
+
+    </p>
+
+
+    <div class="grammar-box">
+
+      <div class="english">
+        When is your birthday?
+      </div>
+
+      <div class="pron">
+        وِن ایز یور بِرث‌دِی؟
+      </div>
+
+      <div class="meaning">
+        تولدت چه زمانی است؟
+      </div>
+
+      <button class="speak-btn"
+        onclick="speak('When is your birthday?')">
+        🔊 گوش دادن
+      </button>
+
+      <br><br>
+
+      <b>My birthday is in September.</b>
+
+      <br>
+
+      مای بِرث‌دِی ایز اِن سِپتِمبِر.
+
+      <br>
+
+      تولد من در سپتامبر است.
+
+    </div>
+
+
+    <div class="grammar-box">
+
+      <div class="english">
+        When do you play football?
+      </div>
+
+      <div class="pron">
+        وِن دو یو پلی فوتبال؟
+      </div>
+
+      <div class="meaning">
+        چه زمانی فوتبال بازی می‌کنی؟
+      </div>
+
+      <button class="speak-btn"
+        onclick="speak('When do you play football?')">
+        🔊 گوش دادن
+      </button>
+
+      <br><br>
+
+      <b>I play football in summer.</b>
+
+      <br>
+
+      آی پلی فوتبال اِن سامِر.
+
+      <br>
+
+      من در تابستان فوتبال بازی می‌کنم.
+
+    </div>
+
+  </div>
+
+
+  <!-- IN / ON -->
+
+  <div class="card">
+
+    <h2>📌 تفاوت in و on</h2>
+
+    <table class="word-table">
+
+      <tr>
+        <th>حرف اضافه</th>
+        <th>برای چه چیزی؟</th>
+        <th>مثال</th>
+      </tr>
+
+      <tr>
+        <td><b>in</b></td>
+        <td>ماه</td>
+        <td>in May</td>
+      </tr>
+
+      <tr>
+        <td><b>in</b></td>
+        <td>فصل</td>
+        <td>in summer</td>
+      </tr>
+
+      <tr>
+        <td><b>on</b></td>
+        <td>روز</td>
+        <td>on Monday</td>
+      </tr>
+
+    </table>
+
+
+    <div class="note">
+
+      ⭐ <b>یادت باشه:</b>
+
+      <br><br>
+
+      📅 روز → <b>on</b>
+
+      <br>
+
+      <b>on Monday</b>
+      → آن ماندِی
+      → در روز دوشنبه
+
+      <br><br>
+
+      📆 ماه → <b>in</b>
+
+      <br>
+
+      <b>in May</b>
+      → اِن مِی
+      → در ماه مه
+
+      <br><br>
+
+      🌤️ فصل → <b>in</b>
+
+      <br>
+
+      <b>in summer</b>
+      → اِن سامِر
+      → در تابستان
+
+    </div>
+
+  </div>
+
+
+  <!-- مثال‌ها -->
+
+  <div class="card">
+
+    <h2>💡 مثال‌های کاربردی</h2>
+
+
+    <div class="grammar-box">
+
+      <div class="english">
+        My birthday is in July.
+      </div>
+
+      <div class="pron">
+        مای بِرث‌دِی ایز اِن جولای.
+      </div>
+
+      <div class="meaning">
+        تولد من در ماه ژوئیه است.
+      </div>
+
+      <button class="speak-btn"
+        onclick="speak('My birthday is in July.')">
+        🔊 تلفظ
+      </button>
+
+    </div>
+
+
+    <div class="grammar-box">
+
+      <div class="english">
+        I like spring.
+      </div>
+
+      <div class="pron">
+        آی لایک اِسپِرینگ.
+      </div>
+
+      <div class="meaning">
+        من بهار را دوست دارم.
+      </div>
+
+      <button class="speak-btn"
+        onclick="speak('I like spring.')">
+        🔊 تلفظ
+      </button>
+
+    </div>
+
+
+    <div class="grammar-box">
+
+      <div class="english">
+        We travel in summer.
+      </div>
+
+      <div class="pron">
+        وی تِرَوِل اِن سامِر.
+      </div>
+
+      <div class="meaning">
+        ما در تابستان سفر می‌کنیم.
+      </div>
+
+      <button class="speak-btn"
+        onclick="speak('We travel in summer.')">
+        🔊 تلفظ
+      </button>
+
+    </div>
+
+
+    <div class="grammar-box">
+
+      <div class="english">
+        It snows in winter.
+      </div>
+
+      <div class="pron">
+        اِت اِسنوز اِن وینتِر.
+      </div>
+
+      <div class="meaning">
+        در زمستان برف می‌بارد.
+      </div>
+
+      <button class="speak-btn"
+        onclick="speak('It snows in winter.')">
+        🔊 تلفظ
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- نکته‌ها -->
+
+  <div class="card">
+
+    <h2>📝 نکته‌های مهم درس</h2>
+
+
+    <div class="note">
+      1️⃣ اسم ماه‌ها و فصل‌ها در انگلیسی با حرف بزرگ شروع می‌شود.
+
+      <br>
+
+      ✅ <b>May</b>
+
+      <br>
+
+      ❌ <b>may</b>
+    </div>
+
+
+    <div class="note">
+      2️⃣ برای ماه‌ها از <b>in</b> استفاده می‌کنیم.
+
+      <br>
+
+      ✅ <b>in August</b>
+    </div>
+
+
+    <div class="note">
+      3️⃣ برای فصل‌ها هم از <b>in</b> استفاده می‌کنیم.
+
+      <br>
+
+      ✅ <b>in winter</b>
+    </div>
+
+
+    <div class="note">
+      4️⃣ برای روزهای هفته از <b>on</b> استفاده می‌کنیم.
+
+      <br>
+
+      ✅ <b>on Monday</b>
+    </div>
+
+
+    <div class="note">
+      5️⃣ برای پرسیدن زمان می‌توانیم از <b>When</b> استفاده کنیم.
+
+      <br>
+
+      <b>When is your birthday?</b>
+    </div>
+
+
+    <div class="note">
+      6️⃣ <b>Fall</b> و <b>Autumn</b> هر دو به معنی پاییز هستند.
+    </div>
+
+  </div>
+
+
+  <!-- مکالمه -->
+
+  <div class="card">
+
+    <h2>🗣️ مکالمه</h2>
+
+    <div class="conversation">
+
+      <p>
+
+        <b>A:</b>
+        When is your birthday?
+
+        <br>
+
+        وِن ایز یور بِرث‌دِی؟
+
+        <br>
+
+        تولدت چه زمانی است؟
+
+        <br>
+
+        <button class="speak-btn"
+          onclick="speak('When is your birthday?')">
+          🔊 گوش دادن
+        </button>
+
+      </p>
+
+
+      <p>
+
+        <b>B:</b>
+        My birthday is in June.
+
+        <br>
+
+        مای بِرث‌دِی ایز اِن جون.
+
+        <br>
+
+        تولد من در ماه ژوئن است.
+
+        <br>
+
+        <button class="speak-btn"
+          onclick="speak('My birthday is in June.')">
+          🔊 گوش دادن
+        </button>
+
+      </p>
+
+
+      <p>
+
+        <b>A:</b>
+        What is your favorite season?
+
+        <br>
+
+        وات ایز یور فِیوِرِت سیزِن؟
+
+        <br>
+
+        فصل مورد علاقه‌ات چیست؟
+
+        <br>
+
+        <button class="speak-btn"
+          onclick="speak('What is your favorite season?')">
+          🔊 گوش دادن
+        </button>
+
+      </p>
+
+
+      <p>
+
+        <b>B:</b>
+        My favorite season is summer.
+
+        <br>
+
+        مای فِیوِرِت سیزِن ایز سامِر.
+
+        <br>
+
+        فصل مورد علاقه من تابستان است.
+
+        <br>
+
+        <button class="speak-btn"
+          onclick="speak('My favorite season is summer.')">
+          🔊 گوش دادن
+        </button>
+
+      </p>
+
+
+      <p>
+
+        <b>A:</b>
+        When do you play football?
+
+        <br>
+
+        وِن دو یو پلی فوتبال؟
+
+        <br>
+
+        چه زمانی فوتبال بازی می‌کنی؟
+
+        <br>
+
+        <button class="speak-btn"
+          onclick="speak('When do you play football?')">
+          🔊 گوش دادن
+        </button>
+
+      </p>
+
+
+      <p>
+
+        <b>B:</b>
+        I play football in summer.
+
+        <br>
+
+        آی پلی فوتبال اِن سامِر.
+
+        <br>
+
+        من در تابستان فوتبال بازی می‌کنم.
+
+        <br>
+
+        <button class="speak-btn"
+          onclick="speak('I play football in summer.')">
+          🔊 گوش دادن
+        </button>
+
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <!-- شروع امتحان -->
+
+  <div class="card">
+
+    <h2>🎯 امتحان درس ۹</h2>
+
+    <p>
+      برای شروع امتحان روی دکمه زیر بزن.
+      ۱۰ سؤال داری! 😎
+    </p>
+
+    <button class="start-exam"
+      onclick="startExam()">
+
+      ▶️ شروع امتحان
+
+    </button>
+
+  </div>
+
+
+  <!-- امتحان -->
+
+  <div class="card" id="examBox">
+
+    <h2>📝 امتحان</h2>
+
+
+    <div class="question">
+
+      <p>
+        1. کدام گزینه به معنی «در ماه May» است؟
+      </p>
+
+      <button class="answer-btn"
+        onclick="answer(this,false)">
+        A) on May
+      </button>
+
+      <button class="answer-btn"
+        onclick="answer(this,true)">
+        B) in May
+      </button>
+
+      <button class="answer-btn"
+        onclick="answer(this,false)">
+        C) at May
+      </button>
+
+    </div>
+
+
+    <div class="question">
+
+      <p>
+        2. کدام گزینه به معنی «در تابستان» است؟
+      </p>
+
+      <button class="answer-btn"
+        onclick="answer(this,true)">
+        A) in summer
+      </button>
+
+      <button class="answer-btn"
+        onclick="answer(this,false)">
+        B) on summer
+      </button>
+
+      <button class="answer-btn"
+        onclick="answer(this,false)">
+        C) at summer
+      </button>
+
+    </div>
+
+
+    <div class="question">
+
+      <p>
+        3. کدام جمله درست است؟
+      </p>
+
+      <button class="answer-btn"
+        onclick="answer(this,false)">
+        A) My birthday is on July.
+      </button>
+
+      <button class="answer-btn"
+        onclick="answer(this,true)">
+        B) My birthday is in July.
+      </button>
+
+      <button class="answer-btn"
+        onclick="answer(this,false)">
+        C) My birthday is at July.
+      </button>
+
+    </div>
+
+
+    <div class="question">
+
+      <p>
+        4. معنی When چیست؟
+      </p>
+
+      <button class="answer-btn"
+        onclick="answer(this,false)">
+        A) کجا
+      </button>
+
+      <button class="answer-btn"
+        onclick="answer(this,true)">
+        B) چه زمانی / کی
+      </button>
+
+      <button class="answer-btn"
+        onclick="answer(this,false)">
+        C) چرا
+      </button>
+
+    </div>
+
+
+    <div class="question">
+
+      <p>
+        5. کدام گزینه درست است؟
+      </p>
+
+      <button class="answer-btn"
+        onclick="answer(this,false)">
+        A) on winter
+      </button>
+
+      <button class="answer-btn"
+        onclick="answer(this,true)">
+        B) in winter
+      </button>
+
+      <button class="answer-btn"
+        onclick="answer(this,false)">
+        C) at winter
+      </button>
+
+    </div>
+
+
+    <div class="question">
+
+      <p>
+        6. برای روزهای هفته معمولاً از کدام حرف اضافه استفاده می‌کنیم؟
+      </p>
+
+      <button class="answer-btn"
+        onclick="answer(this,false)">
+        A) in
+      </button>
+
+      <button class="answer-btn"
+        onclick="answer(this,true)">
+        B) on
+      </button>
+
+      <button class="answer-btn"
+        onclick="answer(this,false)">
+        C) at
+      </button>
+
+    </div>
+
+
+    <div class="question">
+
+      <p>
+        7. کدام گزینه معنی «تولد من در سپتامبر است» را می‌دهد؟
+      </p>
+
+      <button class="answer-btn"
+        onclick="answer(this,true)">
+        A) My birthday is in September.
+      </button>
+
+      <button class="answer-btn"
+        onclick="answer(this,false)">
+        B) My birthday is on September.
+      </button>
+
+      <button class="answer-btn"
+        onclick="answer(this,false)">
+        C) My birthday is at September.
+      </button>
+
+    </div>
+
+
+    <div class="question">
+
+      <p>
+        8. کدام گزینه به معنی «پاییز» است؟
+      </p>
+
+      <button class="answer-btn"
+        onclick="answer(this,false)">
+        A) Spring
+      </button>
+
+      <button class="answer-btn"
+        onclick="answer(this,false)">
+        B) Winter
+      </button>
+
+      <button class="answer-btn"
+        onclick="answer(this,true)">
+        C) Autumn
+      </button>
+
+    </div>
+
+
+    <div class="question">
+
+      <p>
+        9. جمله را کامل کن:
+        <br>
+        I play football ___ summer.
+      </p>
+
+      <button class="answer-btn"
+        onclick="answer(this,true)">
+        A) in
+      </button>
+
+      <button class="answer-btn"
+        onclick="answer(this,false)">
+        B) on
+      </button>
+
+      <button class="answer-btn"
+        onclick="answer(this,false)">
+        C) at
+      </button>
+
+    </div>
+
+
+    <div class="question">
+
+      <p>
+        10. کدام سؤال برای پرسیدن
+        «تولدت چه زمانی است؟»
+        درست است؟
+      </p>
+
+      <button class="answer-btn"
+        onclick="answer(this,false)">
+        A) Where is your birthday?
+      </button>
+
+      <button class="answer-btn"
+        onclick="answer(this,true)">
+        B) When is your birthday?
+      </button>
+
+      <button class="answer-btn"
+        onclick="answer(this,false)">
+        C) What is your birthday?
+      </button>
+
+    </div>
+
+
+    <div id="result">
+      امتیاز: 0 از 10
+    </div>
+
+  </div>
+
+
+  <div class="footer">
+    Arshia Learning 📚
+  </div>
+
+</div>
+
+
+<script>
+
+function speak(text) {
+
+  window.speechSynthesis.cancel();
+
+  const speech =
+    new SpeechSynthesisUtterance(text);
+
+  speech.lang = "en-US";
+  speech.rate = 0.8;
+
+  window.speechSynthesis.speak(speech);
+}
+
+
+function startExam() {
+
+  const exam =
+    document.getElementById("examBox");
+
+  exam.style.display = "block";
+
+  exam.scrollIntoView({
+    behavior: "smooth"
+  });
+
+}
+
+
+let score = 0;
+
+let answeredQuestions = 0;
+
+
+function answer(button, isCorrect) {
+
+  const question =
+    button.closest(".question");
+
+  const buttons =
+    question.querySelectorAll(".answer-btn");
+
+
+  if (buttons[0].disabled) {
+    return;
+  }
+
+
+  buttons.forEach(function(btn) {
+    btn.disabled = true;
+  });
+
+
+  if (isCorrect) {
+
+    button.classList.add("correct");
+
+    score++;
+
+  } else {
+
+    button.classList.add("wrong");
+
+
+    buttons.forEach(function(btn) {
+
+      const code =
+        btn.getAttribute("onclick");
+
+      if (code && code.includes("true")) {
+        btn.classList.add("correct");
+      }
+
+    });
+
+  }
+
+
+  answeredQuestions++;
+
+
+  document.getElementById("result").innerHTML =
+    "امتیاز: " + score + " از 10";
+
+
+  if (answeredQuestions === 10) {
+
+    let message = "";
+
+
+    if (score === 10) {
+
+      message =
+        "🎉 عالی! نمره کامل گرفتی!";
+
+    } else if (score >= 8) {
+
+      message =
+        "🔥 خیلی خوب بود!";
+
+    } else if (score >= 5) {
+
+      message =
+        "👍 خوبه! ولی بهتره درس رو یک بار دیگه مرور کنی.";
+
+    } else {
+
+      message =
+        "📚 بهتره درس رو دوباره مرور کنی.";
+
+    }
+
+
+    setTimeout(function() {
+
+      document.getElementById("result").innerHTML =
+        "🎯 نمره نهایی: " +
+        score +
+        " از 10" +
+        "<br><br>" +
+        message;
+
+    }, 300);
+
+  }
+
+}
+
+</script>
+
+</body>
+</html>
